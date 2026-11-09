@@ -1,0 +1,14 @@
+# Claude and editor settings
+.claude/
+.vscode/
+
+# Windows and OneDrive housekeeping
+desktop.ini
+Thumbs.db
+~$*
+*.tmp
+*.log
+
+# Secrets should never be committed
+.env
+.env.*

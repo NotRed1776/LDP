@@ -1,0 +1,2730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lycan Division | Protection Services</title>
+<meta name="description" content="Lycan Division of Protection Services LLC — professional security officers, executive protection, event security, mobile patrol and risk assessments.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#000; --panel:#0b0b0b; --panel-2:#131313; --line:#262626;
+    --text:#fff; --muted:#a9adb2; --silver:#c0c0c0; --soft:#d9dbde;
+    --accent:#39ff14; --accent-ink:#000;
+    --radius:14px; --max:1180px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:Oswald,Impact,"Arial Narrow",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.02em;line-height:1.1;margin:0 0 .5em}
+  h2{font-size:clamp(30px,4vw,46px)}
+  h3{font-size:21px;letter-spacing:.04em}
+  p{margin:0 0 1em}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  section{padding:96px 0;scroll-margin-top:70px}
+  .muted{color:var(--muted)}
+  .eyebrow{display:inline-flex;align-items:center;gap:12px;font:600 12px/1.2 Inter,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+  .eyebrow::before{content:"";width:28px;height:2px;background:var(--accent);flex:none}
+  .section-head{max-width:720px;margin-bottom:52px}
+  .section-head p{color:var(--muted);font-size:18px}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-radius:8px;font-weight:600;font-size:15px;letter-spacing:.02em;text-decoration:none;border:1px solid transparent;transition:transform .15s,background .15s,border-color .15s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-primary{background:var(--accent);color:var(--accent-ink);box-shadow:0 0 22px color-mix(in srgb,var(--accent) 30%,transparent)}
+  .btn-primary:hover{background:color-mix(in srgb,var(--accent) 80%,white);box-shadow:0 0 30px color-mix(in srgb,var(--accent) 45%,transparent)}
+  .btn-ghost{border-color:color-mix(in srgb,var(--silver) 55%,transparent);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--accent)}
+
+  /* top bar + header */
+  .topbar{background:#000;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}
+  .topbar .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
+  .topbar a{color:var(--text);text-decoration:none;font-weight:600}
+  .topbar b{color:var(--accent);font-weight:600}
+  .site-header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.84);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .site-header .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .logo-mark{position:relative;width:42px;height:42px;flex:none;color:var(--accent);display:grid;place-items:center}
+  .logo-mark svg,.logo-mark img{width:100%;height:100%;object-fit:contain}
+  .logo-mark .cut{fill:var(--bg)}
+  .brand-name{display:flex;flex-direction:column;line-height:1}
+  .brand-name strong{font:700 21px/1 Oswald,sans-serif;letter-spacing:.12em;text-transform:uppercase;background:linear-gradient(180deg,#fff 30%,var(--silver) 75%,#8d9196);-webkit-background-clip:text;background-clip:text;color:transparent;caret-color:#fff}
+  .brand-name small{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--silver);margin-top:5px}
+  .nav-links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0}
+  .nav-links a{text-decoration:none;font-size:14px;font-weight:500;color:var(--muted);transition:color .15s}
+  .nav-links a:hover{color:var(--text)}
+  .nav-links .nav-cta{padding:10px 18px;font-size:14px;color:var(--accent-ink)}
+  .nav-toggle{display:none;background:none;border:1px solid var(--line);border-radius:8px;width:44px;height:44px;color:var(--text);cursor:pointer}
+  .nav-toggle span{display:block;width:18px;height:2px;background:currentColor;margin:4px auto}
+
+  /* hero */
+  .hero{position:relative;min-height:calc(100vh - 106px);display:flex;align-items:center;padding:80px 0;overflow:hidden;
+    background:radial-gradient(900px 600px at 78% 35%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 65%),linear-gradient(180deg,#000,#0a0a0a);
+    background-size:cover;background-position:center}
+  .hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.35;
+    -webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%);mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%)}
+  .hero.has-img::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(0,0,0,.94) 25%,rgba(0,0,0,.55))}
+  .hero.has-img::after,.hero.has-img .hero-emblem{display:none}
+  .hero-emblem{position:absolute;right:-4%;top:50%;transform:translateY(-50%);width:min(50vw,620px);aspect-ratio:1;pointer-events:none;color:color-mix(in srgb,var(--accent) 10%,transparent)}
+  .hero-emblem::before{content:"";position:absolute;inset:6%;border-radius:50%;background:radial-gradient(circle at 40% 35%,rgba(192,192,192,.09),rgba(192,192,192,.02) 60%,transparent 70%);border:1px solid rgba(192,192,192,.12)}
+  .hero-emblem svg{position:absolute;inset:16%;width:68%;height:68%}
+  .hero-emblem .cut{fill:#050505}
+  .hero .wrap{position:relative;z-index:2;width:100%}
+  .hero-copy{max-width:680px}
+  .hero h1{font-size:clamp(44px,7.4vw,92px);font-weight:700;letter-spacing:.01em;margin-bottom:.3em}
+  .hero h1 .hl{color:var(--accent)}
+  .hero-sub{font-size:clamp(17px,1.6vw,20px);color:var(--soft);max-width:600px;margin-bottom:34px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:54px}
+  .hero-badges{display:flex;gap:12px 34px;flex-wrap:wrap;list-style:none;margin:0;padding:0}
+  .hero-badges li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted)}
+  .hero-badges li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 20%,transparent);flex:none}
+
+  /* services */
+  .grid-services{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+  .card{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:30px;transition:border-color .2s,transform .2s}
+  .card:hover{border-color:color-mix(in srgb,var(--accent) 50%,var(--line));transform:translateY(-2px)}
+  .icon{width:50px;height:50px;border-radius:12px;display:grid;place-items:center;margin-bottom:22px;background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent)}
+  .icon svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .card p{color:var(--muted);margin:0}
+
+  /* about */
+  .about{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
+  .media{position:relative;aspect-ratio:4/5;border-radius:var(--radius);border:1px solid var(--line);overflow:hidden;background-size:cover;background-position:center;
+    background-color:#0a0a0a;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.025) 0 2px,transparent 2px 14px),radial-gradient(circle at 50% 40%,color-mix(in srgb,var(--accent) 18%,transparent),transparent 60%)}
+  .media .media-mark{position:absolute;inset:0;display:grid;place-items:center;color:color-mix(in srgb,var(--accent) 22%,transparent)}
+  .media .media-mark svg{width:42%}
+  .media .media-mark .cut{fill:#0a0a0a}
+  .media.has-img .media-mark{display:none}
+  .media-tag{position:absolute;left:20px;bottom:20px;right:20px;z-index:2;background:rgba(0,0,0,.8);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+  .media-tag strong{display:block;font:600 26px/1 Oswald,sans-serif;color:var(--accent)}
+  .media-tag span{font-size:13px;color:var(--muted)}
+  .pillars{display:grid;gap:18px;margin-top:30px}
+  .pillar{position:relative;display:grid;grid-template-columns:44px 1fr;gap:16px;padding:18px 0;border-top:1px solid var(--line)}
+  .pillar .icon{width:44px;height:44px;margin:0}
+  .pillar h3{margin:0 0 4px;font-size:19px}
+  .pillar p{margin:0;color:var(--muted);font-size:15px}
+
+  /* approach */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;counter-reset:step}
+  .step{position:relative;padding:30px 26px;border-radius:var(--radius);background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);counter-increment:step}
+  .step::before{content:"0" counter(step);display:block;font:700 44px/1 Oswald,sans-serif;color:transparent;-webkit-text-stroke:1px var(--accent);margin-bottom:18px}
+  .step p{color:var(--muted);margin:0;font-size:15px}
+
+  /* industries */
+  .industries{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .chips{display:flex;flex-wrap:wrap;gap:12px;list-style:none;margin:0;padding:0}
+  .chip{position:relative;padding:12px 20px;border:1px solid color-mix(in srgb,var(--silver) 35%,transparent);border-radius:999px;background:var(--bg);font-weight:500;font-size:15px}
+
+  /* careers */
+  .cta-band{position:relative;overflow:hidden;border-radius:20px;padding:56px;display:grid;grid-template-columns:1.4fr auto;gap:30px;align-items:center;
+    background:linear-gradient(120deg,color-mix(in srgb,var(--accent) 22%,#0a0a0a),#0a0a0a 70%);border:1px solid color-mix(in srgb,var(--accent) 35%,var(--line))}
+  .cta-band h2{margin-bottom:.25em}
+  .cta-band p{color:var(--soft);margin:0;max-width:620px}
+
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+  .info-list{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:14px}
+  .info-list li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+  .info-list .icon{width:44px;height:44px;margin:0}
+  .info-list small{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .info-list a,.info-list span{font-weight:600;text-decoration:none}
+  .form{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:34px}
+  .form h3{margin-bottom:20px}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+  .field > span{font-size:13px;font-weight:600;color:var(--muted)}
+  .field input,.field select,.field textarea{font:inherit;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px 14px;width:100%}
+  .field textarea{min-height:130px;resize:vertical}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 20%,transparent)}
+  .form .btn{width:100%;border:0;cursor:pointer;font-family:inherit}
+  .form-status{margin:14px 0 0;font-size:14px;min-height:1.4em}
+  .form-status.ok{color:var(--accent)}.form-status.err{color:#ff8a7a}
+  .form-note{font-size:12.5px;color:var(--muted);margin:12px 0 0}
+
+  /* footer */
+  .site-footer{border-top:1px solid var(--line);padding:60px 0 30px;background:#000}
+  .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:40px}
+  .site-footer h4{font-size:14px;letter-spacing:.16em;color:var(--silver);margin-bottom:16px}
+  .site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+  .site-footer ul a{text-decoration:none;color:var(--soft);font-size:15px}
+  .site-footer ul a:hover{color:var(--accent)}
+  .footer-blurb{color:var(--muted);font-size:15px;margin-top:18px;max-width:380px}
+  .footer-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:24px;font-size:13px;color:var(--muted)}
+  .admin-link{color:var(--muted);text-decoration:none;opacity:.6}
+  .admin-link:hover{opacity:1;color:var(--accent)}
+
+  /* reveal */
+  .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .js .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none;transition:none}}
+
+  /* responsive */
+  @media (max-width:960px){
+    .about-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+    .media{aspect-ratio:16/10}
+    .cta-band{grid-template-columns:1fr;padding:38px 28px}
+    .footer-grid{grid-template-columns:1fr 1fr}
+    .footer-grid > div:first-child{grid-column:1/-1}
+    .nav-toggle{display:block}
+    .nav-links{position:absolute;left:0;right:0;top:70px;flex-direction:column;align-items:stretch;gap:0;padding:8px 20px 20px;background:#000;border-bottom:1px solid var(--line);display:none}
+    .nav-links a{display:block;padding:14px 0;font-size:16px;border-bottom:1px solid var(--line)}
+    .nav-links .nav-cta{margin-top:14px;border:0;text-align:center;color:var(--accent-ink)}
+    .site-header.open .nav-links{display:flex}
+  }
+  @media (max-width:600px){
+    section{padding:68px 0}
+    .hero{padding:60px 0;min-height:auto}
+    .hero-emblem{width:90vw;right:-35%;opacity:.7}
+    .form{padding:24px 18px}
+    .form-row{grid-template-columns:1fr;gap:0}
+    .footer-grid{grid-template-columns:1fr}
+    .topbar .hide-sm{display:none}
+    .brand-name small{display:none}
+  }
+
+  .topbar-right{display:flex;align-items:center;gap:18px}
+  .topbar .emp-link{color:var(--accent)}
+
+  /* ============ EMPLOYEE PORTAL ============ */
+  .portal{display:none;padding:0}
+  body.view-portal #site > :not(.portal){display:none}
+  body.view-portal .portal{display:block}
+
+  /* ============ EMPLOYMENT APPLICATION ============ */
+  .apply-page{display:none;padding:0}
+  body.view-apply #site > :not(.apply-page){display:none}
+  body.view-apply .apply-page{display:block}
+  .apply-top{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .apply-top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:70px}
+  .apply-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start;padding-top:56px;padding-bottom:90px}
+  .apply-intro{position:sticky;top:110px}
+  .apply-intro h1{font-size:clamp(40px,5vw,64px);font-weight:700}
+  .apply-points{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:12px}
+  .apply-points li{display:flex;align-items:center;gap:12px;color:var(--soft)}
+  .apply-points li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 20%,transparent);flex:none}
+  .checks{border:0;padding:0;margin:0 0 16px}
+  .checks legend{padding:0;margin-bottom:8px;font-size:13px;font-weight:600;color:var(--muted)}
+  .check-row{display:flex;flex-wrap:wrap;gap:8px}
+  .check-row label{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--line);border-radius:999px;background:var(--bg);font-size:14px;cursor:pointer}
+  .check-row input,.certify input{accent-color:var(--accent)}
+  .certify{display:flex;align-items:flex-start;gap:10px;margin:6px 0 18px;font-size:14px;color:var(--soft)}
+  .certify input{margin-top:4px;flex:none}
+  .apply-success{display:none;background:var(--panel);border:1px solid color-mix(in srgb,var(--accent) 40%,var(--line));border-radius:var(--radius);padding:40px 34px}
+  body.applied #applyForm{display:none}
+  body.applied .apply-success{display:block}
+  @media (max-width:960px){.apply-wrap{grid-template-columns:1fr;gap:28px;padding-top:36px}.apply-intro{position:static}}
+  body.portal-authed .portal-login,body:not(.portal-authed) .portal-app{display:none}
+  .btn-sm{padding:9px 14px;font-size:13px}
+  button.btn{font-family:inherit;cursor:pointer}
+  .btn-ghost{background:transparent}
+  .field input{color-scheme:dark}
+  .portal-login{min-height:100vh;display:grid;place-items:center;padding:40px 20px;background:radial-gradient(700px 500px at 50% 0%,color-mix(in srgb,var(--accent) 9%,transparent),transparent 70%)}
+  .login-card{width:min(420px,100%)}
+  .login-card .brand{margin-bottom:28px}
+  .login-card h2{font-size:32px;margin-bottom:.25em}
+  .login-card > p.muted{margin-bottom:22px}
+  .back-link{display:inline-block;margin-top:4px;font-size:14px;color:var(--muted);text-decoration:none}
+  .back-link:hover{color:var(--accent)}
+  .portal-top{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .portal-top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:66px}
+  .portal-actions{display:flex;gap:8px}
+  .portal-tabs{position:sticky;top:66px;z-index:49;background:var(--panel);border-bottom:1px solid var(--line)}
+  .portal-tabs .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+  .portal-tabs button{flex:none;background:none;border:0;border-bottom:2px solid transparent;color:var(--muted);padding:17px 14px 15px;font:600 14px/1 Inter,sans-serif;cursor:pointer;white-space:nowrap}
+  .portal-tabs button:hover{color:var(--text)}
+  .portal-tabs button.is-active{color:var(--text);border-bottom-color:var(--accent)}
+  .panel{display:none;padding:44px 0 20px}
+  .panel.is-active,body.editing .panel{display:block}
+  body.editing .panel + .panel{border-top:1px dashed var(--line);margin-top:20px}
+  .panel h2{font-size:clamp(28px,3.4vw,38px)}
+  .panel-head{max-width:760px;margin-bottom:26px}
+  .panel-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:44px;align-items:start}
+  .sched-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+  .sched{min-width:940px}
+  .sched-row{display:grid;grid-template-columns:1.2fr 1.6fr repeat(7,1fr)}
+  .sched-row + .sched-row{border-top:1px solid var(--line)}
+  .sched-row > div:not(.edit-ui){padding:12px;font-size:14px}
+  .sched-row > div:not(.edit-ui) + div:not(.edit-ui){border-left:1px solid var(--line)}
+  .sched-row > div:first-child{font-weight:600}
+  .sched-head{background:var(--panel-2);color:var(--silver)}
+  .sched-head > div:not(.edit-ui){font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+  .sched .add-item{margin:12px}
+  .sched-row .item-ctrl{top:6px;right:6px}
+  .small-note{font-size:14px;margin-top:16px}
+  .posts{display:grid;gap:16px;max-width:860px}
+  .post{position:relative;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:12px;padding:22px 24px}
+  .post h3{margin:12px 0 6px}
+  .post p{margin:0;color:var(--soft)}
+  .post-meta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+  .tag{display:inline-block;padding:5px 10px;border-radius:999px;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+  .tag-alert{background:rgba(255,80,60,.15);color:#ff7a66}
+  .bolos{display:grid;gap:18px}
+  .bolo{position:relative;display:grid;grid-template-columns:210px 1fr;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .bolo-img{position:relative;min-height:230px;background:#0a0a0a center/cover no-repeat;border-right:1px solid var(--line);display:grid;place-items:center}
+  .bolo-noimg{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .bolo-img.has-img .bolo-noimg{display:none}
+  .bolo-body{padding:22px 24px}
+  .bolo-body h3{margin:12px 0 14px}
+  .bolo-dl{display:grid;grid-template-columns:110px 1fr;gap:8px 16px;margin:0;font-size:14px}
+  .bolo-dl dt{color:var(--silver);font-weight:600}
+  .bolo-dl dd{margin:0;color:var(--soft)}
+  .notice{margin-top:22px;padding:16px 18px;border:1px solid color-mix(in srgb,var(--accent) 40%,var(--line));border-radius:12px;background:color-mix(in srgb,var(--accent) 6%,transparent)}
+  .notice small{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+  body.editing .portal-login{display:none}
+  body.editing .portal-app{display:block}
+  .whoami{align-self:center;font-size:13px;color:var(--silver);margin-right:6px}
+  .sched-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+  .sched-top p{margin:0}
+  .sched-updated{display:block;font-size:12px;margin-top:4px;opacity:.8}
+  .sched-row > div.is-off{color:var(--muted)}
+  .sched-owner{display:block;font-size:11px;font-weight:500;color:var(--muted);margin-top:3px}
+  .sched-form{display:grid;gap:16px}
+  .sched-form .field{margin:0}
+  .sched-editing{min-width:1160px}
+  .sched-editing .sched-row{grid-template-columns:1.5fr 1.4fr repeat(7,1fr) 50px}
+  .sched-editing .sched-row > div:not(.edit-ui){padding:8px 6px}
+  .sched-editing input,.sched-editing select{width:100%;font:500 13px Inter,sans-serif;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:7px 8px;color-scheme:dark}
+  .sched-editing input:focus,.sched-editing select:focus{outline:none;border-color:var(--accent)}
+  .sched-editing select{margin-top:6px;font-size:12px;color:var(--soft)}
+  .sched-del{width:34px;height:34px;border-radius:8px;border:1px solid #444;background:#1a1a1a;color:#ff9a8a;cursor:pointer}
+  .sched-del:hover{border-color:#ff8a7a}
+  .rec-actions .spacer{flex:1}
+  .rec-actions .primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+  .login-edit{display:block;margin:18px auto 0}
+  .demo-banner{background:rgba(255,190,60,.1);border-bottom:1px solid rgba(255,190,60,.3);color:#ffd27a;font-size:13px;text-align:center;padding:8px 16px}
+  .sup-only,.reports-only,.staff-only,.quotes-only,.apps-only{display:none}
+  body.role-sup .sup-only,body.role-reports .reports-only,body.role-staff .staff-only,body.role-quotes .quotes-only,body.role-apps .apps-only{display:block}
+  /* restricted sections stay hidden (even in the page editor) unless the signed-in role may see them */
+  body:not(.role-staff) [data-panel="staff"],
+  body:not(.role-sup) [data-panel="photos"],
+  body:not(.role-quotes) [data-panel="quotes"],
+  body:not(.role-apps) [data-panel="apps"]{display:none !important}
+  .rec-tags{display:flex;gap:8px;flex-wrap:wrap}
+  .resume-link{margin:12px 0 0;font-size:14px}
+  .resume-link a{color:var(--accent);font-weight:600}
+  .rec-tools{margin-bottom:16px}
+  .rec-section{margin-top:48px}
+  .rec-section > h3{font-size:20px;margin-bottom:4px}
+  .rec-section > p.muted{font-size:14px;margin:0}
+  .rec-list{display:grid;gap:12px;margin-top:16px}
+  .rec{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  .rec-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+  .rec-head b{font-size:16px}
+  .rec-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .rec-actions button{font:600 12px/1 Inter,sans-serif;padding:9px 12px;border-radius:8px;border:1px solid #444;background:#1a1a1a;color:var(--text);cursor:pointer}
+  .rec-actions button:hover{border-color:var(--accent)}
+  .rec-actions .danger{color:#ff9a8a}
+  .rec-actions .danger:hover{border-color:#ff8a7a}
+  .tag-warn{background:rgba(255,190,60,.15);color:#ffc65c}
+  .tag-muted{background:rgba(192,192,192,.12);color:var(--silver)}
+  .rec-sub > h4,.rec-group > summary{display:flex;align-items:center;gap:10px;font:600 16px/1.2 Oswald,sans-serif;letter-spacing:.06em;text-transform:uppercase}
+  .rec-sub > h4{margin:20px 0 0}
+  .rec-group{margin-top:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+  .rec-group > summary{padding:15px 18px;cursor:pointer;list-style:none}
+  .rec-group > summary::-webkit-details-marker{display:none}
+  .rec-group > summary::before{content:"";width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .2s;margin-right:4px}
+  .rec-group[open] > summary::before{transform:rotate(45deg)}
+  .rec-group.is-approved > summary{color:var(--accent)}
+  .rec-group.is-denied > summary{color:#ff7a66}
+  .rec-group.is-contacted > summary{color:#ffc65c}
+  .rec-group.is-closed > summary{color:var(--silver)}
+  .quote-contact{display:flex;flex-wrap:wrap;gap:8px 18px;margin:-4px 0 12px}
+  .quote-contact a{color:var(--accent);font-weight:600;text-decoration:none}
+  .quote-contact a:hover{text-decoration:underline}
+  .tab-count{display:inline-block;min-width:18px;margin-left:7px;padding:3px 6px;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-size:11px;line-height:1;text-align:center}
+  .tab-count:empty{display:none}
+  .rec-group > .rec-list{margin:0;padding:0 14px 14px}
+  .rec-group .rec{background:var(--bg)}
+  .count{display:inline-block;min-width:24px;padding:3px 8px;border-radius:999px;border:1px solid var(--line);background:var(--panel-2);font:600 12px/1 Inter,sans-serif;color:var(--soft);text-align:center;letter-spacing:0}
+  .rec-note{margin:14px 0 0}
+  .rec-note textarea{min-height:64px}
+  .empty-note{margin:0;padding:14px 16px;border:1px dashed var(--line);border-radius:10px;color:var(--muted)}
+  .portal-foot{margin:36px 0 60px;text-align:center}
+  .linklike{background:none;border:0;color:var(--muted);font:500 13px Inter,sans-serif;cursor:pointer;text-decoration:underline;opacity:.7}
+  .linklike:hover{opacity:1;color:var(--accent)}
+  @media (max-width:960px){.panel-grid{grid-template-columns:1fr;gap:24px}}
+  @media (max-width:600px){
+    .bolo{grid-template-columns:1fr}
+    .bolo-img{min-height:200px;border-right:0;border-bottom:1px solid var(--line)}
+    .bolo-dl{grid-template-columns:1fr;gap:2px}
+    .bolo-dl dd{margin-bottom:8px}
+    .portal-actions .hide-sm{display:none}
+  }
+
+  /* ============ MY PROFILE ============ */
+  .profile-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:28px;align-items:start}
+  .form .form-sub{margin:26px 0 14px;padding-top:20px;border-top:1px solid var(--line);font-size:17px}
+  .form-row-3{grid-template-columns:2fr 1fr 1fr}
+  .emg-list{display:grid;gap:10px;margin-bottom:12px}
+  .emg-row{display:grid;grid-template-columns:1.3fr 1fr 1fr auto;gap:10px;align-items:end;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+  .emg-row .field{margin:0}
+  .form .btn-ghost{width:auto;border:1px solid color-mix(in srgb,var(--silver) 55%,transparent);margin-bottom:24px}
+  .form-hint{margin:-4px 0 16px;font-size:13px;color:var(--muted)}
+  @media (max-width:960px){.profile-grid{grid-template-columns:1fr}}
+  @media (max-width:600px){.form-row-3,.emg-row{grid-template-columns:1fr}}
+
+  /* ============ STAFF LOGINS & FIRST SIGN-IN ============ */
+  .reset-card{display:none}
+  body.portal-reset .reset-card{display:block}
+  body.portal-reset #portalLogin{display:none}
+  .temp-row{display:flex;gap:8px}
+  .temp-row input{flex:1;font-family:ui-monospace,Consolas,monospace}
+  .form .temp-row .btn{width:auto;margin:0;flex:none}
+  .staff-list-head{font-size:20px;margin-bottom:14px}
+  .staff-search{margin-bottom:14px}
+  .badge-no{font-weight:500;font-size:13px;color:var(--muted)}
+  .staff-contact{display:grid;grid-template-columns:1fr 1.6fr;gap:12px;margin-top:12px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);font-size:14px}
+  .staff-contact small{display:block;margin-bottom:4px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .staff-contact span{display:block}
+  .staff-contact a{color:var(--accent);font-weight:600;text-decoration:none}
+  @media (max-width:600px){.staff-contact{grid-template-columns:1fr}}
+  .created-box{margin-top:16px;padding:16px 18px;border:1px solid color-mix(in srgb,var(--accent) 45%,var(--line));border-radius:12px;background:color-mix(in srgb,var(--accent) 7%,transparent);font-size:15px}
+  .created-box small{display:block;margin-bottom:8px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  .created-box > div{margin:6px 0}
+  .created-box code{font:600 15px ui-monospace,Consolas,monospace;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
+  .created-box p{margin:10px 0 0;font-size:13.5px;color:var(--soft)}
+
+  /* ============ PHOTO GALLERY ============ */
+  .gallery-placeholder{aspect-ratio:4/3;display:grid;place-items:center;align-content:center;gap:12px;border:1px dashed var(--line);border-radius:12px;background:var(--panel);color:color-mix(in srgb,var(--accent) 25%,transparent)}
+  .gallery-placeholder svg{width:56px;height:56px}
+  .gallery-placeholder .cut{fill:var(--panel)}
+  .gallery-placeholder span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+  .gallery-item{margin:0}
+  .gallery-open{display:block;width:100%;aspect-ratio:4/3;padding:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel);cursor:zoom-in}
+  .gallery-open img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  .gallery-open:hover img{transform:scale(1.04)}
+  .gallery-open:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .gallery-item figcaption{margin-top:10px;font-size:14px;color:var(--soft)}
+  .lightbox{border:0;padding:0;background:transparent;max-width:min(1100px,94vw);max-height:92vh;overflow:visible}
+  .lightbox::backdrop{background:rgba(0,0,0,.9)}
+  .lightbox img{display:block;max-width:100%;max-height:82vh;margin:0 auto;border-radius:10px}
+  .lightbox p{margin:12px 0 0;text-align:center;color:var(--soft)}
+  .lightbox p:empty{display:none}
+  .lb-close{position:absolute;top:-16px;right:-16px;z-index:2;width:40px;height:40px;border-radius:50%;border:1px solid #444;background:#111;color:#fff;font-size:16px;cursor:pointer}
+  .lb-close:hover{border-color:var(--accent)}
+  .photo-upload{max-width:620px;margin-bottom:30px}
+  .photo-admin{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+  .photo-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .photo-thumb{aspect-ratio:4/3;background:#0a0a0a center/cover no-repeat;border-bottom:1px solid var(--line)}
+  .photo-cap{display:block;margin:12px 12px 0;width:calc(100% - 24px);font:inherit;font-size:14px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 10px}
+  .photo-cap:focus{outline:none;border-color:var(--accent)}
+  .photo-card .rec-actions{margin:10px 12px 12px}
+  .rec-actions button:disabled{opacity:.35;cursor:default;border-color:#444}
+
+  /* ============ EDITOR UI (only visible in edit mode) ============ */
+  .edit-bar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:1000;display:none;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;
+    width:max-content;max-width:calc(100% - 24px);padding:8px;border-radius:14px;background:#141414;border:1px solid #3a3a3a;box-shadow:0 18px 50px rgba(0,0,0,.55);font:500 13px/1 Inter,sans-serif}
+  body.editing .edit-bar{display:flex}
+  body.editing{padding-bottom:110px}
+  .edit-bar .eb-title{display:flex;flex-direction:column;gap:4px;padding:0 10px 0 6px;color:var(--muted);font-size:11px;min-width:120px}
+  .edit-bar .eb-title b{color:var(--accent);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+  .edit-bar button,.dlg button{font:600 13px/1 Inter,sans-serif;padding:10px 13px;border-radius:9px;border:1px solid #444;background:#222;color:#e8eaed;cursor:pointer}
+  .edit-bar button:hover,.dlg button:hover{border-color:var(--accent)}
+  .edit-bar .primary,.dlg .primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+  .edit-bar .danger,.dlg .danger{color:#ff9a8a}
+  body.editing [data-e]{outline:1px dashed color-mix(in srgb,var(--accent) 45%,transparent);outline-offset:3px;border-radius:3px;cursor:text}
+  body.editing [data-e]:hover{outline-color:var(--accent)}
+  body.editing [data-e]:focus{outline:2px solid var(--accent);background:color-mix(in srgb,var(--accent) 8%,transparent)}
+  body.editing .reveal{opacity:1;transform:none}
+  body.editing [data-item],body.editing [data-img]{position:relative}
+  .edit-ui{font:600 12px/1 Inter,sans-serif}
+  .item-ctrl{position:absolute;top:8px;right:8px;z-index:6;display:flex;gap:4px}
+  .item-ctrl button,.img-btn{border:1px solid #444;background:rgba(0,0,0,.9);color:#fff;border-radius:7px;cursor:pointer;font:600 12px/1 Inter,sans-serif}
+  .item-ctrl button{width:28px;height:28px;padding:0}
+  .item-ctrl button:hover,.img-btn:hover{border-color:var(--accent);color:var(--accent)}
+  .item-ctrl button[data-act="del"]:hover{border-color:#ff8a7a;color:#ff8a7a}
+  .chip .item-ctrl{top:-13px;right:-8px}
+  .chip .item-ctrl button{width:22px;height:22px;font-size:11px}
+  .pillar .item-ctrl{top:14px}
+  .add-item{border:2px dashed color-mix(in srgb,var(--accent) 60%,transparent);background:transparent;color:var(--accent);border-radius:var(--radius);min-height:64px;padding:12px 20px;cursor:pointer;font:600 14px/1 Inter,sans-serif;list-style:none}
+  .chips .add-item{border-radius:999px;min-height:0}
+  .img-btn{position:absolute;right:12px;bottom:12px;z-index:7;padding:9px 12px}
+  .hero > .img-btn{top:16px;bottom:auto;right:16px}
+  .logo-mark .img-btn{right:-10px;bottom:-10px;padding:4px 6px;font-size:10px}
+  .media-tag{z-index:3}
+  .media > .img-btn{top:12px;bottom:auto}
+
+  .dlg{border:1px solid #3a3a3a;border-radius:16px;background:#0e0e0e;color:var(--text);padding:0;width:min(520px,calc(100% - 32px));box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .dlg{max-height:calc(100vh - 40px);overflow:auto}
+  .dlg::backdrop{background:rgba(0,0,0,.6)}
+  .dlg-wide{width:min(720px,calc(100% - 32px))}
+  .dlg-ask{width:min(440px,calc(100% - 32px))}
+  .dlg .ask-msg{margin:0 0 18px;font-size:15.5px;line-height:1.5;color:var(--text);white-space:pre-line}
+  .dlg #askInput{width:100%;margin-bottom:16px}
+  .dlg .danger-solid{background:#d9443a;border-color:#d9443a;color:#fff}
+  .dlg .danger-solid:hover{background:#e85a50;border-color:#e85a50}
+  .dlg textarea{font:inherit;font-weight:400;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;resize:vertical}
+  .dlg input[type=date]{color-scheme:dark}
+  .dlg-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .dlg label.check{flex-direction:row;align-items:center;gap:8px;font-weight:500}
+  .dlg select{font:inherit;font-size:14px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;color-scheme:dark}
+  .acct-list{display:grid;gap:8px}
+  .acct-row{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);font-size:14px}
+  .acct-row b{color:var(--text)}
+  .acct-row small{display:block;color:var(--muted)}
+  .acct-row .acct-btns{display:flex;gap:6px}
+  .acct-row button{padding:7px 10px;font-size:12px}
+  .acct-new{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .acct-new select,.acct-new button{grid-column:span 1}
+  .acct-new select{grid-column:1 / span 2}
+  @media (max-width:600px){.acct-new{grid-template-columns:1fr}.acct-new select{grid-column:auto}.acct-row{grid-template-columns:1fr}}
+  .dlg .dlg-sub{font-size:15px;color:var(--silver);margin:22px 0 12px;padding-top:18px;border-top:1px solid var(--line)}
+  .dlg form{padding:26px}
+  .dlg h3{margin-bottom:14px}
+  .dlg label{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;font-size:13px;font-weight:600;color:var(--muted)}
+  .dlg input{font:inherit;font-weight:400;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+  .dlg input[type=color]{padding:2px;height:42px;width:80px}
+  .dlg p,.dlg li{font-size:14px;color:var(--soft)}
+  .dlg ul{padding-left:20px;margin:0 0 16px}
+  .dlg .hint{font-size:12.5px;color:var(--muted)}
+  .dlg-actions{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;margin-top:8px}
+  .dlg-actions .spacer{flex:1}
+  .toast{position:fixed;left:50%;top:20px;transform:translate(-50%,-20px);z-index:1100;background:#141414;border:1px solid var(--accent);color:var(--text);padding:12px 18px;border-radius:10px;font:500 14px/1.3 Inter,sans-serif;opacity:0;pointer-events:none;transition:.25s;max-width:calc(100% - 32px)}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+
+  /* ============ PHONES & TABLETS ============ */
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  .btn-sm,.brand-name strong{white-space:nowrap}
+  .portal-login{min-height:100svh}
+  .edit-bar{bottom:max(16px,env(safe-area-inset-bottom))}
+  /* finger-sized tap targets on touch screens */
+  @media (pointer:coarse){
+    .rec-actions button,.edit-bar button,.dlg-actions button{min-height:42px}
+    .item-ctrl button{width:36px;height:36px}
+    .sched-del{width:42px;height:42px}
+    .site-footer ul a,.info-list a{display:inline-block;padding:6px 0}
+  }
+  @media (max-width:600px){
+    .hide-sm{display:none}
+    /* iPhones zoom the page when a text box under 16px is tapped */
+    .dlg input,.dlg select,.dlg textarea,.sched-editing input,.sched-editing select,.photo-cap{font-size:16px}
+    .demo-banner{font-size:12px;padding:6px 12px}
+    .portal-top .brand-name{display:none}
+    .whoami{font-size:12px;line-height:1.25;max-width:160px}
+    .portal-tabs .wrap{padding-right:44px;-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent)}
+    .panel{padding-top:32px}
+    .post,.rec,.bolo-body{padding:16px}
+    /* schedule: one card per officer with the week in a 4-column grid instead of a wide table */
+    .sched:not(.sched-editing){min-width:0}
+    .sched:not(.sched-editing) .sched-head{display:none}
+    .sched:not(.sched-editing) .sched-row{grid-template-columns:repeat(4,1fr);padding:10px 4px}
+    .sched:not(.sched-editing) .sched-row > div:not(.edit-ui){border-left:0;padding:6px 8px}
+    .sched:not(.sched-editing) .sched-row > div:nth-child(-n+2){grid-column:1/-1}
+    .sched:not(.sched-editing) .sched-row > div:nth-child(2){padding-top:0;color:var(--soft)}
+    .sched:not(.sched-editing) .sched-row > div[data-day]{padding:6px 4px;font-size:13px;white-space:nowrap}
+    .sched:not(.sched-editing) .sched-row > div[data-day]::before{content:attr(data-day);display:block;margin-bottom:2px;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .dlg form{padding:20px}
+    .dlg-row{grid-template-columns:1fr}
+    .edit-bar{left:12px;right:12px;width:auto;max-width:none;transform:none;gap:4px;padding:6px}
+    .edit-bar .eb-title{width:100%;flex-direction:row;justify-content:space-between;align-items:center;padding:2px 6px 6px}
+    .edit-bar button{flex:1 1 auto;padding:10px 8px}
+    .lightbox{max-width:96vw}
+    .lb-close{top:-50px;right:0}
+    .acct-row .acct-btns{flex-wrap:wrap}
+  }
+</style>
+</head>
+<body>
+
+<template id="logo-tpl"><svg viewBox="0 0 64 64" aria-hidden="true"><path fill="currentColor" d="M7 3l16 17 9-4 9 4L57 3l-2 27-8 14-15 17-15-17-8-14z"/><path class="cut" d="M17 30l11 4-7.5 3.5zM47 30l-11 4 7.5 3.5zM27.5 46h9L32 52z"/></svg></template>
+
+<div id="site" data-email="contact@your-domain.com" data-endpoint=""
+  data-timeoff-email="scheduling@your-domain.com" data-timeoff-endpoint=""
+  data-complaint-emails="supervisor1@your-domain.com,supervisor2@your-domain.com" data-complaint-endpoint=""
+  data-careers-email="careers@your-domain.com" data-careers-endpoint=""
+  data-editor-pass="f343296857198793482015ee6ab9e456fe27b0bc0ec2651f0d378f6f164f4059"
+  data-accounts='[{"user":"admin1","name":"Admin1","role":"employee","pass":"df2810076c2f8f928242bb09633f731b41ca1a726be96939fe8e83cd347b3e16"},{"user":"lkornick101","name":"Assistant Chief","role":"asst_chief","pass":"499a0e1e66042e14d33a804827b126f3fa8cc774ef669a8f6316430016236df8"},{"user":"owner","name":"Site Owner","role":"owner","pass":"e28cc74467f4449564d5b4c5dfc373875df9cffd863edf9f881a2d78a8126e25"}]'>
+
+  <div class="topbar">
+    <div class="wrap">
+      <span><b data-e>24/7 Dispatch:</b> <a href="tel:+15555550100" data-e>(555) 555-0100</a></span>
+      <span class="topbar-right"><span class="hide-sm" data-e>Licensed &amp; Insured · Serving Columbus &amp; All of Ohio</span><a href="#employees" class="emp-link" data-e>Employee Login</a></span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a href="#top" class="brand" aria-label="Lycan Division home">
+        <span class="logo-mark" data-img="logo"><svg viewBox="0 0 64 64" aria-hidden="true"><path fill="currentColor" d="M7 3l16 17 9-4 9 4L57 3l-2 27-8 14-15 17-15-17-8-14z"/><path class="cut" d="M17 30l11 4-7.5 3.5zM47 30l-11 4 7.5 3.5zM27.5 46h9L32 52z"/></svg></span>
+        <span class="brand-name"><strong data-e>Lycan Division</strong><small data-e>of Protection Services</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="#services" data-e>Services</a></li>
+        <li><a href="#about" data-e>About</a></li>
+        <li><a href="#approach" data-e>Approach</a></li>
+        <li><a href="#industries" data-e>Industries</a></li>
+        <li><a href="#gallery" data-e>Gallery</a></li>
+        <li><a href="#careers" data-e>Careers</a></li>
+        <li><a href="#contact" class="btn btn-primary nav-cta" data-e>Request a Quote</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" data-img="bg">
+      <div class="hero-emblem" aria-hidden="true"><svg viewBox="0 0 64 64"><path fill="currentColor" d="M7 3l16 17 9-4 9 4L57 3l-2 27-8 14-15 17-15-17-8-14z"/><path class="cut" d="M17 30l11 4-7.5 3.5zM47 30l-11 4 7.5 3.5zM27.5 46h9L32 52z"/></svg></div>
+      <div class="wrap">
+        <div class="hero-copy">
+          <div class="eyebrow" data-e>Lycan Division of Protection Services LLC</div>
+          <h1 data-e>The Pack <span class="hl">Stands Watch.</span></h1>
+          <p class="hero-sub" data-e>Disciplined, professional security for businesses, events and people who can't afford to leave safety to chance. Trained officers. Clear communication. Protection with purpose.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary" data-e>Request a Free Assessment</a>
+            <a href="#services" class="btn btn-ghost" data-e>View Services</a>
+          </div>
+          <ul class="hero-badges">
+            <li data-e>24/7 Response</li>
+            <li data-e>Vetted &amp; Trained Officers</li>
+            <li data-e>Custom Security Plans</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="eyebrow" data-e>What We Do</div>
+          <h2 data-e>Security Services</h2>
+          <p data-e>From a single post to a full security program, every assignment is planned around your site, your people and your risks.</p>
+        </div>
+        <div class="grid-services" data-list>
+          <article class="card reveal" data-item>
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8.4-8 9-4.6-.6-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <h3 data-e>Security Officers</h3>
+            <p data-e>Uniformed armed and unarmed officers for access control, front desk, overnight and dedicated posts.</p>
+          </article>
+          <article class="card reveal" data-item>
+            <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+            <h3 data-e>Executive Protection</h3>
+            <p data-e>Discreet close protection for executives, VIPs and high-profile individuals, at home, at work or on the move.</p>
+          </article>
+          <article class="card reveal" data-item>
+            <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
+            <h3 data-e>Event Security</h3>
+            <p data-e>Crowd management, entry screening and VIP coverage for concerts, corporate events, weddings and private functions.</p>
+          </article>
+          <article class="card reveal" data-item>
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 13l2-6h14l2 6v4H3z"/><path d="M3 13h18"/><circle cx="7.5" cy="17" r="1.6"/><circle cx="16.5" cy="17" r="1.6"/></svg></div>
+            <h3 data-e>Mobile Patrol</h3>
+            <p data-e>Marked patrol vehicles, randomized site checks, lock-ups and alarm response with time-stamped reports.</p>
+          </article>
+          <article class="card reveal" data-item>
+            <div class="icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></svg></div>
+            <h3 data-e>Risk Assessments</h3>
+            <p data-e>On-site vulnerability reviews with a clear, prioritized plan to close gaps in people, process and technology.</p>
+          </article>
+          <article class="card reveal" data-item>
+            <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3c1 4 5 5.5 5 10a5 5 0 0 1-10 0c0-2.5 1.5-3.5 2-5 1 1.5 2 2 2 2s-1-3 1-7z"/></svg></div>
+            <h3 data-e>Fire Watch &amp; Loss Prevention</h3>
+            <p data-e>Fire watch coverage during system outages or hot work, plus loss prevention for retail and warehouse sites.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="wrap about-grid">
+        <div class="media reveal" data-img="bg">
+          <div class="media-mark" aria-hidden="true"><svg viewBox="0 0 64 64"><path fill="currentColor" d="M7 3l16 17 9-4 9 4L57 3l-2 27-8 14-15 17-15-17-8-14z"/><path class="cut" d="M17 30l11 4-7.5 3.5zM47 30l-11 4 7.5 3.5zM27.5 46h9L32 52z"/></svg></div>
+          <div class="media-tag"><strong data-e>Always On Watch</strong><span data-e>Officers, supervisors and dispatch, around the clock.</span></div>
+        </div>
+        <div class="reveal">
+          <div class="eyebrow" data-e>Why Lycan Division</div>
+          <h2 data-e>Built Like a Pack. Run Like a Unit.</h2>
+          <p class="muted" data-e>Lycan Division of Protection Services LLC was founded on a simple idea: real security comes from people who are trained, accountable and committed to each other and to the clients they protect. Every officer we deploy is screened, briefed on your site and backed by supervisors who answer the phone.</p>
+          <div class="pillars" data-list>
+            <div class="pillar" data-item>
+              <div class="icon"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+              <div><h3 data-e>Vigilance</h3><p data-e>We stay alert to what others miss and stop problems before they start.</p></div>
+            </div>
+            <div class="pillar" data-item>
+              <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
+              <div><h3 data-e>Discipline</h3><p data-e>Professional conduct, sharp appearance and clear reporting on every shift.</p></div>
+            </div>
+            <div class="pillar" data-item>
+              <div class="icon"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
+              <div><h3 data-e>Loyalty</h3><p data-e>We treat your people and property as our own, and we stand by our clients.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="eyebrow" data-e>How We Work</div>
+          <h2 data-e>Our Approach</h2>
+          <p data-e>A straightforward process that gets the right coverage in place quickly and keeps you informed.</p>
+        </div>
+        <div class="steps" data-list>
+          <div class="step reveal" data-item><h3 data-e>Assess</h3><p data-e>We walk your site, learn your operations and identify the real risks.</p></div>
+          <div class="step reveal" data-item><h3 data-e>Plan</h3><p data-e>You get a tailored post order and staffing plan with transparent pricing.</p></div>
+          <div class="step reveal" data-item><h3 data-e>Deploy</h3><p data-e>Trained officers are briefed and on post, with supervisors checking in.</p></div>
+          <div class="step reveal" data-item><h3 data-e>Report</h3><p data-e>Daily activity and incident reports keep you in the loop, with no surprises.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="industries" class="industries">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="eyebrow" data-e>Who We Protect</div>
+          <h2 data-e>Industries We Serve</h2>
+        </div>
+        <ul class="chips reveal" data-list>
+          <li class="chip" data-item><span data-e>Commercial &amp; Office</span></li>
+          <li class="chip" data-item><span data-e>Construction Sites</span></li>
+          <li class="chip" data-item><span data-e>Retail</span></li>
+          <li class="chip" data-item><span data-e>Residential &amp; HOA</span></li>
+          <li class="chip" data-item><span data-e>Healthcare</span></li>
+          <li class="chip" data-item><span data-e>Events &amp; Venues</span></li>
+          <li class="chip" data-item><span data-e>Industrial &amp; Warehousing</span></li>
+          <li class="chip" data-item><span data-e>Hospitality</span></li>
+          <li class="chip" data-item><span data-e>Schools &amp; Churches</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="eyebrow" data-e>On the Job</div>
+          <h2 data-e>Photo Gallery</h2>
+          <p data-e>A look at the Lycan Division team at work.</p>
+        </div>
+        <div class="gallery" id="galleryGrid" data-render></div>
+      </div>
+    </section>
+
+    <section id="careers">
+      <div class="wrap">
+        <div class="cta-band reveal">
+          <div>
+            <div class="eyebrow" data-e>Careers</div>
+            <h2 data-e>Join the Pack</h2>
+            <p data-e>We're always looking for dependable, professional officers. If you take pride in your work and want a team that has your back, we want to hear from you.</p>
+          </div>
+          <a href="#apply" class="btn btn-primary" data-e>Apply Now</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap contact-grid">
+        <div class="reveal">
+          <div class="eyebrow" data-e>Contact</div>
+          <h2 data-e>Request a Quote</h2>
+          <p class="muted" data-e>Tell us about your site or event. We'll respond within one business day, and urgent requests are handled by 24/7 dispatch.</p>
+          <ul class="info-list">
+            <li><div class="icon"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div><div><small data-e>Phone (24/7)</small><a href="tel:+15555550100" data-e>(555) 555-0100</a></div></li>
+            <li><div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div><div><small data-e>Email</small><a href="mailto:contact@your-domain.com" data-e>contact@your-domain.com</a></div></li>
+            <li><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div><div><small data-e>Service Area</small><span data-e>State of Ohio</span></div></li>
+            <li><div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><small data-e>Office Hours</small><span data-e>Mon–Fri 8am–6pm · Dispatch 24/7</span></div></li>
+          </ul>
+        </div>
+
+        <form class="form reveal" id="quoteForm" data-form="quote" novalidate>
+          <h3 data-e>Tell Us What You Need</h3>
+          <div class="form-row">
+            <label class="field"><span data-e>Full name *</span><input name="name" required autocomplete="name"></label>
+            <label class="field"><span data-e>Company</span><input name="company" autocomplete="organization"></label>
+          </div>
+          <div class="form-row">
+            <label class="field"><span data-e>Email *</span><input name="email" type="email" required autocomplete="email"></label>
+            <label class="field"><span data-e>Phone</span><input name="phone" type="tel" autocomplete="tel"></label>
+          </div>
+          <label class="field"><span data-e>Service needed</span>
+            <select name="service">
+              <option>Security Officers</option>
+              <option>Executive Protection</option>
+              <option>Event Security</option>
+              <option>Mobile Patrol</option>
+              <option>Risk Assessment</option>
+              <option>Fire Watch / Loss Prevention</option>
+              <option>Other / Not sure</option>
+            </select>
+          </label>
+          <label class="field"><span data-e>Details *</span><textarea name="message" required placeholder="Location, dates, hours of coverage, number of officers, any specific concerns…"></textarea></label>
+          <button type="submit" class="btn btn-primary" data-e>Send Request</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+          <p class="form-note" data-e>For emergencies, call 911.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a href="#top" class="brand">
+            <span class="logo-mark" data-img="logo"><svg viewBox="0 0 64 64" aria-hidden="true"><path fill="currentColor" d="M7 3l16 17 9-4 9 4L57 3l-2 27-8 14-15 17-15-17-8-14z"/><path class="cut" d="M17 30l11 4-7.5 3.5zM47 30l-11 4 7.5 3.5zM27.5 46h9L32 52z"/></svg></span>
+            <span class="brand-name"><strong data-e>Lycan Division</strong><small data-e>of Protection Services</small></span>
+          </a>
+          <p class="footer-blurb" data-e>Professional security officers, executive protection, event security and mobile patrol. Protection with purpose.</p>
+        </div>
+        <div>
+          <h4 data-e>Company</h4>
+          <ul>
+            <li><a href="#services" data-e>Services</a></li>
+            <li><a href="#about" data-e>About</a></li>
+            <li><a href="#gallery" data-e>Gallery</a></li>
+            <li><a href="#careers" data-e>Careers</a></li>
+            <li><a href="#contact" data-e>Contact</a></li>
+            <li><a href="#employees" data-e>Employee Login</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-e>Reach Us</h4>
+          <ul>
+            <li><a href="tel:+15555550100" data-e>(555) 555-0100</a></li>
+            <li><a href="mailto:contact@your-domain.com" data-e>contact@your-domain.com</a></li>
+            <li><a href="#contact" data-e>Request a Quote</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="year">2026</span> <span data-e>Lycan Division of Protection Services LLC. All rights reserved.</span></span>
+        <span><span data-e>Ohio Security License #[XXXXXX]</span> · <a href="#edit" class="admin-link">Edit site</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ EMPLOYMENT APPLICATION (shown at #apply) ============ -->
+  <section id="apply" class="apply-page" data-v="4" aria-label="Employment application">
+    <div class="apply-top">
+      <div class="wrap">
+        <a href="#top" class="brand">
+          <span class="logo-mark" data-img="logo"><svg viewBox="0 0 64 64" aria-hidden="true"><path fill="currentColor" d="M7 3l16 17 9-4 9 4L57 3l-2 27-8 14-15 17-15-17-8-14z"/><path class="cut" d="M17 30l11 4-7.5 3.5zM47 30l-11 4 7.5 3.5zM27.5 46h9L32 52z"/></svg></span>
+          <span class="brand-name"><strong data-e>Lycan Division</strong><small data-e>Careers</small></span>
+        </a>
+        <a href="#top" class="btn btn-ghost btn-sm">← Back<span class="hide-sm"> to website</span></a>
+      </div>
+    </div>
+    <div class="wrap apply-wrap">
+      <div class="apply-intro">
+        <div class="eyebrow" data-e>Careers</div>
+        <h1 data-e>Join the Pack</h1>
+        <p class="muted" data-e>Apply for a position with Lycan Division of Protection Services. It takes about 10 minutes. Our HR team reviews every application and will contact you about next steps.</p>
+        <ul class="apply-points">
+          <li data-e>Officer, dispatcher and support staff positions</li>
+          <li data-e>Full-time and part-time shifts</li>
+          <li data-e>Serving Columbus and all of Ohio</li>
+        </ul>
+      </div>
+
+      <form class="form apply-form" id="applyForm" data-form="application" novalidate>
+        <h3>Your Information</h3>
+        <div class="form-row">
+          <label class="field"><span data-e>Full name *</span><input name="name" required autocomplete="name"></label>
+          <label class="field"><span data-e>Phone *</span><input name="phone" type="tel" required autocomplete="tel"></label>
+        </div>
+        <label class="field"><span data-e>Email *</span><input name="email" type="email" required autocomplete="email"></label>
+        <div class="form-row">
+          <label class="field"><span data-e>City *</span><input name="city" required autocomplete="address-level2"></label>
+          <label class="field"><span data-e>State</span><input name="state" autocomplete="address-level1" value="OH"></label>
+        </div>
+        <label class="field"><span data-e>Are you at least 18 years old? *</span>
+          <select name="age18" required><option value="">Select…</option><option>Yes</option><option>No</option></select>
+        </label>
+
+        <h3 class="form-sub">Position</h3>
+        <div class="form-row">
+          <label class="field"><span data-e>Position applying for *</span>
+            <select name="position" required>
+              <option value="">Select…</option>
+              <option>Security Officer (Unarmed)</option><option>Security Officer (Armed)</option>
+              <option>Dispatcher</option><option>Support Staff / Administrative</option><option>Other</option>
+            </select>
+          </label>
+          <label class="field"><span data-e>Employment type</span>
+            <select name="employmentType"><option>Full-time</option><option>Part-time</option><option>Either</option></select>
+          </label>
+        </div>
+        <label class="field"><span data-e>Earliest start date</span><input name="startDate" type="date"></label>
+        <fieldset class="field checks">
+          <legend data-e>Availability (check all that apply)</legend>
+          <div class="check-row">
+            <label><input type="checkbox" name="availability" value="Weekdays"> Weekdays</label>
+            <label><input type="checkbox" name="availability" value="Weekends"> Weekends</label>
+            <label><input type="checkbox" name="availability" value="Days"> Days</label>
+            <label><input type="checkbox" name="availability" value="Evenings"> Evenings</label>
+            <label><input type="checkbox" name="availability" value="Overnights"> Overnights</label>
+          </div>
+        </fieldset>
+
+        <h3 class="form-sub">Licensing &amp; Experience</h3>
+        <div class="form-row">
+          <label class="field"><span data-e>Ohio security guard license</span>
+            <select name="license"><option>No, but willing to obtain</option><option>Yes, active</option><option>Application in progress</option></select>
+          </label>
+          <label class="field"><span data-e>License number (if any)</span><input name="licenseNumber"></label>
+        </div>
+        <div class="form-row">
+          <label class="field"><span data-e>Firearms certification</span>
+            <select name="firearms"><option>No</option><option>Yes, current</option><option>Expired</option></select>
+          </label>
+          <label class="field"><span data-e>Driver's license &amp; transportation</span>
+            <select name="transport"><option>Valid license and reliable transportation</option><option>Valid license only</option><option>No valid license</option></select>
+          </label>
+        </div>
+        <div class="form-row">
+          <label class="field"><span data-e>Security experience</span>
+            <select name="experience"><option>None</option><option>Less than 1 year</option><option>1–3 years</option><option>3–5 years</option><option>5+ years</option></select>
+          </label>
+          <label class="field"><span data-e>Military or law enforcement background</span>
+            <select name="background"><option>None</option><option>Military</option><option>Law enforcement</option><option>Both</option></select>
+          </label>
+        </div>
+        <label class="field"><span data-e>Most recent employer and position</span><input name="prevEmployer"></label>
+        <label class="field"><span data-e>References (name and phone) *</span><textarea name="references" required placeholder="Two professional references"></textarea></label>
+        <label class="field"><span data-e>Why do you want to join Lycan Division? *</span><textarea name="about" required></textarea></label>
+        <label class="field"><span data-e>Résumé * (PDF or Word, under 1 MB)</span><input type="file" name="resume" required accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"></label>
+        <label class="certify"><input type="checkbox" name="certify" value="Yes" required> <span data-e>I certify that the information in this application is true and complete. *</span></label>
+        <button type="submit" class="btn btn-primary">Submit Application</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="apply-success" role="status">
+        <div class="eyebrow">Application received</div>
+        <h2 data-e>Thank You for Applying</h2>
+        <p class="muted" data-e>Our HR team will review your application and contact you about next steps. If you have questions in the meantime, call us at (555) 555-0100.</p>
+        <a href="#top" class="btn btn-primary">Back to website</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EMPLOYEE PORTAL (shown at #employees) ============ -->
+  <section id="portal" class="portal" data-v="14" aria-label="Employee portal">
+    <div class="portal-login">
+      <form class="form login-card" id="portalLogin" novalidate>
+        <a href="#top" class="brand">
+          <span class="logo-mark" data-img="logo"><svg viewBox="0 0 64 64" aria-hidden="true"><path fill="currentColor" d="M7 3l16 17 9-4 9 4L57 3l-2 27-8 14-15 17-15-17-8-14z"/><path class="cut" d="M17 30l11 4-7.5 3.5zM47 30l-11 4 7.5 3.5zM27.5 46h9L32 52z"/></svg></span>
+          <span class="brand-name"><strong data-e>Lycan Division</strong><small data-e>of Protection Services</small></span>
+        </a>
+        <h2 data-e>Employee Portal</h2>
+        <p class="muted" data-e>Authorized Lycan Division personnel only. Sign in with the login provided by your supervisor.</p>
+        <label class="field"><span>Username</span><input name="username" required autocomplete="username" autocapitalize="none"></label>
+        <label class="field"><span>Password</span><input name="password" type="password" required autocomplete="current-password"></label>
+        <button type="submit" class="btn btn-primary">Sign In</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+        <a href="#top" class="back-link">← Back to website</a>
+        <button type="button" class="linklike login-edit" data-portal="edit">Manage portal</button>
+      </form>
+      <form class="form login-card reset-card" id="resetForm" novalidate>
+        <h2>Set Your Password</h2>
+        <p class="muted">Welcome, <b id="resetWho" data-render></b>. You signed in with a temporary password. Choose your own password to continue.</p>
+        <label class="field"><span>New password</span><input name="newPass" type="password" autocomplete="new-password"></label>
+        <label class="field"><span>Confirm new password</span><input name="confirmPass" type="password" autocomplete="new-password"></label>
+        <p class="form-hint">At least 8 characters.</p>
+        <button type="submit" class="btn btn-primary">Set Password &amp; Continue</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+        <button type="button" class="linklike login-edit" data-portal="cancel-reset">Back to sign in</button>
+      </form>
+    </div>
+
+    <div class="portal-app">
+      <div class="demo-banner">Test mode: requests, reports, posts and BOLOs are saved on this device only until the database is connected.</div>
+      <div class="portal-top">
+        <div class="wrap">
+          <a href="#top" class="brand">
+            <span class="logo-mark" data-img="logo"><svg viewBox="0 0 64 64" aria-hidden="true"><path fill="currentColor" d="M7 3l16 17 9-4 9 4L57 3l-2 27-8 14-15 17-15-17-8-14z"/><path class="cut" d="M17 30l11 4-7.5 3.5zM47 30l-11 4 7.5 3.5zM27.5 46h9L32 52z"/></svg></span>
+            <span class="brand-name"><strong data-e>Lycan Division</strong><small data-e>Employee Portal</small></span>
+          </a>
+          <div class="portal-actions">
+            <span class="whoami"></span>
+            <a href="#top" class="btn btn-ghost btn-sm hide-sm">Public site</a>
+            <button type="button" class="btn btn-ghost btn-sm" data-portal="logout">Log out</button>
+          </div>
+        </div>
+      </div>
+      <nav class="portal-tabs" aria-label="Portal sections">
+        <div class="wrap">
+          <button type="button" data-tab="schedule">Schedule</button>
+          <button type="button" data-tab="timeoff">Time Off</button>
+          <button type="button" data-tab="bulletin">Bulletin Board</button>
+          <button type="button" data-tab="bolo">BOLO</button>
+          <button type="button" data-tab="report">Report a Concern</button>
+          <button type="button" data-tab="profile">My Profile</button>
+          <button type="button" data-tab="staff" class="staff-only">Staff</button>
+          <button type="button" data-tab="photos" class="sup-only">Site Photos</button>
+          <button type="button" data-tab="quotes" class="quotes-only">Quote Requests<span class="tab-count" id="quoteCount" data-render></span></button>
+          <button type="button" data-tab="apps" class="apps-only">Applications<span class="tab-count" id="appCount" data-render></span></button>
+        </div>
+      </nav>
+
+      <div class="wrap">
+        <div class="panel" data-panel="schedule">
+          <div class="panel-head">
+            <h2 data-e>Schedule</h2>
+          </div>
+          <div id="schedBox" data-render></div>
+        </div>
+
+        <div class="panel" data-panel="timeoff">
+          <div class="panel-grid">
+            <div>
+              <h2 data-e>Time Off Requests</h2>
+              <p class="muted" data-e>Submit requests at least 14 days in advance whenever possible. A request is not approved until you receive confirmation from a supervisor.</p>
+            </div>
+            <form class="form" data-form="timeoff" novalidate>
+              <div class="form-row">
+                <label class="field"><span data-e>Full name *</span><input name="name" required autocomplete="name"></label>
+                <label class="field"><span data-e>Employee ID</span><input name="employeeId"></label>
+              </div>
+              <div class="form-row">
+                <label class="field"><span data-e>First day off *</span><input name="start" type="date" required></label>
+                <label class="field"><span data-e>Last day off *</span><input name="end" type="date" required></label>
+              </div>
+              <label class="field"><span data-e>Type of leave</span>
+                <select name="type">
+                  <option>Vacation</option><option>Sick</option><option>Personal</option><option>Bereavement</option><option>Other</option>
+                </select>
+              </label>
+              <label class="field"><span data-e>Shifts affected / notes</span><textarea name="notes" placeholder="Which shifts or posts are affected, and anything your supervisor should know"></textarea></label>
+              <button type="submit" class="btn btn-primary" data-e>Submit Request</button>
+              <p class="form-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+          <div class="rec-section">
+            <h3>My Requests</h3>
+            <p class="muted">Your own time-off requests and whether they are pending, approved or denied.</p>
+            <div class="rec-list" id="myTimeoff" data-render></div>
+          </div>
+          <div class="rec-section sup-only">
+            <h3>All Time-Off Requests</h3>
+            <p class="muted">Supervisors: approve or deny each request.</p>
+            <div class="rec-list" id="allTimeoff" data-render></div>
+          </div>
+        </div>
+
+        <div class="panel" data-panel="bulletin">
+          <div class="panel-head">
+            <h2 data-e>Bulletin Board</h2>
+            <p class="muted" data-e>Company announcements, reminders and updates. Check at the start of every shift.</p>
+          </div>
+          <div class="rec-tools sup-only"><button type="button" class="btn btn-primary btn-sm" data-rec="new:posts" data-id="">+ New post</button></div>
+          <div class="posts" id="postList" data-render></div>
+        </div>
+
+        <div class="panel" data-panel="bolo">
+          <div class="panel-head">
+            <h2 data-e>BOLO: Be On the Lookout</h2>
+            <p class="muted" data-e>Do not engage. Observe, document and notify your supervisor immediately. Call 911 for any emergency.</p>
+          </div>
+          <div class="rec-tools sup-only"><button type="button" class="btn btn-primary btn-sm" data-rec="new:bolos" data-id="">+ New BOLO</button></div>
+          <div class="bolos" id="boloList" data-render></div>
+        </div>
+
+        <div class="panel" data-panel="report">
+          <div class="panel-grid">
+            <div>
+              <h2 data-e>Report a Concern</h2>
+              <p class="muted" data-e>Use this form to report misconduct, harassment, safety issues or policy violations. Reports are seen only by Internal Affairs and the company owners, and are handled confidentially. Retaliation against anyone who reports in good faith is not tolerated.</p>
+              <div class="notice"><small data-e>Reports go only to</small><strong data-e>Internal Affairs, the Chief and the Assistant Chief</strong></div>
+            </div>
+            <form class="form" data-form="complaint" novalidate>
+              <div class="form-row">
+                <label class="field"><span data-e>Your name (optional)</span><input name="name" autocomplete="name"></label>
+                <label class="field"><span data-e>Best way to reach you (optional)</span><input name="contact"></label>
+              </div>
+              <div class="form-row">
+                <label class="field"><span data-e>Date of incident</span><input name="date" type="date"></label>
+                <label class="field"><span data-e>Location / post</span><input name="location"></label>
+              </div>
+              <label class="field"><span data-e>Type of concern</span>
+                <select name="category">
+                  <option>Harassment or discrimination</option><option>Safety concern</option><option>Officer misconduct</option><option>Policy violation</option><option>Scheduling or pay</option><option>Other</option>
+                </select>
+              </label>
+              <label class="field"><span data-e>People involved</span><input name="involved"></label>
+              <label class="field"><span data-e>What happened? *</span><textarea name="details" required></textarea></label>
+              <button type="submit" class="btn btn-primary" data-e>Send Confidential Report</button>
+              <p class="form-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+          <div class="rec-section reports-only">
+            <h3>Reported Concerns</h3>
+            <p class="muted">Visible only to Internal Affairs, the Chief, the Assistant Chief and the Site Owner.</p>
+            <div class="rec-list" id="complaintList" data-render></div>
+          </div>
+        </div>
+
+        <div class="panel" data-panel="profile">
+          <div class="panel-head">
+            <h2>My Profile</h2>
+            <p class="muted">Keep your contact details and emergency contacts up to date, and change your password. Your phone number and emergency contacts can be seen by supervisors and above. Your home address and personal email stay private.</p>
+          </div>
+          <div class="profile-grid">
+            <form class="form" id="profileForm" novalidate>
+              <h3>Contact Information</h3>
+              <div class="form-row">
+                <label class="field"><span>Full name</span><input name="fullName" autocomplete="name"></label>
+                <label class="field"><span>Phone</span><input name="phone" type="tel" autocomplete="tel"></label>
+              </div>
+              <label class="field"><span>Personal email</span><input name="email" type="email" autocomplete="email"></label>
+              <h3 class="form-sub">Home Address</h3>
+              <label class="field"><span>Street address</span><input name="street" autocomplete="street-address"></label>
+              <div class="form-row form-row-3">
+                <label class="field"><span>City</span><input name="city" autocomplete="address-level2"></label>
+                <label class="field"><span>State</span><input name="state" autocomplete="address-level1"></label>
+                <label class="field"><span>ZIP</span><input name="zip" autocomplete="postal-code" inputmode="numeric"></label>
+              </div>
+              <h3 class="form-sub">Emergency Contacts</h3>
+              <div class="emg-list" id="emgList" data-render></div>
+              <button type="button" class="btn btn-ghost btn-sm" data-profile="add-emg">+ Add emergency contact</button>
+              <button type="submit" class="btn btn-primary">Save Profile</button>
+              <p class="form-status" role="status" aria-live="polite"></p>
+            </form>
+            <form class="form" id="passwordForm" novalidate>
+              <h3>Change Password</h3>
+              <label class="field"><span>Current password</span><input name="current" type="password" autocomplete="current-password"></label>
+              <label class="field"><span>New password</span><input name="newPass" type="password" autocomplete="new-password"></label>
+              <label class="field"><span>Confirm new password</span><input name="confirmPass" type="password" autocomplete="new-password"></label>
+              <p class="form-hint">At least 8 characters.</p>
+              <button type="submit" class="btn btn-primary">Update Password</button>
+              <p class="form-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+
+        <div class="panel" data-panel="staff">
+          <div class="panel-head">
+            <h2>Staff Logins</h2>
+            <p class="muted">Create logins for new employees. Each new login gets a temporary password that the employee must change the first time they sign in. HR, Captains, the Assistant Chief, the Chief and the Site Owner can edit, reset and remove any login. Phone numbers and emergency contacts come from each employee's My Profile.</p>
+          </div>
+          <div class="profile-grid">
+            <form class="form" id="staffForm" novalidate>
+              <h3>Create a Login</h3>
+              <div class="form-row">
+                <label class="field"><span>Full name *</span><input name="fullName" autocomplete="off"></label>
+                <label class="field"><span>Badge number</span><input name="badge" autocomplete="off" spellcheck="false" placeholder="e.g. 1042"></label>
+              </div>
+              <div class="form-row">
+                <label class="field"><span>Username *</span><input name="username" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="e.g. jsmith"></label>
+                <label class="field"><span>Role</span><select name="role" id="staffRole" data-render></select></label>
+              </div>
+              <div class="field"><span>Temporary password *</span>
+                <div class="temp-row"><input name="temp" autocomplete="off" spellcheck="false" aria-label="Temporary password"><button type="button" class="btn btn-ghost btn-sm" data-staff="gen">Generate</button></div>
+              </div>
+              <button type="submit" class="btn btn-primary">Create Login</button>
+              <p class="form-status" role="status" aria-live="polite"></p>
+              <div id="staffCreated" data-render></div>
+            </form>
+            <div>
+              <h3 class="staff-list-head">Current Logins</h3>
+              <label class="field staff-search"><span>Search logins</span><input type="search" id="staffSearch" placeholder="Name, username or badge number" autocomplete="off" spellcheck="false"></label>
+              <p class="empty-note" id="staffNoMatch" hidden>No logins match your search.</p>
+              <div class="rec-list" id="staffList" data-render></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" data-panel="photos">
+          <div class="panel-head">
+            <h2>Site Photos</h2>
+            <p class="muted">Photos added here appear in the Photo Gallery on the public website, in the order shown below.</p>
+          </div>
+          <div class="form photo-upload">
+            <label class="field"><span>Choose photos</span><input type="file" id="photoFiles" accept="image/*" multiple></label>
+            <label class="field"><span>Caption (optional)</span><input id="photoCaption" placeholder="e.g. Event coverage at the Columbus Convention Center"></label>
+            <button type="button" class="btn btn-primary" data-photo="upload">Add to Public Site</button>
+            <p class="form-status" id="photoStatus" role="status" aria-live="polite"></p>
+          </div>
+          <div class="photo-admin" id="photoAdmin" data-render></div>
+        </div>
+
+        <div class="panel" data-panel="quotes">
+          <div class="panel-head">
+            <h2>Quote Requests</h2>
+            <p class="muted">Requests submitted through the quote form on the public website. Visible only to Captains, the Assistant Chief, the Chief and the Site Owner.</p>
+          </div>
+          <div id="quoteList" data-render></div>
+        </div>
+
+        <div class="panel" data-panel="apps">
+          <div class="panel-head">
+            <h2>Applications</h2>
+            <p class="muted">Job applications submitted through the website's Apply Now page. Visible only to HR, the Assistant Chief, the Chief and the Site Owner.</p>
+          </div>
+          <div id="appList" data-render></div>
+        </div>
+
+        <p class="portal-foot"><button type="button" class="linklike" data-portal="edit">Edit portal content</button></p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ EDITOR (hidden for visitors) ============ -->
+<div class="edit-bar" role="toolbar" aria-label="Site editor">
+  <span class="eb-title"><b>Editing</b><span id="ebStatus">No changes yet</span></span>
+  <button type="button" data-cmd="save" title="Ctrl+S">Save</button>
+  <button type="button" data-cmd="link">Edit link</button>
+  <button type="button" data-cmd="settings">Settings</button>
+  <button type="button" data-cmd="staff">Staff logins</button>
+  <button type="button" data-cmd="help">Help</button>
+  <button type="button" data-cmd="export" class="primary">Export HTML</button>
+  <button type="button" data-cmd="discard" class="danger">Discard draft</button>
+  <button type="button" data-cmd="exit">Done</button>
+</div>
+
+<dialog class="dlg" id="helpDlg">
+  <form method="dialog">
+    <h3>Editing your site</h3>
+    <ul>
+      <li><b>Click any outlined text</b> and type to change it. Ctrl+B / Ctrl+I work for bold and italic.</li>
+      <li><b>Buttons &amp; links:</b> click into one, then press <b>Edit link</b> to change where it goes (e.g. <code>tel:+15551234567</code>, <code>mailto:you@site.com</code>, <code>#contact</code>).</li>
+      <li><b>Cards, steps &amp; tags:</b> use ↑ to move, ⧉ to duplicate, ✕ to delete, or <b>+ Add</b> for a new one.</li>
+      <li><b>Images:</b> use the image buttons on the logo, hero background and about photo.</li>
+      <li><b>Settings:</b> brand color, page title, where each form sends, and the portal login.</li>
+      <li><b>Employee portal:</b> use <b>Staff logins</b> to give each employee a username and password and a role. Supervisors sign in to the portal to edit the schedule, bulletin board and BOLOs.</li>
+      <li>Changes auto-save <i>in this browser only</i>. When you're happy, press <b>Export HTML</b> and upload the downloaded <code>index.html</code> to your web host.</li>
+    </ul>
+    <p class="hint">Open the editor any time with the "Edit site" link in the footer, by adding <code>#edit</code> to the address, or Ctrl+Shift+E. Each one asks for the editor password, which you can change in Settings.</p>
+    <div class="dlg-actions"><button value="ok" class="primary">Got it</button></div>
+  </form>
+</dialog>
+
+<dialog class="dlg" id="imgDlg">
+  <form method="dialog">
+    <h3>Change image</h3>
+    <label>Upload from your computer<input type="file" id="imgFile" accept="image/*"></label>
+    <label>…or paste an image URL<input type="url" id="imgUrl" placeholder="https://"></label>
+    <p class="hint">Uploads are resized and embedded in the page. Use a few photos at most so the page stays fast.</p>
+    <div class="dlg-actions"><button value="remove" class="danger">Remove image</button><span class="spacer"></span><button value="cancel">Cancel</button><button value="apply" class="primary">Apply</button></div>
+  </form>
+</dialog>
+
+<dialog class="dlg" id="setDlg">
+  <form method="dialog">
+    <h3>Site settings</h3>
+    <label>Browser tab title<input id="setTitle"></label>
+    <label>Brand accent color<input type="color" id="setAccent"></label>
+    <label>Quote form sends to this email<input type="email" id="setEmail" placeholder="you@your-domain.com"></label>
+    <label>Form service endpoint (optional)<input type="url" id="setEndpoint" placeholder="https://formspree.io/f/xxxxxxx"></label>
+    <p class="hint">Without an endpoint, the quote form opens the visitor's email app addressed to you. With a form service like Formspree, Basin or Getform, submissions are delivered straight to your inbox.</p>
+    <h4 class="dlg-sub">Employee portal</h4>
+    <p class="hint">Employee usernames and passwords are managed under <b>Staff logins</b> in the editor toolbar.</p>
+    <label>Time-off requests go to<input type="email" id="setTimeoff" placeholder="scheduling@your-domain.com"></label>
+    <label>Time-off form endpoint (optional)<input type="url" id="setTimeoffEp" placeholder="https://formspree.io/f/…"></label>
+    <label>Concern reports go ONLY to (supervisor emails, comma-separated)<input id="setComplaint" placeholder="supervisor1@your-domain.com, supervisor2@your-domain.com"></label>
+    <label>Concern report endpoint (optional)<input type="url" id="setComplaintEp" placeholder="https://formspree.io/f/…"></label>
+    <label>Job applications also go to this email<input type="email" id="setCareers" placeholder="careers@your-domain.com"></label>
+    <label>Job application endpoint (optional)<input type="url" id="setCareersEp" placeholder="https://formspree.io/f/…"></label>
+    <h4 class="dlg-sub">Site editor</h4>
+    <label>New editor password (leave blank to keep the current one)<input type="password" id="setEditorPass" autocomplete="new-password"></label>
+    <p class="hint">Point the concern endpoint at a form whose notifications go only to those supervisors.</p>
+    <div class="dlg-actions"><button value="cancel">Cancel</button><button value="apply" class="primary">Save settings</button></div>
+  </form>
+</dialog>
+
+<dialog class="dlg dlg-wide" id="acctDlg">
+  <form method="dialog">
+    <h3>Staff logins</h3>
+    <p class="hint">Each employee signs in with their own username and password and sees only the schedule rows assigned to their login. Supervisors see every row and choose which login sees each row with Edit schedule on the Schedule tab.</p>
+    <div id="acctList" class="acct-list"></div>
+    <h4 class="dlg-sub">Add a login</h4>
+    <div class="acct-new">
+      <input id="newUser" placeholder="Username" autocomplete="off" autocapitalize="none">
+      <input id="newName" placeholder="Display name" autocomplete="off">
+      <input id="newPass" type="password" placeholder="Password" autocomplete="new-password">
+      <select id="newRole"><option value="employee">Officer</option><option value="dispatcher">Dispatcher</option><option value="support">Support Staff</option><option value="supervisor">Supervisor</option><option value="ia">Internal Affairs</option><option value="hr">HR</option><option value="captain">Captain</option><option value="asst_chief">Assistant Chief</option><option value="chief">Chief</option><option value="owner">Site Owner</option></select>
+      <button type="button" id="addAcct" class="primary">Add login</button>
+    </div>
+    <div class="dlg-actions"><button value="close">Done</button></div>
+  </form>
+</dialog>
+
+<dialog class="dlg" id="postDlg">
+  <form method="dialog">
+    <h3 id="postDlgTitle">New post</h3>
+    <input type="hidden" id="postId">
+    <div class="dlg-row">
+      <label>Label<select id="postTag"><option>Announcement</option><option>Reminder</option><option>Schedule</option><option>Training</option><option>Policy</option><option>Urgent</option></select></label>
+      <label>Date<input type="date" id="postDate"></label>
+    </div>
+    <label>Title<input id="postTitle"></label>
+    <label>Message<textarea id="postBody" rows="6"></textarea></label>
+    <div class="dlg-actions"><button value="cancel">Cancel</button><button value="save" class="primary">Save post</button></div>
+  </form>
+</dialog>
+
+<dialog class="dlg" id="boloDlg">
+  <form method="dialog">
+    <h3 id="boloDlgTitle">New BOLO</h3>
+    <input type="hidden" id="boloId">
+    <label>Title (person or vehicle)<input id="boloTitle"></label>
+    <div class="dlg-row">
+      <label>Status<select id="boloStatus"><option>Active</option><option>Resolved</option></select></label>
+      <label>Issued<input type="date" id="boloIssued"></label>
+    </div>
+    <label>Description<textarea id="bolo_description" rows="2"></textarea></label>
+    <label>Vehicle / plate<input id="bolo_vehicle"></label>
+    <label>Last seen<input id="bolo_lastSeen"></label>
+    <label>Reason<input id="bolo_reason"></label>
+    <label>Action for officers<textarea id="bolo_action" rows="2"></textarea></label>
+    <label>Photo<input type="file" id="boloFile" accept="image/*"></label>
+    <label class="check"><input type="checkbox" id="boloNoPhoto"> Remove current photo</label>
+    <div class="dlg-actions"><button value="cancel">Cancel</button><button value="save" class="primary">Save BOLO</button></div>
+  </form>
+</dialog>
+
+<dialog class="lightbox" id="lightbox" aria-label="Photo">
+  <form method="dialog"><button class="lb-close" aria-label="Close">✕</button></form>
+  <img id="lbImg" alt="">
+  <p id="lbCap"></p>
+</dialog>
+
+<dialog class="dlg dlg-ask" id="askDlg">
+  <form method="dialog">
+    <p id="askMsg" class="ask-msg"></p>
+    <input id="askInput" autocomplete="off" hidden>
+    <div class="dlg-actions"><button value="cancel">Cancel</button><button value="ok" id="askOk" class="primary">OK</button></div>
+  </form>
+</dialog>
+
+<dialog class="dlg" id="staffEditDlg">
+  <form method="dialog">
+    <h3>Edit Login</h3>
+    <p class="hint" id="staffEditUser"></p>
+    <input type="hidden" id="staffEditId">
+    <label>Full name<input id="staffEditName" autocomplete="off"></label>
+    <label>Badge number<input id="staffEditBadge" autocomplete="off" spellcheck="false"></label>
+    <label>Role<select id="staffEditRole"></select></label>
+    <div class="dlg-actions"><button value="cancel">Cancel</button><button value="save" class="primary">Save changes</button></div>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(() => {
+  const KEY = 'lycan-site-draft-v1', HELP_KEY = 'lycan-site-help-seen';
+  const root = document.documentElement, body = document.body;
+  const site = document.getElementById('site');
+  const $ = id => document.getElementById(id);
+  const LOGO_SVG = $('logo-tpl').innerHTML.trim();
+
+  // In-page replacement for confirm()/prompt(): some browsers and embedded viewers block
+  // native dialogs (they silently return "cancel"), which made deletes do nothing.
+  function ask(message, { ok = 'OK', danger = false, input = null, type = 'text' } = {}){
+    const dlg = $('askDlg'), field = $('askInput'), okBtn = $('askOk');
+    $('askMsg').textContent = message;
+    okBtn.textContent = ok;
+    okBtn.className = danger ? 'danger-solid' : 'primary';
+    field.hidden = input === null;
+    field.type = type;
+    field.value = input ?? '';
+    dlg.returnValue = '';
+    dlg.showModal();
+    (input === null ? okBtn : field).focus();
+    return new Promise(resolve => dlg.addEventListener('close', () => {
+      const yes = dlg.returnValue === 'ok';
+      resolve(input === null ? yes : yes ? field.value : null);
+    }, { once: true }));
+  }
+  $('askInput').addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); $('askDlg').close('ok'); } });
+  root.classList.add('js');
+
+  const store = {
+    get(k){ try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
+    set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch { return false; } },
+    del(k){ try { localStorage.removeItem(k); } catch {} }
+  };
+
+  const cfg = {
+    title: document.title,
+    accent: getComputedStyle(root).getPropertyValue('--accent').trim() || '#39ff14',
+    email: '', endpoint: '',
+    timeoffEmail: '', timeoffEndpoint: '',
+    complaintEmails: '', complaintEndpoint: '',
+    careersEmail: '', careersEndpoint: '',
+    editorPass: '',   // SHA-256 of "lycan-editor:<site editor password>"
+    accounts: ''      // JSON list of staff logins; passwords stored as SHA-256 of "user:password"
+  };
+  const DATA_KEYS = Object.keys(cfg).slice(2);
+  DATA_KEYS.forEach(k => cfg[k] = site.dataset[k] || '');
+
+  // Restore a saved draft from this browser, if one exists.
+  // Sections added to the page after the draft was saved (e.g. the portal) are kept.
+  // Older drafts kept the schedule as page HTML; read it so it can become portal records
+  const parseSched = root => {
+    const sched = root.querySelector('.sched');
+    if (!sched) return null;
+    const cells = row => [...row.children].filter(c => !c.classList.contains('edit-ui')).map(c => c.textContent.trim());
+    const head = sched.querySelector('.sched-head');
+    return {
+      week: root.querySelector('[data-panel="schedule"] .panel-head p')?.textContent.trim() || '',
+      note: root.querySelector('[data-panel="schedule"] .small-note')?.textContent.trim() || '',
+      days: head ? cells(head).slice(2, 9) : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      rows: [...sched.querySelectorAll('.sched-row[data-item]')].map((r, i) => {
+        const c = cells(r);
+        return { id: 'r' + i, owner: r.dataset.owner || '', officer: c[0] || '', post: c[1] || '', days: c.slice(2, 9) };
+      })
+    };
+  };
+  let legacySchedule = null;
+
+  const draft = store.get(KEY);
+  if (draft && draft.html) {
+    const defaults = [...site.children].filter(c => c.id);
+    const defaultSections = [...site.querySelectorAll('main > section[id]')];
+    site.innerHTML = draft.html;
+    // public sections added since the draft was saved go in at their usual place
+    defaultSections.forEach((sec, i) => {
+      if (site.querySelector('#' + sec.id)) return;
+      const next = defaultSections.slice(i + 1).map(s => site.querySelector('#' + s.id)).find(Boolean);
+      if (next) next.before(sec); else site.querySelector('main')?.appendChild(sec);
+    });
+    defaults.forEach(c => {
+      const saved = site.querySelector(':scope > #' + c.id);
+      if (!saved) { site.appendChild(c); return; }
+      if (c.dataset.v && saved.dataset.v !== c.dataset.v) {
+        // this section was upgraded since the draft was saved: take the new version, carrying the schedule over
+        legacySchedule = parseSched(saved);
+        saved.replaceWith(c);
+      }
+    });
+    Object.assign(cfg, draft.cfg || {});
+    // Apply Now used to be a placeholder email link; it now opens the application page
+    site.querySelectorAll('#careers a.btn[href^="mailto:"]').forEach(a => a.setAttribute('href', '#apply'));
+    // menu links added since the draft was saved
+    site.querySelectorAll('.nav-links, .site-footer ul').forEach(list => {
+      if (list.querySelector('a[href="#gallery"]')) return;
+      list.querySelector('a[href="#careers"]')?.closest('li')?.insertAdjacentHTML('beforebegin', '<li><a href="#gallery" data-e>Gallery</a></li>');
+    });
+  }
+
+  function applyCfg(){
+    document.title = cfg.title;
+    root.style.setProperty('--accent', cfg.accent);
+    DATA_KEYS.forEach(k => site.dataset[k] = cfg[k]);
+  }
+  applyCfg();
+
+  // ---------- employee portal ----------
+  const AUTH = 'lycan-portal-auth';
+  const sha256 = async s => {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
+    return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+  };
+  // Logins: ones the site owner adds (page settings) plus ones supervisors create in the portal
+  const cfgAccounts = () => { try { return JSON.parse(cfg.accounts) || []; } catch { return []; } };
+  const getAccounts = () => {
+    // site-owner logins can be removed or edited (name, badge, role) in the portal
+    const d = db.load(), removed = new Set(d.removed || []), edits = d.acctEdits || {};
+    const base = cfgAccounts().filter(a => !removed.has(a.user)).map(a => ({ ...a, ...(edits[a.user] || {}) }));
+    const taken = new Set(base.map(a => a.user));
+    return [...base, ...(d.accounts || []).filter(a => !taken.has(a.user)).map(a => ({ ...a, src: 'portal' }))];
+  };
+  // a username is taken if any login uses it now, or a removed site-owner login used it
+  const usernameTaken = user => getAccounts().some(a => a.user === user) || cfgAccounts().some(a => a.user === user);
+  const setAccounts = list => { cfg.accounts = JSON.stringify(list); applyCfg(); save(false); applyUser(); };
+  const passHash = (user, pass) => sha256(user + ':' + pass);
+  let currentUser = null, profileFor, pendingReset = null;
+  let createdFor = null, lastCreated = '';   // the login whose temporary password is on screen, and its copy text
+  try { currentUser = sessionStorage.getItem(AUTH); } catch {}
+
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const fmtDate = s => {
+    if (!s) return '';
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s);
+    const d = m ? new Date(+m[1], m[2] - 1, +m[3]) : new Date(s);
+    return isNaN(d) ? s : d.toLocaleDateString([], { month: 'short', day: 'numeric', year: 'numeric' });
+  };
+  const fmtTime = s => new Date(s).toLocaleString([], { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+
+  // Portal records (time off, reports, posts, BOLOs).
+  // TEST MODE: kept in this browser's localStorage only. Replace these methods with
+  // calls to a real database to share records across devices.
+  const DB_KEY = 'lycan-portal-db-v1';
+  const db = {
+    load(){ try { return JSON.parse(localStorage.getItem(DB_KEY)) || {}; } catch { return {}; } },
+    write(d){ try { localStorage.setItem(DB_KEY, JSON.stringify(d)); return true; } catch { toast('Browser storage is full. Use smaller photos.'); return false; } },
+    list(t){ return this.load()[t] || []; },
+    add(t, rec){
+      const d = this.load();
+      (d[t] = d[t] || []).unshift({ id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), at: new Date().toISOString(), ...rec });
+      return this.write(d);
+    },
+    update(t, id, patch){ const d = this.load(); const r = (d[t] || []).find(x => x.id === id); if (r) Object.assign(r, patch); return this.write(d); },
+    remove(t, id){ const d = this.load(); d[t] = (d[t] || []).filter(x => x.id !== id); return this.write(d); }
+  };
+  // Passwords employees set themselves live with the portal records, not the page settings,
+  // so changing one never saves a private copy of the site in the employee's browser
+  const passFor = a => (db.load().passwords || {})[a.user] || a.pass;
+  // a temporary password (a new login, or one a supervisor re-issued) must be replaced at first sign-in
+  const needsReset = a => { const t = db.load().tempReset || {}; return a.user in t ? !!t[a.user] : !!a.mustReset; };
+  // "employee" is the Officer role (kept as the stored value so existing logins carry over)
+  const ROLE_NAMES = { employee: 'Officer', dispatcher: 'Dispatcher', support: 'Support Staff', supervisor: 'Supervisor', ia: 'Internal Affairs', hr: 'HR', captain: 'Captain', asst_chief: 'Assistant Chief', chief: 'Chief', owner: 'Site Owner' };
+  const genTemp = () => {
+    const A = 'ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
+    const s = [...crypto.getRandomValues(new Uint32Array(10))].map(n => A[n % A.length]).join('');
+    return `${s.slice(0, 4)}-${s.slice(4, 8)}-${s.slice(8)}`;
+  };
+  if (!db.load().seeded) {
+    const d = db.load(), at = '2026-11-07T12:00:00.000Z';
+    d.seeded = true;
+    d.posts = [
+      { id: 'p1', at, tag: 'Announcement', date: '2026-11-07', title: 'Welcome to the Employee Portal', body: 'Schedules, announcements and BOLOs will be posted here. Use the Time Off and Report a Concern tabs to reach the right people directly.' },
+      { id: 'p2', at, tag: 'Reminder', date: '2026-11-07', title: 'Uniform & Equipment Standards', body: 'Report to post in a clean, complete uniform with your ID visible. Replace this text with your current uniform and equipment policy.' },
+      { id: 'p3', at, tag: 'Training', date: '2026-11-07', title: 'Upcoming Training', body: 'Dates and details for the next training session will be posted here.' }
+    ];
+    d.bolos = [
+      { id: 'b1', at, status: 'Active', issued: '2026-11-07', img: '', title: 'Example: Person of Interest', description: 'Height, build, hair, clothing and any distinguishing marks.', lastSeen: 'Site / location, date and time.', reason: 'Why officers should watch for this person (e.g. trespass warning on file).', action: 'Do not engage. Notify your supervisor and document in your daily report.' },
+      { id: 'b2', at, status: 'Active', issued: '2026-11-07', img: '', title: 'Example: Vehicle', vehicle: 'Color, make, model, year. State and plate number, if known.', lastSeen: 'Site / location, date and time.', action: 'Record time and location if seen. Notify your supervisor.' }
+    ];
+    db.write(d);
+  }
+  const DEFAULT_SCHEDULE = {
+    week: 'Week of November 9 – 15, 2026. Schedule changes are announced on the Bulletin Board.',
+    note: 'Shift swaps must be approved by a supervisor. If you will be late or cannot make a shift, call dispatch immediately at (555) 555-0100.',
+    days: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    rows: [
+      { id: 'r0', owner: 'admin1', officer: 'Admin1', post: 'Site A – Front Desk', days: ['0700–1500', '0700–1500', '0700–1500', '0700–1500', '0700–1500', 'OFF', 'OFF'] },
+      { id: 'r1', owner: '', officer: 'Officer 2', post: 'Site A – Overnight', days: ['OFF', 'OFF', '2300–0700', '2300–0700', '2300–0700', '2300–0700', '2300–0700'] },
+      { id: 'r2', owner: '', officer: 'Officer 3', post: 'Mobile Patrol', days: ['1500–2300', '1500–2300', '1500–2300', '1500–2300', 'OFF', 'OFF', '1500–2300'] },
+      { id: 'r3', owner: '', officer: 'Officer 4', post: 'Event Coverage', days: ['OFF', 'OFF', 'OFF', 'OFF', '1800–0200', '1800–0200', 'OFF'] }
+    ]
+  };
+  if (!db.load().schedule) {
+    const d = db.load(), ls = legacySchedule;
+    d.schedule = ls && ls.rows.length
+      ? { week: ls.week || DEFAULT_SCHEDULE.week, note: ls.note || DEFAULT_SCHEDULE.note, days: ls.days.length === 7 ? ls.days : DEFAULT_SCHEDULE.days, rows: ls.rows }
+      : DEFAULT_SCHEDULE;
+    db.write(d);
+  }
+
+  const STATUS_TAG = { Pending: 'tag-warn', Denied: 'tag-alert', Open: 'tag-alert', Reviewed: 'tag-warn', Closed: 'tag-muted', Active: 'tag-alert', Resolved: 'tag-muted', Urgent: 'tag-alert', 'Temporary password': 'tag-warn', Contacted: 'tag-warn', Interviewing: 'tag-warn', 'Not Selected': 'tag-muted' };
+  const tag = s => `<span class="tag ${STATUS_TAG[s] || ''}">${esc(s)}</span>`;
+  const dl = pairs => `<dl class="bolo-dl">${pairs.filter(([, v]) => v).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v).replace(/\n/g, '<br>')}</dd>`).join('')}</dl>`;
+  const btns = list => `<div class="rec-actions">${list.map(([label, rec, id, cls = '', val = '']) =>
+    `<button type="button" class="${cls}" data-rec="${rec}" data-id="${id}" data-val="${val}">${label}</button>`).join('')}</div>`;
+  const empty = msg => `<p class="empty-note">${msg}</p>`;
+  const fill = (id, html) => { const n = $(id); if (n) n.innerHTML = html; };
+
+  // Schedule: supervisors edit it in place; employees only get the rows assigned to their login
+  let schedDraft = null;   // a supervisor's unsaved schedule edits
+  const schedule = () => db.load().schedule || { week: '', note: '', days: [], rows: [] };
+  const newRow = n => ({ id: 'r' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5), owner: '', officer: '', post: '', days: Array(n).fill('OFF') });
+
+  function collectSched(){
+    const box = $('schedBox'), v = el => el ? el.value.trim() : '';
+    return {
+      week: v(box.querySelector('[data-sf=week]')),
+      note: v(box.querySelector('[data-sf=note]')),
+      days: [...box.querySelectorAll('[data-sf=day]')].map(v),
+      rows: [...box.querySelectorAll('[data-row]')].map(r => ({
+        id: r.dataset.row,
+        owner: r.querySelector('[data-sf=owner]').value,
+        officer: v(r.querySelector('[data-sf=officer]')),
+        post: v(r.querySelector('[data-sf=post]')),
+        days: [...r.querySelectorAll('[data-sf=d]')].map(v)
+      }))
+    };
+  }
+
+  function renderSchedule(sup, keepTyping = true){
+    const box = $('schedBox');
+    if (!box) return;
+    if (!sup) schedDraft = null;
+    if (schedDraft && keepTyping && box.querySelector('[data-sf=week]')) schedDraft = collectSched();
+
+    if (schedDraft) {
+      const s = schedDraft, accts = getAccounts();
+      const ownerOpts = owner => '<option value="">Not assigned (supervisors only)</option>'
+        + accts.map(a => `<option value="${esc(a.user)}"${a.user === owner ? ' selected' : ''}>${esc(a.name || a.user)} (${esc(a.user)})</option>`).join('')
+        + (owner && !accts.some(a => a.user === owner) ? `<option value="${esc(owner)}" selected>${esc(owner)} (login removed)</option>` : '');
+      box.innerHTML = `
+        <div class="sched-form">
+          <label class="field"><span>Week / heading</span><input data-sf="week" value="${esc(s.week)}"></label>
+          <div class="sched-wrap"><div class="sched sched-editing">
+            <div class="sched-row sched-head"><div>Officer &amp; login</div><div>Post</div>${s.days.map(d => `<div><input data-sf="day" value="${esc(d)}" aria-label="Day label"></div>`).join('')}<div></div></div>
+            ${s.rows.map(r => `
+            <div class="sched-row" data-row="${esc(r.id)}">
+              <div><input data-sf="officer" value="${esc(r.officer)}" placeholder="Officer name" aria-label="Officer"><select data-sf="owner" aria-label="Login that sees this row">${ownerOpts(r.owner)}</select></div>
+              <div><input data-sf="post" value="${esc(r.post)}" placeholder="Post / site" aria-label="Post"></div>
+              ${s.days.map((day, i) => `<div><input data-sf="d" value="${esc(r.days[i] ?? '')}" aria-label="${esc(day)}"></div>`).join('')}
+              <div><button type="button" class="sched-del" data-sched="delrow" data-id="${esc(r.id)}" title="Delete row">✕</button></div>
+            </div>`).join('')}
+          </div></div>
+          <label class="field"><span>Note under the schedule</span><textarea data-sf="note" rows="2">${esc(s.note)}</textarea></label>
+          <div class="rec-actions"><button type="button" data-sched="addrow">+ Add row</button><span class="spacer"></span><button type="button" data-sched="cancel">Cancel</button><button type="button" class="primary" data-sched="save">Save schedule</button></div>
+        </div>`;
+      return;
+    }
+
+    const s = schedule();
+    const rows = sup ? s.rows : s.rows.filter(r => r.owner && r.owner === currentUser);
+    box.innerHTML = `
+      <div class="sched-top">
+        <p class="muted">${esc(s.week)}${s.updatedBy ? `<small class="sched-updated">Updated ${esc(fmtTime(s.updatedAt))} by ${esc(s.updatedBy)}</small>` : ''}</p>
+        ${sup ? '<button type="button" class="btn btn-primary btn-sm" data-sched="edit">Edit schedule</button>' : ''}
+      </div>
+      ${rows.length ? `<div class="sched-wrap"><div class="sched">
+        <div class="sched-row sched-head"><div>Officer</div><div>Post</div>${s.days.map(d => `<div>${esc(d)}</div>`).join('')}</div>
+        ${rows.map(r => `
+        <div class="sched-row">
+          <div>${esc(r.officer)}${sup ? `<small class="sched-owner">${r.owner ? 'Login: ' + esc(r.owner) : 'Not assigned'}</small>` : ''}</div>
+          <div>${esc(r.post)}</div>
+          ${s.days.map((day, i) => `<div data-day="${esc(day)}"${/^off$/i.test(r.days[i] || '') ? ' class="is-off"' : ''}>${esc(r.days[i] ?? '')}</div>`).join('')}
+        </div>`).join('')}
+      </div></div>` : empty(sup ? 'No schedule rows yet. Click Edit schedule to add some.' : 'No shifts are assigned to you this week. Contact your supervisor if this looks wrong.')}
+      ${s.note ? `<p class="muted small-note">${esc(s.note)}</p>` : ''}`;
+  }
+
+  // Roles: the Site Owner, Chief and Assistant Chief have unrestricted access. Supervisors and Captains
+  // manage the schedule, posts, BOLOs, time off and site photos; Internal Affairs sees reported concerns,
+  // Captains see quote requests, HR sees job applications
+  const FULL = ['owner', 'chief', 'asst_chief'];
+  const isFull = role => FULL.includes(role);
+  const isSup = role => isFull(role) || ['supervisor', 'captain'].includes(role);
+  const seesReports = role => isFull(role) || role === 'ia';
+  const seesQuotes = role => isFull(role) || role === 'captain';
+  const seesApps = role => isFull(role) || role === 'hr';
+  const RANK = { employee: 0, dispatcher: 0, support: 0, supervisor: 1, ia: 1, hr: 2, captain: 2, asst_chief: 3, chief: 4, owner: 5 };
+  const rank = r => RANK[r] ?? 0;
+  const canStaff = role => isSup(role) || role === 'hr';
+  // Staff tab, creating logins: the unrestricted roles can add any role (only the Site Owner can add a
+  // Site Owner); Captains can add every role below them; supervisors and HR can't add HR, Internal Affairs
+  // or Captain logins.
+  const RESTRICTED = ['hr', 'ia', 'captain'];
+  const creatableRoles = role => role === 'owner' ? Object.keys(RANK)
+    : isFull(role) ? Object.keys(RANK).filter(r => r !== 'owner')
+    : canStaff(role) ? Object.keys(RANK).filter(r => rank(r) < rank(role) && (!RESTRICTED.includes(r) || role === 'captain'))
+    : [];
+  // Editing, resetting and removing: HR, Captains and the unrestricted roles can do this to every login,
+  // except that only the Site Owner can change the Site Owner login. Supervisors can only issue temporary
+  // passwords to lower ranks.
+  const EDITORS = ['owner', 'chief', 'asst_chief', 'captain', 'hr'];
+  const canEdit = (role, target) => EDITORS.includes(role) && (target !== 'owner' || role === 'owner');
+  const canManage = (role, target) => EDITORS.includes(role) ? canEdit(role, target) : canStaff(role) && rank(target) < rank(role);
+  const canRemove = canEdit;
+
+  function renderPortal(role){
+    const sup = isSup(role), reports = seesReports(role);
+    renderSchedule(sup);
+    fill('postList', db.list('posts').map(p => `
+      <article class="post">
+        <div class="post-meta">${tag(p.tag)}<span>${esc(fmtDate(p.date))}</span></div>
+        <h3>${esc(p.title)}</h3>
+        <p>${esc(p.body).replace(/\n/g, '<br>')}</p>
+        ${sup ? btns([['Edit', 'edit:posts', p.id], ['Delete', 'del:posts', p.id, 'danger']]) : ''}
+      </article>`).join('') || empty('No posts yet.'));
+
+    fill('boloList', db.list('bolos').map(b => `
+      <article class="bolo">
+        <div class="bolo-img${b.img ? ' has-img' : ''}"${b.img ? ` style="background-image:url('${esc(b.img)}')"` : ''}><span class="bolo-noimg">No photo</span></div>
+        <div class="bolo-body">
+          <div class="post-meta">${tag(b.status)}<span>Issued ${esc(fmtDate(b.issued))}</span></div>
+          <h3>${esc(b.title)}</h3>
+          ${dl([['Description', b.description], ['Vehicle / plate', b.vehicle], ['Last seen', b.lastSeen], ['Reason', b.reason], ['Action', b.action]])}
+          ${sup ? btns([['Edit', 'edit:bolos', b.id],
+            [b.status === 'Active' ? 'Mark resolved' : 'Mark active', 'status:bolos', b.id, '', b.status === 'Active' ? 'Resolved' : 'Active'],
+            ['Delete', 'del:bolos', b.id, 'danger']]) : ''}
+        </div>
+      </article>`).join('') || empty('No BOLOs at this time.'));
+
+    // keep any note a supervisor is still typing when the list re-renders
+    const noteDrafts = Object.fromEntries([...document.querySelectorAll('#allTimeoff [data-note], #appList [data-note]')].map(t => [t.dataset.note, t.value]));
+    const timeoffCard = (r, manage) => `
+      <div class="rec">
+        <div class="rec-head"><b>${esc(r.name)}</b>${tag(r.status)}</div>
+        ${dl([['Dates', `${fmtDate(r.start)} – ${fmtDate(r.end)}`], ['Type', r.type], ['Employee ID', r.employeeId], ['Notes', r.notes],
+              ['Submitted', fmtTime(r.at) + (r.by ? ` by ${r.by}` : '')], ['Decision', r.decidedBy ? `${r.status} by ${r.decidedBy}` : ''],
+              ['Supervisor note', !manage && r.note ? `${r.note}${r.noteBy ? ` (${r.noteBy})` : ''}` : '']])}
+        ${manage ? `
+        <label class="field rec-note"><span>Supervisor note (shown to the employee)</span>
+          <textarea data-note="${r.id}" rows="2" placeholder="Reason for approving or denying this request">${esc(noteDrafts[r.id] ?? r.note ?? '')}</textarea></label>
+        ${btns([['Approve', 'status:timeoff', r.id, '', 'Approved'], ['Deny', 'status:timeoff', r.id, '', 'Denied'],
+                ['Save note', 'note:timeoff', r.id], ['Delete', 'del:timeoff', r.id, 'danger']])}`
+          : btns([['Delete request', 'del:timeoff', r.id, 'danger']])}
+      </div>`;
+    // Pending requests stay on top; once decided they move into Approved / Denied dropdowns
+    const grouped = (boxId, list, card, emptyMsg, first = 'Pending', drops = [['Approved', 'is-approved'], ['Denied', 'is-denied']]) => {
+      if (!list.length) return empty(emptyMsg);
+      const open = new Set([...document.querySelectorAll(`#${boxId} details[open]`)].map(d => d.dataset.group));
+      const of = s => list.filter(r => r.status === s);
+      const cards = items => items.map(r => card(r)).join('');
+      const top = of(first);
+      const dropdown = (status, cls) => {
+        const items = of(status);
+        return `
+        <details class="rec-group ${cls}" data-group="${status}"${open.has(status) ? ' open' : ''}>
+          <summary>${status} <span class="count">${items.length}</span></summary>
+          <div class="rec-list">${cards(items) || empty(`Nothing in ${status} yet.`)}</div>
+        </details>`;
+      };
+      return `
+        <div class="rec-sub">
+          <h4>${first} <span class="count">${top.length}</span></h4>
+          <div class="rec-list">${cards(top) || empty(`Nothing ${first.toLowerCase()} right now.`)}</div>
+        </div>
+        ${drops.map(([status, cls]) => dropdown(status, cls)).join('')}`;
+    };
+    // everyone sees only their own requests; the full list is only ever rendered for supervisors
+    const reqs = db.list('timeoff');
+    fill('myTimeoff', grouped('myTimeoff', reqs.filter(r => r.by && r.by === currentUser), r => timeoffCard(r, false), 'You have no time-off requests.'));
+    fill('allTimeoff', sup ? grouped('allTimeoff', reqs, r => timeoffCard(r, true), 'No time-off requests yet.') : '');
+
+    // Quote requests from the public site: only ever rendered for Captains, the Assistant Chief and the Chief
+    const quotes = seesQuotes(role) ? db.list('quotes') : [];
+    const newQuotes = quotes.filter(q => q.status === 'New').length;
+    fill('quoteCount', newQuotes ? String(newQuotes) : '');
+    const quoteCard = q => `
+      <div class="rec">
+        <div class="rec-head"><b>${esc(q.name)}${q.company ? ` · ${esc(q.company)}` : ''}</b>${tag(q.status)}</div>
+        <div class="quote-contact">
+          ${q.email ? `<a href="mailto:${esc(q.email)}">${esc(q.email)}</a>` : ''}
+          ${q.phone ? `<a href="tel:${esc(q.phone.replace(/[^\d+]/g, ''))}">${esc(q.phone)}</a>` : ''}
+        </div>
+        ${dl([['Service', q.service], ['Details', q.message], ['Received', fmtTime(q.at)], ['Status', q.decidedBy ? `${q.status} by ${q.decidedBy}` : '']])}
+        ${btns([...[['Mark contacted', 'Contacted'], ['Close', 'Closed'], ['Reopen', 'New']].filter(([, s]) => s !== q.status)
+                  .map(([label, s]) => [label, 'status:quotes', q.id, '', s]),
+                ['Delete', 'del:quotes', q.id, 'danger']])}
+      </div>`;
+    // Job applications from the Apply Now page: only ever rendered for HR, the Assistant Chief and the Chief
+    const apps = seesApps(role) ? db.list('applications') : [];
+    const newApps = apps.filter(a => a.status === 'New').length;
+    fill('appCount', newApps ? String(newApps) : '');
+    const appCard = a => `
+      <div class="rec">
+        <div class="rec-head"><b>${esc(a.name)}</b><span class="rec-tags"><span class="tag tag-muted">${esc(a.position)}</span>${tag(a.status)}</span></div>
+        <div class="quote-contact">
+          ${a.email ? `<a href="mailto:${esc(a.email)}">${esc(a.email)}</a>` : ''}
+          ${a.phone ? `<a href="tel:${esc(a.phone.replace(/[^\d+]/g, ''))}">${esc(a.phone)}</a>` : ''}
+          <span class="muted">${esc([a.city, a.state].filter(Boolean).join(', '))}</span>
+        </div>
+        ${dl([['Employment', a.employmentType], ['Start date', fmtDate(a.startDate)], ['Availability', a.availability], ['18 or older', a.age18],
+              ['Ohio license', [a.license, a.licenseNumber].filter(Boolean).join(' · ')], ['Firearms', a.firearms], ['Transportation', a.transport],
+              ['Experience', a.experience], ['Background', a.background], ['Last employer', a.prevEmployer], ['References', a.references],
+              ['Why Lycan', a.about], ['Received', fmtTime(a.at)], ['Status', a.decidedBy ? `${a.status} by ${a.decidedBy}` : '']])}
+        ${a.resume?.data ? `<p class="resume-link"><a href="${esc(a.resume.data)}" download="${esc(a.resume.name)}">Download résumé: ${esc(a.resume.name)} (${Math.max(1, Math.round(a.resume.size / 1024))} KB)</a></p>` : ''}
+        <label class="field rec-note"><span>HR notes (internal, not shown to the applicant)</span>
+          <textarea data-note="${a.id}" rows="2" placeholder="Interview notes, follow-ups, background check status">${esc(noteDrafts[a.id] ?? a.note ?? '')}</textarea></label>
+        ${btns([...[['Interview', 'Interviewing'], ['Hire', 'Hired'], ['Not selected', 'Not Selected'], ['Reopen', 'New']].filter(([, s]) => s !== a.status)
+                  .map(([label, s]) => [label, 'status:applications', a.id, '', s]),
+                ['Save note', 'note:applications', a.id], ['Delete', 'del:applications', a.id, 'danger']])}
+      </div>`;
+    fill('appList', seesApps(role)
+      ? grouped('appList', apps, appCard, 'No applications yet. Submissions from the website\'s Apply Now page appear here.', 'New',
+                [['Interviewing', 'is-contacted'], ['Hired', 'is-approved'], ['Not Selected', 'is-closed']])
+      : '');
+
+    fill('quoteList', seesQuotes(role)
+      ? grouped('quoteList', quotes, quoteCard, 'No quote requests yet. Submissions from the website\'s quote form appear here.', 'New', [['Contacted', 'is-contacted'], ['Closed', 'is-closed']])
+      : '');
+
+    fill('complaintList', reports ? db.list('complaints').map(c => `
+      <div class="rec">
+        <div class="rec-head"><b>${esc(c.category)}</b>${tag(c.status)}</div>
+        ${dl([['Submitted', fmtTime(c.at)], ['Reported by', c.name || 'Anonymous'], ['Contact', c.contact], ['Incident date', fmtDate(c.date)],
+              ['Location / post', c.location], ['People involved', c.involved], ['What happened', c.details],
+              ['Status', c.decidedBy ? `${c.status} by ${c.decidedBy}` : '']])}
+        ${btns([['Mark reviewed', 'status:complaints', c.id, '', 'Reviewed'], ['Close', 'status:complaints', c.id, '', 'Closed'],
+                ['Reopen', 'status:complaints', c.id, '', 'Open'], ['Delete', 'del:complaints', c.id, 'danger']])}
+      </div>`).join('') || empty('No reports have been submitted.') : '');
+
+    // Staff logins (supervisors and up): every login with its phone and emergency contacts
+    const roles = creatableRoles(role), staff = canStaff(role), roleSel = $('staffRole');
+    if (roleSel) {
+      const cur = roleSel.value;
+      roleSel.innerHTML = roles.map(r => `<option value="${r}">${ROLE_NAMES[r]}</option>`).join('');
+      if (roles.includes(cur)) roleSel.value = cur;
+    }
+    const tempInput = $('staffForm')?.elements.namedItem('temp');
+    if (staff && tempInput && !tempInput.value) tempInput.value = genTemp();
+    const profiles = staff ? db.load().profiles || {} : {};
+    const tel = n => `<a href="tel:${esc(String(n).replace(/[^\d+]/g, ''))}">${esc(n)}</a>`;
+    fill('staffList', staff ? getAccounts().map(a => {
+      const self = a.user === currentUser;
+      const edit = !self && canEdit(role, a.role), manage = !self && canManage(role, a.role), remove = !self && canRemove(role, a.role);
+      const p = profiles[a.user] || {}, contacts = (p.emergency || []).filter(c => c.name || c.phone);
+      return `
+      <div class="rec" data-search="${esc([a.name, a.user, a.badge, ROLE_NAMES[a.role]].filter(Boolean).join(' ').toLowerCase())}">
+        <div class="rec-head"><b>${esc(a.name || a.user)}${a.badge ? ` <span class="badge-no">#${esc(a.badge)}</span>` : ''}</b>${tag(needsReset(a) ? 'Temporary password' : 'Password set')}</div>
+        ${dl([['Username', a.user], ['Badge number', a.badge], ['Role', ROLE_NAMES[a.role] || 'Officer'], ['Created', a.createdBy ? `${fmtTime(a.at)} by ${a.createdBy}` : 'By the site owner']])}
+        <div class="staff-contact">
+          <div><small>Phone</small>${p.phone ? tel(p.phone) : '<span class="muted">Not provided</span>'}</div>
+          <div><small>Emergency contacts</small>${contacts.length
+            ? contacts.map(c => `<span>${esc(c.name || 'Contact')}${c.relation ? ` (${esc(c.relation)})` : ''}${c.phone ? ' · ' + tel(c.phone) : ''}</span>`).join('')
+            : '<span class="muted">Not provided</span>'}</div>
+        </div>
+        ${edit || manage || remove ? `
+        <div class="rec-actions">
+          ${edit ? `<button type="button" data-staff="edit" data-id="${esc(a.user)}">Edit</button>` : ''}
+          ${manage ? `<button type="button" data-staff="temp" data-id="${esc(a.user)}">Issue temporary password</button>` : ''}
+          ${remove ? `<button type="button" class="danger" data-staff="del" data-id="${esc(a.user)}">Remove login</button>` : ''}
+        </div>` : ''}
+      </div>`;
+    }).join('') : '');
+    filterStaff();
+    // the "give these to…" box disappears once that person has signed in and set their own password
+    if (createdFor) { const c = getAccounts().find(a => a.user === createdFor); if (!c || !needsReset(c)) clearCreated(); }
+
+    const photos = db.list('gallery');
+    fill('photoAdmin', sup ? photos.map((p, i) => `
+      <div class="photo-card">
+        <div class="photo-thumb" style="background-image:url('${esc(p.img)}')"></div>
+        <input class="photo-cap" data-photo="caption" data-id="${p.id}" value="${esc(p.caption)}" placeholder="Add a caption" aria-label="Caption">
+        <div class="rec-actions">
+          <button type="button" data-photo="left" data-id="${p.id}"${i ? '' : ' disabled'}>← Earlier</button>
+          <button type="button" data-photo="right" data-id="${p.id}"${i < photos.length - 1 ? '' : ' disabled'}>Later →</button>
+          <button type="button" class="danger" data-photo="del" data-id="${p.id}">Delete</button>
+        </div>
+      </div>`).join('') || empty('No photos on the public site yet. Add some above.') : '');
+  }
+
+  // Public Photo Gallery: supervisors' photos, or "coming soon" tiles until there are some
+  function renderGallery(){
+    const photos = db.list('gallery');
+    fill('galleryGrid', photos.length ? photos.map(p => `
+      <figure class="gallery-item">
+        <button type="button" class="gallery-open" data-gallery="${p.id}" aria-label="View photo${p.caption ? ': ' + esc(p.caption) : ''}">
+          <img src="${esc(p.img)}" alt="${esc(p.caption || 'Lycan Division photo')}" loading="lazy">
+        </button>
+        ${p.caption ? `<figcaption>${esc(p.caption)}</figcaption>` : ''}
+      </figure>`).join('')
+      : [1, 2, 3].map(() => `<figure class="gallery-item"><div class="gallery-placeholder" aria-hidden="true">${LOGO_SVG}<span>Photos coming soon</span></div></figure>`).join(''));
+  }
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-gallery]'); if (!b) return;
+    const p = db.list('gallery').find(x => x.id === b.dataset.gallery); if (!p) return;
+    $('lbImg').src = p.img; $('lbImg').alt = p.caption || 'Lycan Division photo';
+    $('lbCap').textContent = p.caption || '';
+    $('lightbox').showModal();
+  });
+  $('lightbox').addEventListener('click', e => { if (e.target === $('lightbox')) $('lightbox').close(); });
+
+  // Show the portal for the signed-in account; employees only see schedule rows assigned to them
+  function applyUser(){
+    const a = currentUser && getAccounts().find(x => x.user === currentUser);
+    const role = a ? a.role || 'employee' : '';
+    body.classList.toggle('portal-authed', !!a);
+    body.classList.toggle('role-sup', isSup(role));
+    body.classList.toggle('role-staff', canStaff(role));
+    body.classList.toggle('role-reports', seesReports(role));
+    body.classList.toggle('role-quotes', seesQuotes(role));
+    body.classList.toggle('role-apps', seesApps(role));
+    site.querySelectorAll('.whoami').forEach(n => n.textContent = a ? `Signed in as ${a.name || a.user}` : '');
+    const tf = site.querySelector('[data-form=timeoff]');
+    if (tf && (!a || !tf.name.value)) tf.name.value = a ? (a.name || a.user) : '';
+    renderPortal(role);
+    if (profileFor !== currentUser) { profileFor = currentUser; fillProfile(); }
+  }
+
+  // My Profile: contact details, address and emergency contacts, private to each login
+  const PROFILE_FIELDS = ['fullName', 'phone', 'email', 'street', 'city', 'state', 'zip'];
+  function renderEmg(list){
+    fill('emgList', list.map(c => `
+      <div class="emg-row">
+        <label class="field"><span>Name</span><input data-ef="name" value="${esc(c.name)}" autocomplete="off"></label>
+        <label class="field"><span>Relationship</span><input data-ef="relation" value="${esc(c.relation)}" autocomplete="off"></label>
+        <label class="field"><span>Phone</span><input data-ef="phone" type="tel" value="${esc(c.phone)}" autocomplete="off"></label>
+        <button type="button" class="sched-del" data-profile="del-emg" title="Remove contact" aria-label="Remove contact">✕</button>
+      </div>`).join(''));
+  }
+  const collectEmg = () => [...document.querySelectorAll('#emgList .emg-row')].map(r =>
+    Object.fromEntries([...r.querySelectorAll('[data-ef]')].map(i => [i.dataset.ef, i.value.trim()])));
+
+  function fillProfile(){
+    const f = $('profileForm'); if (!f) return;
+    const p = (currentUser && (db.load().profiles || {})[currentUser]) || {};
+    const acct = currentUser && getAccounts().find(a => a.user === currentUser);
+    PROFILE_FIELDS.forEach(k => f.elements.namedItem(k).value = p[k] || '');
+    if (!p.fullName && acct) f.elements.namedItem('fullName').value = acct.name || '';
+    renderEmg(p.emergency && p.emergency.length ? p.emergency : [{}]);
+    f.querySelector('.form-status').textContent = '';
+    $('passwordForm').reset();
+    $('passwordForm').querySelector('.form-status').textContent = '';
+  }
+
+  function saveProfile(form){
+    const st = form.querySelector('.form-status');
+    st.className = 'form-status';
+    if (!currentUser) { st.textContent = 'Please sign in again.'; st.classList.add('err'); return; }
+    const email = form.elements.namedItem('email');
+    if (!email.checkValidity()) { st.textContent = 'Please enter a valid email address.'; st.classList.add('err'); email.focus(); return; }
+    const p = Object.fromEntries(PROFILE_FIELDS.map(k => [k, form.elements.namedItem(k).value.trim()]));
+    p.emergency = collectEmg().filter(c => c.name || c.phone);
+    p.updatedAt = new Date().toISOString();
+    const d = db.load();
+    (d.profiles = d.profiles || {})[currentUser] = p;
+    if (!db.write(d)) return;
+    renderEmg(p.emergency.length ? p.emergency : [{}]);
+    st.textContent = 'Profile saved.'; st.classList.add('ok');
+  }
+
+  async function changePassword(form){
+    const st = form.querySelector('.form-status');
+    st.className = 'form-status';
+    const fail = msg => { st.textContent = msg; st.classList.add('err'); };
+    const a = currentUser && getAccounts().find(x => x.user === currentUser);
+    if (!a) return fail('Please sign in again.');
+    if (!window.crypto?.subtle) return fail('Changing passwords needs the site to be served over https.');
+    const val = k => form.elements.namedItem(k).value;
+    if (await passHash(a.user, val('current')) !== passFor(a)) return fail('Your current password is incorrect.');
+    if (val('newPass').length < 8) return fail('Use at least 8 characters for your new password.');
+    if (val('newPass') !== val('confirmPass')) return fail('The new passwords do not match.');
+    if (val('newPass') === val('current')) return fail('Choose a password different from your current one.');
+    const d = db.load();
+    (d.passwords = d.passwords || {})[a.user] = await passHash(a.user, val('newPass'));
+    if (!db.write(d)) return;
+    form.reset();
+    st.textContent = 'Password updated. Use your new password next time you sign in.'; st.classList.add('ok');
+  }
+
+  site.addEventListener('click', e => {
+    const b = e.target.closest('[data-profile]'); if (!b) return;
+    const list = collectEmg();
+    if (b.dataset.profile === 'add-emg') list.push({});
+    else list.splice([...document.querySelectorAll('#emgList .emg-row')].indexOf(b.closest('.emg-row')), 1);
+    renderEmg(list.length ? list : [{}]);
+    if (b.dataset.profile === 'add-emg') document.querySelector('#emgList .emg-row:last-child input')?.focus();
+  });
+  function setUser(user){
+    if (user !== currentUser) clearCreated();   // never leave a temporary password on screen after sign-out
+    currentUser = user;
+    schedDraft = null;
+    try { user ? sessionStorage.setItem(AUTH, user) : sessionStorage.removeItem(AUTH); } catch {}
+    applyUser();
+  }
+
+  async function login(form){
+    const status = form.querySelector('.form-status');
+    status.className = 'form-status';
+    if (!window.crypto?.subtle) { status.textContent = 'Sign-in needs the site to be served over https.'; status.classList.add('err'); return; }
+    const user = form.username.value.trim().toLowerCase();
+    const acct = getAccounts().find(a => a.user === user);
+    if (acct && passFor(acct) === await passHash(user, form.password.value)) {
+      form.reset();
+      if (needsReset(acct)) {
+        // signed in with a temporary password: they must choose their own before entering the portal
+        pendingReset = user;
+        $('resetWho').textContent = acct.name || user;
+        $('resetForm').reset();
+        $('resetForm').querySelector('.form-status').textContent = '';
+        body.classList.add('portal-reset');
+        $('resetForm').elements.namedItem('newPass').focus();
+        return;
+      }
+      setUser(user); showTab('schedule'); window.scrollTo(0, 0);
+    } else {
+      status.textContent = 'Incorrect username or password.'; status.classList.add('err'); form.password.value = '';
+    }
+  }
+
+  function endReset(){ pendingReset = null; body.classList.remove('portal-reset'); }
+
+  async function finishReset(form){
+    const st = form.querySelector('.form-status');
+    st.className = 'form-status';
+    const fail = msg => { st.textContent = msg; st.classList.add('err'); };
+    st.textContent = '';
+    const a = pendingReset && getAccounts().find(x => x.user === pendingReset);
+    if (!a) { endReset(); return; }
+    const nw = form.elements.namedItem('newPass').value, cf = form.elements.namedItem('confirmPass').value;
+    if (nw.length < 8) return fail('Use at least 8 characters.');
+    if (nw !== cf) return fail('The passwords do not match.');
+    const hash = await passHash(a.user, nw);
+    if (hash === passFor(a)) return fail('Choose a password different from your temporary one.');
+    const d = db.load();
+    (d.passwords = d.passwords || {})[a.user] = hash;
+    (d.tempReset = d.tempReset || {})[a.user] = false;
+    if (!db.write(d)) return;
+    endReset(); setUser(a.user); showTab('schedule'); window.scrollTo(0, 0);
+    toast('Password set. Welcome to the portal!');
+  }
+
+  function clearCreated(){ createdFor = null; lastCreated = ''; fill('staffCreated', ''); }
+  function showCreated(title, user, temp, name){
+    createdFor = user;
+    lastCreated = `Lycan Division Employee Portal\nUsername: ${user}\nTemporary password: ${temp}\nYou will be asked to choose your own password when you first sign in.`;
+    fill('staffCreated', `
+      <div class="created-box" role="status">
+        <small>${esc(title)}</small>
+        <div>Give these to <b>${esc(name)}</b>:</div>
+        <div>Username: <code>${esc(user)}</code></div>
+        <div>Temporary password: <code>${esc(temp)}</code></div>
+        <p>They will be asked to choose their own password the first time they sign in. This password is not shown again.</p>
+        <div class="rec-actions"><button type="button" data-staff="copy">Copy details</button></div>
+      </div>`);
+    $('staffCreated').scrollIntoView({ block: 'nearest' });
+  }
+
+  // another tab changed the portal records (for example, a new employee just set their password):
+  // refresh what this tab shows
+  window.addEventListener('storage', e => { if (e.key === DB_KEY) applyUser(); });
+
+  // badge numbers are unique (ignoring capitals); blank is allowed
+  const badgeTaken = (badge, except) => !!badge && getAccounts().some(a => a.user !== except && (a.badge || '').toLowerCase() === badge.toLowerCase());
+
+  // search the Staff list by name, username or badge number
+  function filterStaff(){
+    const q = ($('staffSearch')?.value || '').trim().toLowerCase();
+    let shown = 0;
+    document.querySelectorAll('#staffList .rec').forEach(r => { const hit = !q || r.dataset.search.includes(q); r.hidden = !hit; if (hit) shown++; });
+    const none = $('staffNoMatch'); if (none) none.hidden = !(q && !shown);
+  }
+  $('staffSearch')?.addEventListener('input', filterStaff);
+
+  // Edit a login's name, badge number and role. The role list is what the editor may assign, plus the
+  // login's current role so editing other details never forces a role change.
+  function openStaffEdit(a, myRole){
+    $('staffEditId').value = a.user;
+    $('staffEditUser').textContent = `Username: ${a.user}`;
+    $('staffEditName').value = a.name || '';
+    $('staffEditBadge').value = a.badge || '';
+    const current = a.role || 'employee', options = [...new Set([current, ...creatableRoles(myRole)])];
+    $('staffEditRole').innerHTML = options.map(r => `<option value="${r}">${ROLE_NAMES[r] || r}</option>`).join('');
+    $('staffEditRole').value = current;
+    $('staffEditDlg').returnValue = '';
+    $('staffEditDlg').showModal();
+  }
+  $('staffEditDlg').addEventListener('close', () => {
+    if ($('staffEditDlg').returnValue !== 'save') return;
+    const user = $('staffEditId').value, a = getAccounts().find(x => x.user === user);
+    const myRole = getAccounts().find(x => x.user === currentUser)?.role;
+    if (!a || a.user === currentUser || !canEdit(myRole, a.role)) { toast('Your login cannot change this account.'); return; }
+    const name = $('staffEditName').value.trim(), badge = $('staffEditBadge').value.trim(), role = $('staffEditRole').value;
+    if (!name) { toast('A login needs a name. Nothing was changed.'); return; }
+    if (role !== (a.role || 'employee') && !creatableRoles(myRole).includes(role)) { toast('Your login cannot assign that role.'); return; }
+    if (badgeTaken(badge, user)) { toast(`Badge number ${badge} is already used by another login. Nothing was changed.`); return; }
+    const d = db.load(), patch = { name, badge, role };
+    if (a.src === 'portal') Object.assign((d.accounts || []).find(x => x.user === user) || {}, patch);
+    else (d.acctEdits = d.acctEdits || {})[user] = patch;
+    if (!db.write(d)) return;
+    applyUser(); toast(`Login "${user}" updated`);
+  });
+
+  async function createStaff(form){
+    const st = form.querySelector('.form-status');
+    st.className = 'form-status'; st.textContent = ''; fill('staffCreated', '');
+    const fail = msg => { st.textContent = msg; st.classList.add('err'); };
+    const myRole = getAccounts().find(a => a.user === currentUser)?.role;
+    if (!window.crypto?.subtle) return fail('Creating logins needs the site to be served over https.');
+    const val = k => form.elements.namedItem(k).value.trim();
+    const name = val('fullName'), user = val('username').toLowerCase(), role = val('role'), temp = val('temp'), badge = val('badge');
+    if (!creatableRoles(myRole).includes(role)) return fail('Your login cannot create that role.');
+    if (!name) return fail('Enter the employee\'s full name.');
+    if (!/^[a-z0-9._-]{2,40}$/.test(user)) return fail('Usernames are 2–40 letters, numbers, dots, dashes or underscores.');
+    if (usernameTaken(user)) return fail('That username is already taken.');
+    if (badgeTaken(badge)) return fail(`Badge number ${badge} is already used by another login.`);
+    if (temp.length < 8) return fail('The temporary password must be at least 8 characters.');
+    const d = db.load();
+    (d.accounts = d.accounts || []).push({ user, name, badge, role, pass: await passHash(user, temp), mustReset: true, createdBy: myName(), at: new Date().toISOString() });
+    if (d.passwords) delete d.passwords[user];
+    if (d.tempReset) delete d.tempReset[user];
+    if (!db.write(d)) return;
+    form.reset();
+    applyUser();
+    showCreated('Login created', user, temp, name);
+  }
+
+  site.addEventListener('click', async e => {
+    const b = e.target.closest('[data-staff]'); if (!b) return;
+    const act = b.dataset.staff;
+    if (act === 'gen') { $('staffForm').elements.namedItem('temp').value = genTemp(); return; }
+    if (act === 'copy') {
+      try { await navigator.clipboard.writeText(lastCreated); toast('Login details copied'); }
+      catch { toast('Copy failed. Select the details and copy them by hand.'); }
+      return;
+    }
+    const a = getAccounts().find(x => x.user === b.dataset.id);
+    const myRole = getAccounts().find(x => x.user === currentUser)?.role;
+    const permitted = act === 'del' ? canRemove(myRole, a?.role) : act === 'edit' ? canEdit(myRole, a?.role) : canManage(myRole, a?.role);
+    if (!a || a.user === currentUser || !permitted) { toast('Your login cannot change this account.'); return; }
+    const d = db.load();
+    if (act === 'edit') {
+      openStaffEdit(a, myRole);
+    } else if (act === 'temp') {
+      if (!(await ask(`Issue a new temporary password for ${a.name || a.user}? Their current password will stop working.`, { ok: 'Issue password' }))) return;
+      const temp = genTemp();
+      (d.passwords = d.passwords || {})[a.user] = await passHash(a.user, temp);
+      (d.tempReset = d.tempReset || {})[a.user] = true;
+      if (!db.write(d)) return;
+      applyUser();
+      showCreated('New temporary password issued', a.user, temp, a.name || a.user);
+    } else if (act === 'del') {
+      if (!(await ask(`Remove the login "${a.user}" (${a.name || a.user})? They will no longer be able to sign in.`, { ok: 'Remove login', danger: true }))) return;
+      if (a.src === 'portal') d.accounts = (d.accounts || []).filter(x => x.user !== a.user);
+      else d.removed = [...new Set([...(d.removed || []), a.user])];
+      if (d.passwords) delete d.passwords[a.user];
+      if (d.tempReset) delete d.tempReset[a.user];
+      db.write(d);
+      fill('staffCreated', '');
+      applyUser(); toast(`Login "${a.user}" removed`);
+    }
+  });
+
+  function showTab(name){
+    site.querySelectorAll('[data-tab]').forEach(b => b.classList.toggle('is-active', b.dataset.tab === name));
+    site.querySelectorAll('[data-panel]').forEach(p => p.classList.toggle('is-active', p.dataset.panel === name));
+    // on phones the tab row scrolls sideways: keep the chosen tab in view
+    const btn = site.querySelector(`[data-tab="${name}"]`), row = btn?.parentElement;
+    if (row && row.scrollWidth > row.clientWidth) row.scrollTo({ left: btn.offsetLeft - (row.clientWidth - btn.offsetWidth) / 2, behavior: 'smooth' });
+  }
+  showTab('schedule');
+
+  // #employees shows the portal, #apply the application page, anything else the public site
+  function route(){
+    if (location.hash === '#edit') return;
+    const portal = location.hash === '#employees', apply = location.hash === '#apply';
+    const changed = portal !== body.classList.contains('view-portal') || apply !== body.classList.contains('view-apply');
+    body.classList.toggle('view-portal', portal);
+    body.classList.toggle('view-apply', apply);
+    if (changed) {
+      if (apply) body.classList.remove('applied');   // a fresh visit starts with an empty form
+      window.scrollTo(0, 0);
+    }
+  }
+  window.addEventListener('hashchange', route);
+  route();
+  applyUser();
+  renderGallery();
+  site.querySelectorAll('.year').forEach(n => n.textContent = new Date().getFullYear());
+
+  // ---------- visitor behaviour ----------
+  function initReveal(){
+    const els = site.querySelectorAll('.reveal:not(.in)');
+    if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('in')); return; }
+    const io = new IntersectionObserver(entries => entries.forEach(en => {
+      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+    }), { threshold: .12 });
+    els.forEach(e => io.observe(e));
+  }
+  initReveal();
+
+  document.addEventListener('click', e => {
+    const tab = e.target.closest('[data-tab]');
+    if (tab) { showTab(tab.dataset.tab); return; }
+    const pa = e.target.closest('[data-portal]');
+    if (pa) {
+      if (pa.dataset.portal === 'logout') { setUser(null); window.scrollTo(0, 0); }
+      else if (pa.dataset.portal === 'cancel-reset') endReset();
+      else requestEdit();
+      return;
+    }
+    const header = site.querySelector('.site-header');
+    const toggle = e.target.closest('.nav-toggle');
+    if (toggle) {
+      header.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', header.classList.contains('open'));
+      return;
+    }
+    if (!editing && e.target.closest('.nav-links a')) header.classList.remove('open');
+  });
+
+  // Each form sends to its own recipients (set in Settings): an endpoint if given, otherwise email.
+  const FORMS = {
+    quote: {
+      to: 'email', via: 'endpoint',
+      subject: d => `Quote request — ${d.get('name')}${d.get('company') ? ' (' + d.get('company') + ')' : ''}`,
+      sent: "Thank you — your request was sent. We'll be in touch shortly."
+    },
+    timeoff: {
+      to: 'timeoffEmail', via: 'timeoffEndpoint',
+      subject: d => `Time-off request — ${d.get('name')} (${d.get('start')} to ${d.get('end')})`,
+      sent: 'Request submitted. Track its status under My Requests below.'
+    },
+    complaint: {
+      to: 'complaintEmails', via: 'complaintEndpoint',
+      subject: d => `Confidential report — ${d.get('category')}`,
+      sent: 'Your report was submitted confidentially to Internal Affairs and the company owners.'
+    },
+    application: {
+      to: 'careersEmail', via: 'careersEndpoint',
+      subject: d => `Job application — ${d.get('name')} (${d.get('position')})`,
+      sent: 'Application received.'
+    }
+  };
+  const readFile = file => new Promise((resolve, reject) => {
+    const r = new FileReader(); r.onload = () => resolve(r.result); r.onerror = reject; r.readAsDataURL(file);
+  });
+
+  document.addEventListener('submit', async e => {
+    if (e.target.id === 'portalLogin') { e.preventDefault(); login(e.target); return; }
+    if (e.target.id === 'profileForm') { e.preventDefault(); saveProfile(e.target); return; }
+    if (e.target.id === 'passwordForm') { e.preventDefault(); changePassword(e.target); return; }
+    if (e.target.id === 'resetForm') { e.preventDefault(); finishReset(e.target); return; }
+    if (e.target.id === 'staffForm') { e.preventDefault(); createStaff(e.target); return; }
+    const form = e.target.closest('[data-form]');
+    if (!form) return;
+    e.preventDefault();
+    if (editing) { toast('Forms are disabled while editing'); return; }
+    const spec = FORMS[form.dataset.form];
+    const status = form.querySelector('.form-status');
+    status.className = 'form-status';
+    const fail = msg => { status.textContent = msg; status.classList.add('err'); };
+    // browsers count spaces-only answers as filled in; treat them as empty
+    form.querySelectorAll('input[required]:not([type=file]):not([type=checkbox]), textarea[required]').forEach(el => { if (!el.value.trim()) el.value = ''; });
+    if (!form.checkValidity()) {
+      fail('Please fill in the required fields (marked *).');
+      form.querySelector(':invalid')?.focus();
+      return;
+    }
+    const data = new FormData(form);
+    const kind = form.dataset.form, portalForm = kind === 'timeoff' || kind === 'complaint';
+    // every form keeps a record in the portal: time off for supervisors, reports for Internal Affairs
+    // and the owners, quote requests for Captains and the Chiefs, applications for HR and the Chiefs
+    const rec = {};
+    for (const k of new Set(data.keys())) {
+      const vals = data.getAll(k).filter(v => typeof v === 'string' && v);   // checkbox groups become "a, b, c"
+      if (vals.length) rec[k] = vals.join(', ');
+    }
+    if (kind === 'application') {
+      const file = form.elements.namedItem('resume')?.files[0];   // required
+      if (!file) { fail('Please attach your résumé (PDF or Word).'); form.elements.namedItem('resume').focus(); return; }
+      if (file.size > 1024 * 1024) { fail('Your résumé must be under 1 MB. Try saving it as a PDF.'); return; }
+      try { rec.resume = { name: file.name, type: file.type, size: file.size, data: await readFile(file) }; }
+      catch { fail('That résumé file could not be read. Please try another file.'); return; }
+    }
+    const saved = kind === 'timeoff' ? db.add('timeoff', { ...rec, by: currentUser, status: 'Pending' })
+      : kind === 'complaint' ? db.add('complaints', { ...rec, status: 'Open' })
+      : kind === 'application' ? db.add('applications', { ...rec, status: 'New' })
+      : db.add('quotes', { ...rec, status: 'New' });
+    if (!saved) { fail(portalForm ? 'Could not save. Please contact a supervisor directly.' : 'Sorry, something went wrong. Please call us directly.'); return; }
+    const done = () => {
+      status.textContent = spec.sent; status.classList.add('ok'); form.reset(); applyUser();
+      if (kind === 'application') { body.classList.add('applied'); window.scrollTo(0, 0); }
+    };
+    const endpoint = cfg[spec.via], to = cfg[spec.to].replace(/\s+/g, '');
+    const realTo = to && !/your-domain\.com/i.test(to);   // skip placeholder addresses
+    if (endpoint) {
+      const btn = form.querySelector('[type=submit]');
+      btn.disabled = true; status.textContent = 'Sending…';
+      try {
+        data.append('_subject', spec.subject(data));
+        const r = await fetch(endpoint, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+        if (!r.ok) throw new Error(r.status);
+        done();
+      } catch {
+        fail('Your request was saved, but the email copy could not be sent.');
+      } finally { btn.disabled = false; }
+    } else if (realTo) {
+      const label = k => (form.querySelector(`[name="${k}"]`)?.closest('.field')?.querySelector('span')?.textContent || k).replace(/\s*\*$/, '');
+      const lines = Object.entries(rec).filter(([k]) => k !== 'resume').map(([k, v]) => `${label(k)}: ${v}`).join('\n');
+      location.href = `mailto:${to}?subject=${encodeURIComponent(spec.subject(data))}&body=${encodeURIComponent(lines)}`;
+      done();
+    } else {
+      done();
+    }
+  });
+
+  // ---------- editor ----------
+  let editing = false, saveTimer = null, lastEl = null, imgTarget = null, pendingSrc = null;
+  const statusEl = $('ebStatus');
+  const IMG_ICON = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>';
+  const mk = (tag, cls, text) => { const n = document.createElement(tag); n.className = cls; if (text) n.textContent = text; return n; };
+
+  function toast(msg){
+    const t = $('toast'); t.textContent = msg; t.classList.add('show');
+    clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove('show'), 2800);
+  }
+
+  function addItemCtrl(item){
+    const c = mk('div', 'edit-ui item-ctrl');
+    c.contentEditable = 'false';
+    [['up', '↑', 'Move earlier'], ['dup', '⧉', 'Duplicate'], ['del', '✕', 'Delete']].forEach(([act, label, title]) => {
+      const b = mk('button', '', label); b.type = 'button'; b.dataset.act = act; b.title = title; c.appendChild(b);
+    });
+    item.appendChild(c);
+  }
+
+  function addEditUI(){
+    site.querySelectorAll('[data-e]').forEach(el => { el.contentEditable = 'true'; });
+    site.querySelectorAll('[data-item]').forEach(addItemCtrl);
+    site.querySelectorAll('[data-list]').forEach(list => {
+      const isList = /^(UL|OL)$/.test(list.tagName);
+      const b = mk(isList ? 'li' : 'button', 'edit-ui add-item', '+ Add');
+      b.dataset.act = 'add'; if (!isList) b.type = 'button'; else b.setAttribute('role', 'button');
+      list.appendChild(b);
+    });
+    site.querySelectorAll('[data-img]').forEach(el => {
+      const b = mk('button', 'edit-ui img-btn');
+      b.innerHTML = IMG_ICON + (el.dataset.img === 'logo' ? '' : ' Change image');
+      b.type = 'button'; b.dataset.act = 'img'; b.title = 'Change image';
+      el.appendChild(b);
+    });
+  }
+  function removeEditUI(scope = site){
+    scope.querySelectorAll('.edit-ui').forEach(n => n.remove());
+    scope.querySelectorAll('[contenteditable]').forEach(n => n.removeAttribute('contenteditable'));
+  }
+  function refreshEditUI(){ removeEditUI(); if (editing) addEditUI(); }
+
+  function cleanHTML(){
+    const c = site.cloneNode(true);
+    removeEditUI(c);
+    c.querySelectorAll('.reveal.in').forEach(n => n.classList.remove('in'));
+    c.querySelectorAll('.is-active').forEach(n => n.classList.remove('is-active'));
+    c.querySelectorAll('.form-status').forEach(n => { n.textContent = ''; n.className = 'form-status'; });
+    c.querySelectorAll('.whoami,[data-render]').forEach(n => { n.textContent = ''; });
+    c.querySelector('.site-header')?.classList.remove('open');
+    return c.innerHTML;
+  }
+
+  function stamp(){ return new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }); }
+  function save(announce){
+    clearTimeout(saveTimer);
+    const ok = store.set(KEY, { html: cleanHTML(), cfg, t: Date.now() });
+    statusEl.textContent = ok ? 'Draft saved ' + stamp() : 'Not saved: storage full';
+    if (announce) toast(ok ? 'Saved in this browser. Use Export HTML to publish.' : 'Browser storage is full. Remove large images or Export HTML now.');
+    return ok;
+  }
+  function changed(){
+    statusEl.textContent = 'Saving…';
+    clearTimeout(saveTimer); saveTimer = setTimeout(() => save(false), 700);
+  }
+
+  // Every way into the site editor asks for the editor password first
+  const editorHash = pw => sha256('lycan-editor:' + pw);
+  let unlocking = false;
+  async function requestEdit(){
+    if (editing || unlocking) return;
+    const leave = () => { if (location.hash === '#edit') history.replaceState(null, '', location.pathname + location.search); };
+    if (!window.crypto?.subtle) { toast('The editor needs the site to be served over https.'); leave(); return; }
+    unlocking = true;
+    const pw = await ask('Enter the site editor password:', { ok: 'Unlock editor', input: '', type: 'password' });
+    unlocking = false;
+    if (pw === null) { leave(); return; }
+    if (await editorHash(pw) !== cfg.editorPass) { toast('Incorrect editor password.'); leave(); return; }
+    enterEdit();
+  }
+
+  function enterEdit(){
+    if (editing) return;
+    editing = true;
+    body.classList.add('editing');
+    site.querySelectorAll('.reveal').forEach(n => n.classList.add('in'));
+    addEditUI();
+    statusEl.textContent = store.get(KEY) ? 'Draft loaded' : 'No changes yet';
+    if (!store.get(HELP_KEY)) { $('helpDlg').showModal(); store.set(HELP_KEY, 1); }
+  }
+  function exitEdit(){
+    if (!editing) return;
+    save(false);
+    editing = false;
+    body.classList.remove('editing');
+    removeEditUI();
+    if (location.hash === '#edit') history.replaceState(null, '', location.pathname + location.search);
+    toast('Editor closed. Your draft is saved in this browser.');
+  }
+
+  // clicks inside the site while editing: item controls, and no link navigation
+  site.addEventListener('click', e => {
+    if (!editing) return;
+    const btn = e.target.closest('[data-act]');
+    if (btn) { e.preventDefault(); e.stopPropagation(); itemAction(btn); return; }
+    if (e.target.closest('a')) e.preventDefault();
+  }, true);
+
+  function itemAction(btn){
+    const act = btn.dataset.act;
+    if (act === 'img') { openImage(btn.parentElement); return; }
+    if (act === 'add') {
+      const list = btn.closest('[data-list]');
+      const items = list.querySelectorAll(':scope > [data-item]');
+      const src = items[items.length - 1];
+      if (src) insertCopy(src);
+      return;
+    }
+    const item = btn.closest('[data-item]');
+    if (act === 'dup') insertCopy(item);
+    if (act === 'up') {
+      const prev = item.previousElementSibling;
+      if (prev && prev.matches('[data-item]')) { item.parentNode.insertBefore(item, prev); changed(); }
+    }
+    if (act === 'del') {
+      const siblings = item.parentNode.querySelectorAll(':scope > [data-item]');
+      if (siblings.length <= 1) { toast("Keep at least one item. Edit its text instead."); return; }
+      ask('Delete this item?', { ok: 'Delete', danger: true }).then(yes => { if (yes) { item.remove(); changed(); } });
+    }
+  }
+  function insertCopy(src){
+    const copy = src.cloneNode(true);
+    src.after(copy);
+    refreshEditUI();
+    copy.querySelector('[data-e]')?.focus();
+    changed();
+  }
+
+  site.addEventListener('input', () => { if (editing) changed(); });
+  site.addEventListener('focusin', e => { if (editing) { const el = e.target.closest('[data-e]'); if (el) lastEl = el; } });
+  site.addEventListener('keydown', e => {
+    if (!editing || e.key !== 'Enter') return;
+    const el = e.target.closest('[data-e]');
+    if (!el) return;
+    e.preventDefault();
+    if (el.tagName === 'P') document.execCommand('insertLineBreak');
+  });
+  site.addEventListener('paste', e => {
+    if (!editing || !e.target.closest('[data-e]')) return;
+    e.preventDefault();
+    document.execCommand('insertText', false, (e.clipboardData || window.clipboardData).getData('text/plain'));
+  });
+
+  // images
+  function fileToDataURL(file, max, asJpeg){
+    return new Promise((resolve, reject) => {
+      const r = new FileReader();
+      r.onerror = reject;
+      r.onload = () => {
+        if (/svg|gif/.test(file.type)) return resolve(r.result);
+        const img = new Image();
+        img.onerror = reject;
+        img.onload = () => {
+          const s = Math.min(1, max / Math.max(img.width, img.height));
+          const c = document.createElement('canvas');
+          c.width = Math.round(img.width * s); c.height = Math.round(img.height * s);
+          const ctx = c.getContext('2d'), png = file.type === 'image/png' && !asJpeg;
+          if (!png) { ctx.fillStyle = '#000'; ctx.fillRect(0, 0, c.width, c.height); }
+          ctx.drawImage(img, 0, 0, c.width, c.height);
+          resolve(png ? c.toDataURL('image/png') : c.toDataURL('image/jpeg', .82));
+        };
+        img.src = r.result;
+      };
+      r.readAsDataURL(file);
+    });
+  }
+  function openImage(el){
+    imgTarget = el; pendingSrc = null;
+    $('imgFile').value = ''; $('imgUrl').value = '';
+    $('imgDlg').showModal();
+  }
+  $('imgFile').addEventListener('change', async e => {
+    const f = e.target.files[0]; if (!f) return;
+    try { pendingSrc = await fileToDataURL(f, imgTarget?.dataset.img === 'logo' ? 512 : 1800); }
+    catch { toast("That file couldn't be read as an image."); }
+  });
+  $('imgDlg').addEventListener('close', () => {
+    const v = $('imgDlg').returnValue;
+    if (!imgTarget || v === 'cancel' || !v) return;
+    if (v === 'remove') setImage(imgTarget, null);
+    if (v === 'apply') {
+      const src = pendingSrc || $('imgUrl').value.trim();
+      if (!src) { toast('Choose a file or paste an image URL.'); return; }
+      setImage(imgTarget, src);
+    }
+  });
+  function setImage(el, src){
+    const safe = src && src.replace(/"/g, '%22');
+    if (el.dataset.img === 'logo') {
+      site.querySelectorAll('[data-img="logo"]').forEach(l => {
+        l.innerHTML = safe ? `<img src="${safe}" alt="Lycan Division logo">` : LOGO_SVG;
+      });
+      refreshEditUI();
+    } else if (safe) {
+      el.style.backgroundImage = `url("${safe}")`; el.classList.add('has-img');
+    } else {
+      el.style.removeProperty('background-image'); el.classList.remove('has-img');
+    }
+    if (!save(false)) toast('Image is too large to save in the browser. Try a smaller one or a URL.');
+    else toast(src ? 'Image updated' : 'Image removed');
+  }
+
+  // toolbar
+  const bar = document.querySelector('.edit-bar');
+  bar.addEventListener('mousedown', e => { if (e.target.closest('button')) e.preventDefault(); });
+  bar.addEventListener('click', e => {
+    const b = e.target.closest('[data-cmd]'); if (!b) return;
+    ({
+      save: () => save(true),
+      link: editLink,
+      settings: openSettings,
+      staff: openStaff,
+      help: () => $('helpDlg').showModal(),
+      export: exportSite,
+      discard: async () => {
+        if (!(await ask('Discard all changes saved in this browser and go back to the original page?', { ok: 'Discard changes', danger: true }))) return;
+        store.del(KEY); history.replaceState(null, '', location.pathname + location.search); location.reload();
+      },
+      exit: exitEdit
+    })[b.dataset.cmd]();
+  });
+
+  async function editLink(){
+    const a = lastEl && lastEl.closest('a');
+    if (!a) { toast('Click into a button or link first, then press Edit link.'); return; }
+    const url = await ask('Where should this link go?\nExamples: #contact   tel:+15551234567   mailto:you@site.com   https://…', { ok: 'Save link', input: a.getAttribute('href') || '' });
+    if (url === null) return;
+    a.setAttribute('href', url.trim());
+    changed(); toast('Link updated');
+  }
+
+  function openSettings(){
+    $('setTitle').value = cfg.title;
+    $('setAccent').value = /^#[0-9a-f]{6}$/i.test(cfg.accent) ? cfg.accent : '#39ff14';
+    $('setEmail').value = cfg.email;
+    $('setEndpoint').value = cfg.endpoint;
+    $('setTimeoff').value = cfg.timeoffEmail;
+    $('setTimeoffEp').value = cfg.timeoffEndpoint;
+    $('setComplaint').value = cfg.complaintEmails;
+    $('setComplaintEp').value = cfg.complaintEndpoint;
+    $('setCareers').value = cfg.careersEmail;
+    $('setCareersEp').value = cfg.careersEndpoint;
+    $('setEditorPass').value = '';
+    $('setDlg').showModal();
+  }
+  $('setAccent').addEventListener('input', e => root.style.setProperty('--accent', e.target.value));
+  $('setDlg').addEventListener('close', async () => {
+    if ($('setDlg').returnValue === 'apply') {
+      cfg.title = $('setTitle').value.trim() || cfg.title;
+      cfg.accent = $('setAccent').value;
+      cfg.email = $('setEmail').value.trim();
+      cfg.endpoint = $('setEndpoint').value.trim();
+      cfg.timeoffEmail = $('setTimeoff').value.trim();
+      cfg.timeoffEndpoint = $('setTimeoffEp').value.trim();
+      cfg.complaintEmails = $('setComplaint').value.trim();
+      cfg.complaintEndpoint = $('setComplaintEp').value.trim();
+      cfg.careersEmail = $('setCareers').value.trim();
+      cfg.careersEndpoint = $('setCareersEp').value.trim();
+      const newEditorPass = $('setEditorPass').value;
+      $('setEditorPass').value = '';
+      let msg = 'Settings saved';
+      if (newEditorPass && newEditorPass.length < 8) msg = 'Settings saved. Editor password NOT changed: use at least 8 characters.';
+      else if (newEditorPass) { cfg.editorPass = await editorHash(newEditorPass); msg = 'Settings saved, including the new editor password'; }
+      applyCfg(); save(false); toast(msg);
+    }
+    applyCfg();
+  });
+
+  // portal records: posts, BOLOs, time off and reports
+  const me = () => currentUser && getAccounts().find(a => a.user === currentUser);
+  const myName = () => { const a = me(); return a ? a.name || a.user : ''; };
+  const today = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; };
+  let boloImg = null;
+
+  site.addEventListener('click', async e => {
+    const b = e.target.closest('[data-rec]'); if (!b) return;
+    const [verb, type] = b.dataset.rec.split(':'), id = b.dataset.id, role = me()?.role;
+    // officers may delete their own time-off requests; everything else needs the right role
+    const ownRequest = type === 'timeoff' && verb === 'del' && db.list('timeoff').find(r => r.id === id)?.by === currentUser;
+    const allowed = ownRequest || (type === 'complaints' ? seesReports(role) : type === 'quotes' ? seesQuotes(role)
+      : type === 'applications' ? seesApps(role) : isSup(role));
+    if (!allowed) { toast('Your login cannot make changes here.'); return; }
+    if (verb === 'new' || verb === 'edit') { type === 'posts' ? openPostDlg(id) : openBoloDlg(id); return; }
+    const WHAT = { timeoff: 'time-off request', posts: 'bulletin post', bolos: 'BOLO', complaints: 'report', quotes: 'quote request', applications: 'application' };
+    if (verb === 'del' && !(await ask(`Delete this ${WHAT[type] || 'item'}? This cannot be undone.`, { ok: 'Delete', danger: true }))) return;
+    if (verb === 'del') db.remove(type, id);
+    else {
+      const patch = verb === 'status' ? { status: b.dataset.val, decidedBy: myName() } : {};
+      // a time-off decision saves the supervisor's note along with it
+      const noteEl = ['timeoff', 'applications'].includes(type) && b.closest('.rec')?.querySelector('[data-note]');
+      if (noteEl) {
+        const note = noteEl.value.trim(), old = db.list(type).find(r => r.id === id)?.note || '';
+        if (note !== old) Object.assign(patch, { note, noteBy: note ? myName() : '' });
+      }
+      db.update(type, id, patch);
+      if (verb === 'note') toast('Note saved');
+    }
+    applyUser();
+  });
+
+  site.addEventListener('click', async e => {
+    const b = e.target.closest('[data-sched]'); if (!b) return;
+    const role = me()?.role;
+    if (!isSup(role)) { toast('Only supervisors can change the schedule.'); return; }
+    const act = b.dataset.sched;
+    if (act === 'edit') schedDraft = JSON.parse(JSON.stringify(schedule()));
+    if (act === 'addrow') { schedDraft = collectSched(); schedDraft.rows.push(newRow(schedDraft.days.length)); }
+    if (act === 'delrow') {
+      if (!(await ask('Delete this schedule row?', { ok: 'Delete row', danger: true }))) return;
+      schedDraft = collectSched();
+      schedDraft.rows = schedDraft.rows.filter(r => r.id !== b.dataset.id);
+    }
+    if (act === 'cancel') schedDraft = null;
+    if (act === 'save') {
+      const d = db.load();
+      d.schedule = { ...collectSched(), updatedBy: myName(), updatedAt: new Date().toISOString() };
+      if (!db.write(d)) return;
+      schedDraft = null;
+      toast('Schedule saved');
+    }
+    renderSchedule(true, false);
+    if (act === 'addrow') $('schedBox').querySelector('[data-row]:last-of-type [data-sf=officer]')?.focus();
+  });
+
+  // Site Photos (supervisors): add, caption, reorder and remove public gallery photos
+  const canManagePhotos = () => isSup(me()?.role);
+  site.addEventListener('click', async e => {
+    const b = e.target.closest('[data-photo]');
+    if (!b || b.dataset.photo === 'caption') return;
+    if (!canManagePhotos()) { toast('Only supervisors can manage site photos.'); return; }
+    const act = b.dataset.photo, id = b.dataset.id;
+    if (act === 'upload') {
+      const files = [...$('photoFiles').files], st = $('photoStatus');
+      if (!files.length) { toast('Choose one or more photos first.'); return; }
+      const caption = $('photoCaption').value.trim();
+      st.className = 'form-status'; st.textContent = 'Adding photos…'; b.disabled = true;
+      let added = 0;
+      for (const f of files) {
+        try {
+          const img = await fileToDataURL(f, 1400, true);
+          const d = db.load();
+          (d.gallery = d.gallery || []).push({ id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), at: new Date().toISOString(), img, caption, by: myName() });
+          if (!db.write(d)) break;
+          added++;
+        } catch { toast(`Couldn't read ${f.name} as an image.`); }
+      }
+      b.disabled = false;
+      st.textContent = added ? `${added} photo${added > 1 ? 's' : ''} added to the public site.` : 'No photos were added.';
+      st.classList.add(added ? 'ok' : 'err');
+      if (added) { $('photoFiles').value = ''; $('photoCaption').value = ''; }
+    } else if (act === 'del') {
+      if (!(await ask('Remove this photo from the public site?', { ok: 'Remove photo', danger: true }))) return;
+      db.remove('gallery', id);
+    } else {
+      const d = db.load(), list = d.gallery || [], i = list.findIndex(p => p.id === id), j = act === 'left' ? i - 1 : i + 1;
+      if (i < 0 || j < 0 || j >= list.length) return;
+      [list[i], list[j]] = [list[j], list[i]];
+      db.write(d);
+    }
+    applyUser(); renderGallery();
+  });
+  site.addEventListener('change', e => {
+    const cap = e.target.closest('[data-photo=caption]');
+    if (!cap || !canManagePhotos()) return;
+    db.update('gallery', cap.dataset.id, { caption: cap.value.trim() });
+    renderGallery(); toast('Caption saved');
+  });
+
+  function openPostDlg(id){
+    const p = id ? db.list('posts').find(x => x.id === id) : null;
+    $('postDlgTitle').textContent = p ? 'Edit post' : 'New post';
+    $('postId').value = p ? p.id : '';
+    $('postTag').value = p ? p.tag : 'Announcement';
+    $('postDate').value = p ? p.date : today();
+    $('postTitle').value = p ? p.title : '';
+    $('postBody').value = p ? p.body : '';
+    $('postDlg').returnValue = '';
+    $('postDlg').showModal();
+  }
+  $('postDlg').addEventListener('close', () => {
+    if ($('postDlg').returnValue !== 'save') return;
+    const rec = { tag: $('postTag').value, date: $('postDate').value, title: $('postTitle').value.trim(), body: $('postBody').value.trim() };
+    if (!rec.title) { toast('A post needs a title.'); return; }
+    const id = $('postId').value;
+    id ? db.update('posts', id, rec) : db.add('posts', { ...rec, by: myName() });
+    applyUser(); toast(id ? 'Post updated' : 'Posted to the bulletin board');
+  });
+
+  const BOLO_FIELDS = ['description', 'vehicle', 'lastSeen', 'reason', 'action'];
+  function openBoloDlg(id){
+    const b = id ? db.list('bolos').find(x => x.id === id) : null;
+    $('boloDlgTitle').textContent = b ? 'Edit BOLO' : 'New BOLO';
+    $('boloId').value = b ? b.id : '';
+    $('boloTitle').value = b ? b.title : '';
+    $('boloStatus').value = b ? b.status : 'Active';
+    $('boloIssued').value = b ? b.issued : today();
+    BOLO_FIELDS.forEach(k => $('bolo_' + k).value = b ? b[k] || '' : '');
+    if (!b) $('bolo_action').value = 'Do not engage. Notify your supervisor and document in your daily report.';
+    $('boloFile').value = ''; $('boloNoPhoto').checked = false; boloImg = null;
+    $('boloDlg').returnValue = '';
+    $('boloDlg').showModal();
+  }
+  $('boloFile').addEventListener('change', async e => {
+    const f = e.target.files[0]; if (!f) return;
+    try { boloImg = await fileToDataURL(f, 900); } catch { toast("That file couldn't be read as an image."); }
+  });
+  $('boloDlg').addEventListener('close', () => {
+    if ($('boloDlg').returnValue !== 'save') return;
+    const rec = { title: $('boloTitle').value.trim(), status: $('boloStatus').value, issued: $('boloIssued').value };
+    BOLO_FIELDS.forEach(k => rec[k] = $('bolo_' + k).value.trim());
+    if (!rec.title) { toast('A BOLO needs a title.'); return; }
+    if (boloImg) rec.img = boloImg.replace(/['"()\s]/g, encodeURIComponent);
+    else if ($('boloNoPhoto').checked) rec.img = '';
+    const id = $('boloId').value;
+    const ok = id ? db.update('bolos', id, rec) : db.add('bolos', { img: '', ...rec, by: myName() });
+    applyUser(); if (ok) toast(id ? 'BOLO updated' : 'BOLO posted');
+  });
+
+  // staff logins
+  // (logins supervisors create in the portal are managed on the portal's Staff tab)
+  function renderAccounts(){
+    const list = cfgAccounts();
+    $('acctList').innerHTML = list.length ? list.map((a, i) => `
+      <div class="acct-row">
+        <div><b>${esc(a.name || a.user)}</b><small>Username: ${esc(a.user)} · ${ROLE_NAMES[a.role] || 'Officer'}</small></div>
+        <span></span>
+        <div class="acct-btns"><button type="button" data-acct="reset" data-i="${i}">Reset password</button><button type="button" class="danger" data-acct="del" data-i="${i}">Remove</button></div>
+      </div>`).join('') : '<p class="hint">No logins yet. Add one below.</p>';
+  }
+  function openStaff(){
+    if (!window.crypto?.subtle) { toast('Open the site over https to manage logins.'); return; }
+    renderAccounts(); $('acctDlg').showModal();
+  }
+  $('acctList').addEventListener('click', async e => {
+    const b = e.target.closest('[data-acct]'); if (!b) return;
+    const list = cfgAccounts(), a = list[+b.dataset.i];
+    if (b.dataset.acct === 'del') {
+      if (!(await ask(`Remove the login "${a.user}"? Their schedule rows will become unassigned.`, { ok: 'Remove login', danger: true }))) return;
+      list.splice(+b.dataset.i, 1);
+      if (currentUser === a.user) currentUser = null;
+    } else {
+      const p = await ask(`New password for ${a.user}:`, { ok: 'Set password', input: '', type: 'password' });
+      if (!p) return;
+      a.pass = await passHash(a.user, p);
+      const d = db.load();   // an owner reset replaces any password the employee set or was issued in the portal
+      if (d.passwords) delete d.passwords[a.user];
+      if (d.tempReset) delete d.tempReset[a.user];
+      db.write(d);
+      toast(`Password updated for ${a.user}`);
+    }
+    setAccounts(list); renderAccounts(); refreshEditUI();
+  });
+  $('addAcct').addEventListener('click', async () => {
+    const user = $('newUser').value.trim().toLowerCase(), pass = $('newPass').value;
+    if (!/^[a-z0-9._-]{2,40}$/.test(user)) { toast('Usernames use letters, numbers, dots, dashes or underscores.'); return; }
+    if (!pass) { toast('Enter a password for this login.'); return; }
+    const list = cfgAccounts();
+    if (usernameTaken(user)) { toast('That username is already taken.'); return; }
+    list.push({ user, name: $('newName').value.trim() || user, role: $('newRole').value, pass: await passHash(user, pass) });
+    setAccounts(list);
+    ['newUser', 'newName', 'newPass'].forEach(id => $(id).value = '');
+    renderAccounts(); refreshEditUI();
+    toast(`Login "${user}" added. Assign their schedule rows with the Login picker.`);
+  });
+
+  function exportSite(){
+    save(false);
+    const doc = root.cloneNode(true);
+    doc.classList.remove('js');
+    if (!doc.classList.length) doc.removeAttribute('class');
+    const docBody = doc.querySelector('body');
+    docBody.classList.remove('editing', 'view-portal', 'view-apply', 'applied', 'portal-authed');
+    if (!docBody.classList.length) docBody.removeAttribute('class');
+    doc.querySelector('#site').innerHTML = cleanHTML();
+    doc.querySelectorAll('dialog[open]').forEach(d => d.removeAttribute('open'));
+    doc.querySelector('#toast').classList.remove('show');
+    doc.querySelector('#ebStatus').textContent = 'No changes yet';
+    const html = '<!DOCTYPE html>\n' + doc.outerHTML;
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([html], { type: 'text/html' }));
+    a.download = 'index.html';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 3000);
+    toast('Downloaded index.html. Upload it to your web host to go live.');
+  }
+
+  // ways in
+  document.addEventListener('keydown', e => {
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'e') { e.preventDefault(); editing ? exitEdit() : requestEdit(); }
+    if (editing && (e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') { e.preventDefault(); save(true); }
+  });
+  window.addEventListener('hashchange', () => { if (location.hash === '#edit') requestEdit(); });
+  if (location.hash === '#edit') requestEdit();
+})();
+</script>
+</body>
+</html>
