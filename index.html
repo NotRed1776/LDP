@@ -1581,7 +1581,7 @@
         ${sup ? '<button type="button" class="btn btn-primary btn-sm" data-sched="edit">Edit schedule</button>' : ''}
       </div>
       ${rows.length ? `<div class="sched-wrap"><div class="sched">
-        <div class="sched-row sched-head"><div>Officer</div><div>Post</div>${s.days.map(d => `<div>${esc(d)}</div>`).join('')}</div>
+        <div class="sched-row sched-head"><div>Officer</div><div>Zone</div>${s.days.map(d => `<div>${esc(d)}</div>`).join('')}</div>
         ${rows.map(r => `
         <div class="sched-row">
           <div>${esc(r.officer)}${sup ? `<small class="sched-owner">${r.owner ? 'Login: ' + esc(r.owner) : 'Not assigned'}</small>` : ''}</div>
