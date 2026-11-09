@@ -1562,13 +1562,14 @@
         <div class="sched-form">
           <label class="field"><span>Week / heading</span><input data-sf="week" value="${esc(s.week)}"></label>
           <p class="form-note">Set a shift and post location for each day. Leave a daily location blank to use the Zone.</p>
+          <datalist id="zone-options">${ZONES.map(zone => `<option value="${zone}">`).join('')}</datalist>
           <div class="sched-wrap"><div class="sched sched-editing">
             <div class="sched-row sched-head"><div>Officer &amp; login</div><div>Zone</div>${s.days.map(d => `<div><input data-sf="day" value="${esc(d)}" aria-label="Day label"></div>`).join('')}<div></div></div>
             ${s.rows.map(r => `
             <div class="sched-row" data-row="${esc(r.id)}">
               <div><input data-sf="officer" value="${esc(r.officer)}" placeholder="Officer name" aria-label="Officer"><select data-sf="owner" aria-label="Login that sees this row">${ownerOpts(r.owner)}</select></div>
               <div><select data-sf="post" aria-label="Default zone">${zoneOptions(r.post)}</select></div>
-              ${s.days.map((day, i) => `<div><input data-sf="d" value="${esc(r.days[i] ?? '')}" aria-label="${esc(day)} shift"><select class="day-post-input" data-sf="dp" aria-label="${esc(day)} zone">${zoneOptions((r.posts || [])[i] || '')}</select></div>`).join('')}
+              ${s.days.map((day, i) => `<div><input data-sf="d" value="${esc(r.days[i] ?? '')}" aria-label="${esc(day)} shift"><input class="day-post-input" data-sf="dp" list="zone-options" value="${esc((r.posts || [])[i] ?? '')}" placeholder="Zone" aria-label="${esc(day)} zone"></div>`).join('')}
               <div><button type="button" class="sched-del" data-sched="delrow" data-id="${esc(r.id)}" title="Delete row">✕</button></div>
             </div>`).join('')}
           </div></div>
