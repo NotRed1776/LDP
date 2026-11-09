@@ -1522,8 +1522,8 @@
   let schedDraft = null;   // a supervisor's unsaved schedule edits
   const schedule = () => db.load().schedule || { week: '', note: '', days: [], rows: [] };
   const newRow = n => ({ id: 'r' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5), owner: '', officer: '', post: '', days: Array(n).fill('OFF'), posts: Array(n).fill('') });
-  // a day's own post, only when it differs from the officer's usual post and they are working that day
-  const dayPost = (r, i) => { const p = (r.posts || [])[i]; return p && p !== r.post && !/^off$/i.test(r.days[i] || '') ? p : ''; };
+  // Use a day's assigned location, falling back to the row's usual post.
+  const dayPost = (r, i) => /^off$/i.test(r.days[i] || '') ? '' : (r.posts || [])[i] || r.post || '';
 
   function collectSched(){
     const box = $('schedBox'), v = el => el ? el.value.trim() : '';
@@ -1556,13 +1556,14 @@
       box.innerHTML = `
         <div class="sched-form">
           <label class="field"><span>Week / heading</span><input data-sf="week" value="${esc(s.week)}"></label>
+          <p class="form-note">Set a shift and post location for each day. Leave a daily location blank to use the usual post.</p>
           <div class="sched-wrap"><div class="sched sched-editing">
             <div class="sched-row sched-head"><div>Officer &amp; login</div><div>Usual post</div>${s.days.map(d => `<div><input data-sf="day" value="${esc(d)}" aria-label="Day label"></div>`).join('')}<div></div></div>
             ${s.rows.map(r => `
             <div class="sched-row" data-row="${esc(r.id)}">
               <div><input data-sf="officer" value="${esc(r.officer)}" placeholder="Officer name" aria-label="Officer"><select data-sf="owner" aria-label="Login that sees this row">${ownerOpts(r.owner)}</select></div>
               <div><input data-sf="post" value="${esc(r.post)}" placeholder="Post / site" aria-label="Post"></div>
-              ${s.days.map((day, i) => `<div><input data-sf="d" value="${esc(r.days[i] ?? '')}" aria-label="${esc(day)} shift"><input class="day-post-input" data-sf="dp" value="${esc((r.posts || [])[i] ?? '')}" placeholder="Same post" aria-label="${esc(day)} post, if different"></div>`).join('')}
+              ${s.days.map((day, i) => `<div><input data-sf="d" value="${esc(r.days[i] ?? '')}" aria-label="${esc(day)} shift"><input class="day-post-input" data-sf="dp" value="${esc((r.posts || [])[i] ?? '')}" placeholder="Use usual post" aria-label="${esc(day)} post location"></div>`).join('')}
               <div><button type="button" class="sched-del" data-sched="delrow" data-id="${esc(r.id)}" title="Delete row">✕</button></div>
             </div>`).join('')}
           </div></div>
