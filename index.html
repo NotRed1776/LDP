@@ -543,6 +543,7 @@
   data-editor-pass="f343296857198793482015ee6ab9e456fe27b0bc0ec2651f0d378f6f164f4059"
   data-accounts='[{"user":"admin1","name":"Admin1","role":"employee","pass":"df2810076c2f8f928242bb09633f731b41ca1a726be96939fe8e83cd347b3e16"},{"user":"lkornick101","name":"Assistant Chief","role":"asst_chief","pass":"499a0e1e66042e14d33a804827b126f3fa8cc774ef669a8f6316430016236df8"},{"user":"owner","name":"Site Owner","role":"owner","pass":"e28cc74467f4449564d5b4c5dfc373875df9cffd863edf9f881a2d78a8126e25"}]'>
 
+  <div class="demo-banner" role="note"><strong>DEMO ONLY:</strong> Do not enter real personal, employee, or customer data. Portal credentials are in this page's source, and browser-stored records are not private or shared. Use a server-side system before production.</div>
   <div class="topbar">
     <div class="wrap">
       <span><b data-e>24/7 Dispatch:</b> <a href="tel:+15555550100" data-e>(555) 555-0100</a></span>
@@ -736,6 +737,7 @@
 
         <form class="form reveal" id="quoteForm" data-form="quote" novalidate>
           <h3 data-e>Tell Us What You Need</h3>
+          <p class="demo-banner" role="note">Demo only. Do not submit real customer information.</p>
           <div class="form-row">
             <label class="field"><span data-e>Full name *</span><input name="name" required autocomplete="name"></label>
             <label class="field"><span data-e>Company</span><input name="company" autocomplete="organization"></label>
@@ -826,6 +828,7 @@
 
       <form class="form apply-form" id="applyForm" data-form="application" novalidate>
         <h3>Your Information</h3>
+        <p class="demo-banner" role="note">Demo only. Do not submit real personal information or résumés.</p>
         <div class="form-row">
           <label class="field"><span data-e>Full name *</span><input name="name" required autocomplete="name"></label>
           <label class="field"><span data-e>Phone *</span><input name="phone" type="tel" required autocomplete="tel"></label>
@@ -914,7 +917,7 @@
           <span class="brand-name"><strong data-e>Lycan Division</strong><small data-e>of Protection Services</small></span>
         </a>
         <h2 data-e>Employee Portal</h2>
-        <p class="muted" data-e>Authorized Lycan Division personnel only. Sign in with the login provided by your supervisor.</p>
+        <p class="demo-banner" role="note">Demo only — not a secure employee login. Do not enter real credentials or personal information.</p>
         <label class="field"><span>Username</span><input name="username" required autocomplete="username" autocapitalize="none"></label>
         <label class="field"><span>Password</span><input name="password" type="password" required autocomplete="current-password"></label>
         <button type="submit" class="btn btn-primary">Sign In</button>
@@ -935,7 +938,7 @@
     </div>
 
     <div class="portal-app">
-      <div class="demo-banner">Test mode: requests, reports, posts and BOLOs are saved on this device only until the database is connected.</div>
+      <div class="demo-banner" role="note">DEMO ONLY — Do not enter real employee or customer data. Credentials are in the page source; records stay in this browser and are not private or shared.</div>
       <div class="portal-top">
         <div class="wrap">
           <a href="#top" class="brand">
@@ -2194,6 +2197,14 @@
       try { rec.resume = { name: file.name, type: file.type, size: file.size, data: await readFile(file) }; }
       catch { fail('That résumé file could not be read. Please try another file.'); return; }
     }
+    const endpoint = cfg[spec.via], to = cfg[spec.to].replace(/\s+/g, '');
+    const realTo = to && !/your-domain\.com/i.test(to);   // skip placeholder addresses
+    if (!endpoint && (kind === 'application' || !realTo)) {
+      fail(kind === 'application'
+        ? 'Job applications need a form endpoint so your résumé can be delivered securely.'
+        : 'This form is not configured yet. Please contact us directly.');
+      return;
+    }
     const saved = kind === 'timeoff' ? db.add('timeoff', { ...rec, by: currentUser, status: 'Pending' })
       : kind === 'complaint' ? db.add('complaints', { ...rec, status: 'Open' })
       : kind === 'application' ? db.add('applications', { ...rec, status: 'New' })
@@ -2203,8 +2214,6 @@
       status.textContent = spec.sent; status.classList.add('ok'); form.reset(); applyUser();
       if (kind === 'application') { body.classList.add('applied'); window.scrollTo(0, 0); }
     };
-    const endpoint = cfg[spec.via], to = cfg[spec.to].replace(/\s+/g, '');
-    const realTo = to && !/your-domain\.com/i.test(to);   // skip placeholder addresses
     if (endpoint) {
       const btn = form.querySelector('[type=submit]');
       btn.disabled = true; status.textContent = 'Sending…';
@@ -2220,9 +2229,8 @@
       const label = k => (form.querySelector(`[name="${k}"]`)?.closest('.field')?.querySelector('span')?.textContent || k).replace(/\s*\*$/, '');
       const lines = Object.entries(rec).filter(([k]) => k !== 'resume').map(([k, v]) => `${label(k)}: ${v}`).join('\n');
       location.href = `mailto:${to}?subject=${encodeURIComponent(spec.subject(data))}&body=${encodeURIComponent(lines)}`;
-      done();
-    } else {
-      done();
+      status.textContent = 'Your email app should open with this request. Send the email to complete your submission.';
+      status.classList.add('ok');
     }
   });
 
