@@ -1525,8 +1525,7 @@
   const ZONES = ['Central', 'Zone 1', 'Zone 2', 'Zone 3', 'Zone 4'];
   const zoneOptions = selected => [
     '<option value="">Select a zone</option>',
-    ...ZONES.map(zone => `<option value="${zone}"${selected === zone ? ' selected' : ''}>${zone}</option>`),
-    ...(selected && !ZONES.includes(selected) ? [`<option value="${esc(selected)}" selected>${esc(selected)} (existing location)</option>`] : [])
+    ...ZONES.map(zone => `<option value="${zone}"${selected === zone ? ' selected' : ''}>${zone}</option>`)
   ].join('');
   // Use a day's assigned location, falling back to the row's usual post.
   const dayPost = (r, i) => /^off$/i.test(r.days[i] || '') ? '' : (r.posts || [])[i] || r.post || '';
