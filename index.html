@@ -285,7 +285,9 @@
   .sched-owner{display:block;font-size:11px;font-weight:500;color:var(--muted);margin-top:3px}
   .sched-form{display:grid;gap:16px}
   .sched-form .field{margin:0}
-  .sched-editing{min-width:1160px}
+  .day-post{display:block;margin-top:3px;font-size:11.5px;font-weight:600;line-height:1.25;color:var(--accent);white-space:normal;overflow-wrap:anywhere}
+  .sched-editing input.day-post-input{margin-top:6px;font-size:12px}
+  .sched-editing{min-width:1400px}
   .sched-editing .sched-row{grid-template-columns:1.5fr 1.4fr repeat(7,1fr) 50px}
   .sched-editing .sched-row > div:not(.edit-ui){padding:8px 6px}
   .sched-editing input,.sched-editing select{width:100%;font:500 13px Inter,sans-serif;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:7px 8px;color-scheme:dark}
@@ -1516,7 +1518,9 @@
   // Schedule: supervisors edit it in place; employees only get the rows assigned to their login
   let schedDraft = null;   // a supervisor's unsaved schedule edits
   const schedule = () => db.load().schedule || { week: '', note: '', days: [], rows: [] };
-  const newRow = n => ({ id: 'r' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5), owner: '', officer: '', post: '', days: Array(n).fill('OFF') });
+  const newRow = n => ({ id: 'r' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5), owner: '', officer: '', post: '', days: Array(n).fill('OFF'), posts: Array(n).fill('') });
+  // a day's own post, only when it differs from the officer's usual post and they are working that day
+  const dayPost = (r, i) => { const p = (r.posts || [])[i]; return p && p !== r.post && !/^off$/i.test(r.days[i] || '') ? p : ''; };
 
   function collectSched(){
     const box = $('schedBox'), v = el => el ? el.value.trim() : '';
@@ -1529,7 +1533,8 @@
         owner: r.querySelector('[data-sf=owner]').value,
         officer: v(r.querySelector('[data-sf=officer]')),
         post: v(r.querySelector('[data-sf=post]')),
-        days: [...r.querySelectorAll('[data-sf=d]')].map(v)
+        days: [...r.querySelectorAll('[data-sf=d]')].map(v),
+        posts: [...r.querySelectorAll('[data-sf=dp]')].map(v)
       }))
     };
   }
@@ -1549,12 +1554,12 @@
         <div class="sched-form">
           <label class="field"><span>Week / heading</span><input data-sf="week" value="${esc(s.week)}"></label>
           <div class="sched-wrap"><div class="sched sched-editing">
-            <div class="sched-row sched-head"><div>Officer &amp; login</div><div>Post</div>${s.days.map(d => `<div><input data-sf="day" value="${esc(d)}" aria-label="Day label"></div>`).join('')}<div></div></div>
+            <div class="sched-row sched-head"><div>Officer &amp; login</div><div>Usual post</div>${s.days.map(d => `<div><input data-sf="day" value="${esc(d)}" aria-label="Day label"></div>`).join('')}<div></div></div>
             ${s.rows.map(r => `
             <div class="sched-row" data-row="${esc(r.id)}">
               <div><input data-sf="officer" value="${esc(r.officer)}" placeholder="Officer name" aria-label="Officer"><select data-sf="owner" aria-label="Login that sees this row">${ownerOpts(r.owner)}</select></div>
               <div><input data-sf="post" value="${esc(r.post)}" placeholder="Post / site" aria-label="Post"></div>
-              ${s.days.map((day, i) => `<div><input data-sf="d" value="${esc(r.days[i] ?? '')}" aria-label="${esc(day)}"></div>`).join('')}
+              ${s.days.map((day, i) => `<div><input data-sf="d" value="${esc(r.days[i] ?? '')}" aria-label="${esc(day)} shift"><input class="day-post-input" data-sf="dp" value="${esc((r.posts || [])[i] ?? '')}" placeholder="Same post" aria-label="${esc(day)} post, if different"></div>`).join('')}
               <div><button type="button" class="sched-del" data-sched="delrow" data-id="${esc(r.id)}" title="Delete row">✕</button></div>
             </div>`).join('')}
           </div></div>
@@ -1577,7 +1582,7 @@
         <div class="sched-row">
           <div>${esc(r.officer)}${sup ? `<small class="sched-owner">${r.owner ? 'Login: ' + esc(r.owner) : 'Not assigned'}</small>` : ''}</div>
           <div>${esc(r.post)}</div>
-          ${s.days.map((day, i) => `<div data-day="${esc(day)}"${/^off$/i.test(r.days[i] || '') ? ' class="is-off"' : ''}>${esc(r.days[i] ?? '')}</div>`).join('')}
+          ${s.days.map((day, i) => `<div data-day="${esc(day)}"${/^off$/i.test(r.days[i] || '') ? ' class="is-off"' : ''}>${esc(r.days[i] ?? '')}${dayPost(r, i) ? `<small class="day-post">${esc(dayPost(r, i))}</small>` : ''}</div>`).join('')}
         </div>`).join('')}
       </div></div>` : empty(sup ? 'No schedule rows yet. Click Edit schedule to add some.' : 'No shifts are assigned to you this week. Contact your supervisor if this looks wrong.')}
       ${s.note ? `<p class="muted small-note">${esc(s.note)}</p>` : ''}`;
