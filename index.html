@@ -1522,6 +1522,12 @@
   let schedDraft = null;   // a supervisor's unsaved schedule edits
   const schedule = () => db.load().schedule || { week: '', note: '', days: [], rows: [] };
   const newRow = n => ({ id: 'r' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5), owner: '', officer: '', post: '', days: Array(n).fill('OFF'), posts: Array(n).fill('') });
+  const ZONES = ['Central', 'Zone 1', 'Zone 2', 'Zone 3', 'Zone 4'];
+  const zoneOptions = selected => [
+    '<option value="">Select a zone</option>',
+    ...ZONES.map(zone => `<option value="${zone}"${selected === zone ? ' selected' : ''}>${zone}</option>`),
+    ...(selected && !ZONES.includes(selected) ? [`<option value="${esc(selected)}" selected>${esc(selected)} (existing location)</option>`] : [])
+  ].join('');
   // Use a day's assigned location, falling back to the row's usual post.
   const dayPost = (r, i) => /^off$/i.test(r.days[i] || '') ? '' : (r.posts || [])[i] || r.post || '';
 
@@ -1562,8 +1568,8 @@
             ${s.rows.map(r => `
             <div class="sched-row" data-row="${esc(r.id)}">
               <div><input data-sf="officer" value="${esc(r.officer)}" placeholder="Officer name" aria-label="Officer"><select data-sf="owner" aria-label="Login that sees this row">${ownerOpts(r.owner)}</select></div>
-              <div><input data-sf="post" value="${esc(r.post)}" placeholder="Zone" aria-label="Zone"></div>
-              ${s.days.map((day, i) => `<div><input data-sf="d" value="${esc(r.days[i] ?? '')}" aria-label="${esc(day)} shift"><input class="day-post-input" data-sf="dp" value="${esc((r.posts || [])[i] ?? '')}" placeholder="Use usual post" aria-label="${esc(day)} post location"></div>`).join('')}
+              <div><select data-sf="post" aria-label="Default zone">${zoneOptions(r.post)}</select></div>
+              ${s.days.map((day, i) => `<div><input data-sf="d" value="${esc(r.days[i] ?? '')}" aria-label="${esc(day)} shift"><select class="day-post-input" data-sf="dp" aria-label="${esc(day)} zone">${zoneOptions((r.posts || [])[i] || '')}</select></div>`).join('')}
               <div><button type="button" class="sched-del" data-sched="delrow" data-id="${esc(r.id)}" title="Delete row">✕</button></div>
             </div>`).join('')}
           </div></div>
