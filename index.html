@@ -536,10 +536,10 @@
 
 <template id="logo-tpl"><svg viewBox="0 0 64 64" aria-hidden="true"><path fill="currentColor" d="M7 3l16 17 9-4 9 4L57 3l-2 27-8 14-15 17-15-17-8-14z"/><path class="cut" d="M17 30l11 4-7.5 3.5zM47 30l-11 4 7.5 3.5zM27.5 46h9L32 52z"/></svg></template>
 
-<div id="site" data-email="contact@your-domain.com" data-endpoint=""
-  data-timeoff-email="scheduling@your-domain.com" data-timeoff-endpoint=""
-  data-complaint-emails="supervisor1@your-domain.com,supervisor2@your-domain.com" data-complaint-endpoint=""
-  data-careers-email="careers@your-domain.com" data-careers-endpoint=""
+<div id="site" data-email="Contact@lycandivision.com" data-endpoint=""
+  data-timeoff-email="Contact@lycandivision.com" data-timeoff-endpoint=""
+  data-complaint-emails="Contact@lycandivision.com" data-complaint-endpoint=""
+  data-careers-email="Contact@lycandivision.com" data-careers-endpoint=""
   data-editor-pass="f343296857198793482015ee6ab9e456fe27b0bc0ec2651f0d378f6f164f4059"
   data-accounts='[{"user":"admin1","name":"Admin1","role":"employee","pass":"df2810076c2f8f928242bb09633f731b41ca1a726be96939fe8e83cd347b3e16"},{"user":"lkornick101","name":"Assistant Chief","role":"asst_chief","pass":"499a0e1e66042e14d33a804827b126f3fa8cc774ef669a8f6316430016236df8"},{"user":"owner","name":"Site Owner","role":"owner","pass":"e28cc74467f4449564d5b4c5dfc373875df9cffd863edf9f881a2d78a8126e25"}]'>
 
@@ -729,7 +729,7 @@
           <p class="muted" data-e>Tell us about your site or event. We'll respond within one business day, and urgent requests are handled by 24/7 dispatch.</p>
           <ul class="info-list">
             <li><div class="icon"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div><div><small data-e>Phone (24/7)</small><a href="tel:+15555550100" data-e>(555) 555-0100</a></div></li>
-            <li><div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div><div><small data-e>Email</small><a href="mailto:contact@your-domain.com" data-e>contact@your-domain.com</a></div></li>
+            <li><div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div><div><small data-e>Email</small><a href="mailto:Contact@lycandivision.com" data-e>Contact@lycandivision.com</a></div></li>
             <li><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div><div><small data-e>Service Area</small><span data-e>State of Ohio</span></div></li>
             <li><div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><small data-e>Office Hours</small><span data-e>Mon–Fri 8am–6pm · Dispatch 24/7</span></div></li>
           </ul>
@@ -791,7 +791,7 @@
           <h4 data-e>Reach Us</h4>
           <ul>
             <li><a href="tel:+15555550100" data-e>(555) 555-0100</a></li>
-            <li><a href="mailto:contact@your-domain.com" data-e>contact@your-domain.com</a></li>
+            <li><a href="mailto:Contact@lycandivision.com" data-e>Contact@lycandivision.com</a></li>
             <li><a href="#contact" data-e>Request a Quote</a></li>
           </ul>
         </div>
@@ -1215,16 +1215,16 @@
     <h3>Site settings</h3>
     <label>Browser tab title<input id="setTitle"></label>
     <label>Brand accent color<input type="color" id="setAccent"></label>
-    <label>Quote form sends to this email<input type="email" id="setEmail" placeholder="you@your-domain.com"></label>
+    <label>Quote form sends to this email<input type="email" id="setEmail" placeholder="Contact@lycandivision.com"></label>
     <label>Form service endpoint (optional)<input type="url" id="setEndpoint" placeholder="https://formspree.io/f/xxxxxxx"></label>
     <p class="hint">Without an endpoint, the quote form opens the visitor's email app addressed to you. With a form service like Formspree, Basin or Getform, submissions are delivered straight to your inbox.</p>
     <h4 class="dlg-sub">Employee portal</h4>
     <p class="hint">Employee usernames and passwords are managed under <b>Staff logins</b> in the editor toolbar.</p>
-    <label>Time-off requests go to<input type="email" id="setTimeoff" placeholder="scheduling@your-domain.com"></label>
+    <label>Time-off requests go to<input type="email" id="setTimeoff" placeholder="Contact@lycandivision.com"></label>
     <label>Time-off form endpoint (optional)<input type="url" id="setTimeoffEp" placeholder="https://formspree.io/f/…"></label>
-    <label>Concern reports go ONLY to (supervisor emails, comma-separated)<input id="setComplaint" placeholder="supervisor1@your-domain.com, supervisor2@your-domain.com"></label>
+    <label>Concern reports go ONLY to (supervisor emails, comma-separated)<input id="setComplaint" placeholder="Contact@lycandivision.com"></label>
     <label>Concern report endpoint (optional)<input type="url" id="setComplaintEp" placeholder="https://formspree.io/f/…"></label>
-    <label>Job applications also go to this email<input type="email" id="setCareers" placeholder="careers@your-domain.com"></label>
+    <label>Job applications also go to this email<input type="email" id="setCareers" placeholder="Contact@lycandivision.com"></label>
     <label>Job application endpoint (optional)<input type="url" id="setCareersEp" placeholder="https://formspree.io/f/…"></label>
     <h4 class="dlg-sub">Site editor</h4>
     <label>New editor password (leave blank to keep the current one)<input type="password" id="setEditorPass" autocomplete="new-password"></label>
