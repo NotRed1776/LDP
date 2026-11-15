@@ -538,14 +538,8 @@
 
 <template id="logo-tpl"><img src="lycan-wolf-crest.png" alt="Lycan Division wolf crest"></template>
 
-<div id="site" data-email="admin@lycandivision.com" data-endpoint=""
-  data-timeoff-email="l.kornick@lycandivision.com" data-timeoff-endpoint=""
-  data-complaint-emails="l.kornick@lycandivision.com" data-complaint-endpoint=""
-  data-careers-email="admin@lycandivision.com" data-careers-endpoint=""
-  data-editor-pass="f343296857198793482015ee6ab9e456fe27b0bc0ec2651f0d378f6f164f4059"
-  data-accounts='[{"user":"admin1","name":"Admin1","role":"employee","pass":"df2810076c2f8f928242bb09633f731b41ca1a726be96939fe8e83cd347b3e16"},{"user":"lkornick101","name":"Assistant Chief","role":"asst_chief","pass":"499a0e1e66042e14d33a804827b126f3fa8cc774ef669a8f6316430016236df8"},{"user":"owner","name":"Site Owner","role":"owner","pass":"e28cc74467f4449564d5b4c5dfc373875df9cffd863edf9f881a2d78a8126e25"}]'>
-
-  <div class="demo-banner" role="note"><strong>DEMO ONLY:</strong> Do not enter real personal, employee, or customer data. Portal credentials are in this page's source, and browser-stored records are not private or shared. Use a server-side system before production.</div>
+<div id="site" data-editor-pass="f343296857198793482015ee6ab9e456fe27b0bc0ec2651f0d378f6f164f4059">
+  <div class="demo-banner" role="note"><strong>DEMO ONLY:</strong> The PHP backend must be configured and verified on IONOS before entering real personal, employee, or customer data.</div>
   <div class="topbar">
     <div class="wrap">
       <span><b data-e>24/7 Dispatch:</b> <a href="tel:+15555550100" data-e>(555) 555-0100</a></span>
@@ -919,7 +913,7 @@
           <span class="brand-name"><strong data-e>Lycan Division</strong><small data-e>of Protection Services</small></span>
         </a>
         <h2 data-e>Employee Portal</h2>
-        <p class="demo-banner" role="note">Demo only — not a secure employee login. Do not enter real credentials or personal information.</p>
+        <p class="demo-banner" role="note">Demo only — do not enter real credentials or personal information until the IONOS backend is configured and verified.</p>
         <label class="field"><span>Username</span><input name="username" required autocomplete="username" autocapitalize="none"></label>
         <label class="field"><span>Password</span><input name="password" type="password" required autocomplete="current-password"></label>
         <button type="submit" class="btn btn-primary">Sign In</button>
@@ -927,12 +921,24 @@
         <a href="#top" class="back-link">← Back to website</a>
         <button type="button" class="linklike login-edit" data-portal="edit">Manage portal</button>
       </form>
+      <details class="form login-card" id="setupBox" hidden>
+        <summary>First-time setup</summary>
+        <p class="muted">Create the initial owner account. Use the private setup key from the server configuration. This option closes after an owner is created.</p>
+        <form id="setupForm" novalidate>
+          <label class="field"><span>Private setup key</span><input name="setupKey" type="password" autocomplete="off" required></label>
+          <label class="field"><span>Your name</span><input name="name" autocomplete="name" required></label>
+          <label class="field"><span>Owner username</span><input name="username" autocomplete="username" autocapitalize="none" required></label>
+          <label class="field"><span>Strong password (14 characters minimum)</span><input name="password" type="password" autocomplete="new-password" required minlength="14"></label>
+          <button type="submit" class="btn btn-primary">Create owner account</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </details>
       <form class="form login-card reset-card" id="resetForm" novalidate>
         <h2>Set Your Password</h2>
         <p class="muted">Welcome, <b id="resetWho" data-render></b>. You signed in with a temporary password. Choose your own password to continue.</p>
         <label class="field"><span>New password</span><input name="newPass" type="password" autocomplete="new-password"></label>
         <label class="field"><span>Confirm new password</span><input name="confirmPass" type="password" autocomplete="new-password"></label>
-        <p class="form-hint">At least 8 characters.</p>
+        <p class="form-hint">At least 14 characters.</p>
         <button type="submit" class="btn btn-primary">Set Password &amp; Continue</button>
         <p class="form-status" role="status" aria-live="polite"></p>
         <button type="button" class="linklike login-edit" data-portal="cancel-reset">Back to sign in</button>
@@ -940,7 +946,7 @@
     </div>
 
     <div class="portal-app">
-      <div class="demo-banner" role="note">DEMO ONLY — Do not enter real employee or customer data. Credentials are in the page source; records stay in this browser and are not private or shared.</div>
+      <div class="demo-banner" role="note">DEMO ONLY — Do not enter real records until the PHP backend, roles, email delivery, and uploads have been verified on IONOS.</div>
       <div class="portal-top">
         <div class="wrap">
           <a href="#top" class="brand">
@@ -1097,7 +1103,7 @@
               <label class="field"><span>Current password</span><input name="current" type="password" autocomplete="current-password"></label>
               <label class="field"><span>New password</span><input name="newPass" type="password" autocomplete="new-password"></label>
               <label class="field"><span>Confirm new password</span><input name="confirmPass" type="password" autocomplete="new-password"></label>
-              <p class="form-hint">At least 8 characters.</p>
+              <p class="form-hint">At least 14 characters.</p>
               <button type="submit" class="btn btn-primary">Update Password</button>
               <p class="form-status" role="status" aria-live="polite"></p>
             </form>
@@ -1193,8 +1199,8 @@
       <li><b>Buttons &amp; links:</b> click into one, then press <b>Edit link</b> to change where it goes (e.g. <code>tel:+15551234567</code>, <code>mailto:you@site.com</code>, <code>#contact</code>).</li>
       <li><b>Cards, steps &amp; tags:</b> use ↑ to move, ⧉ to duplicate, ✕ to delete, or <b>+ Add</b> for a new one.</li>
       <li><b>Images:</b> use the image buttons on the logo, hero background and about photo.</li>
-      <li><b>Settings:</b> brand color, page title, where each form sends, and the portal login.</li>
-      <li><b>Employee portal:</b> use <b>Staff logins</b> to give each employee a username and password and a role. Supervisors sign in to the portal to edit the schedule, bulletin board and BOLOs.</li>
+      <li><b>Settings:</b> brand color, page title and public site details. Backend notification recipients are configured privately on the server.</li>
+      <li><b>Employee portal:</b> use first-time setup to create the owner, then manage staff accounts inside the authenticated portal.</li>
       <li>Changes auto-save <i>in this browser only</i>. When you're happy, press <b>Export HTML</b> and upload the downloaded <code>index.html</code> to your web host.</li>
     </ul>
     <p class="hint">Open the editor any time with the "Edit site" link in the footer, by adding <code>#edit</code> to the address, or Ctrl+Shift+E. Each one asks for the editor password, which you can change in Settings.</p>
@@ -1217,37 +1223,18 @@
     <h3>Site settings</h3>
     <label>Browser tab title<input id="setTitle"></label>
     <label>Brand accent color<input type="color" id="setAccent"></label>
-    <label>Quote form sends to this email<input type="email" id="setEmail" placeholder="admin@lycandivision.com"></label>
-    <label>Form service endpoint (optional)<input type="url" id="setEndpoint" placeholder="https://formspree.io/f/xxxxxxx"></label>
-    <p class="hint">Without an endpoint, the quote form opens the visitor's email app addressed to you. With a form service like Formspree, Basin or Getform, submissions are delivered straight to your inbox.</p>
-    <h4 class="dlg-sub">Employee portal</h4>
-    <p class="hint">Employee usernames and passwords are managed under <b>Staff logins</b> in the editor toolbar.</p>
-    <label>Time-off requests go to<input type="email" id="setTimeoff" placeholder="l.kornick@lycandivision.com"></label>
-    <label>Time-off form endpoint (optional)<input type="url" id="setTimeoffEp" placeholder="https://formspree.io/f/…"></label>
-    <label>Concern reports go ONLY to (supervisor emails, comma-separated)<input id="setComplaint" placeholder="l.kornick@lycandivision.com"></label>
-    <label>Concern report endpoint (optional)<input type="url" id="setComplaintEp" placeholder="https://formspree.io/f/…"></label>
-    <label>Job applications also go to this email<input type="email" id="setCareers" placeholder="admin@lycandivision.com"></label>
-    <label>Job application endpoint (optional)<input type="url" id="setCareersEp" placeholder="https://formspree.io/f/…"></label>
+    <h4 class="dlg-sub">Secure form delivery</h4>
+    <p class="hint">Form records and notifications are handled by the PHP backend. Quote requests and applications go to admin@lycandivision.com; time-off and concern reports go to l.kornick@lycandivision.com. These recipients are configured privately on the server.</p>
     <h4 class="dlg-sub">Site editor</h4>
     <label>New editor password (leave blank to keep the current one)<input type="password" id="setEditorPass" autocomplete="new-password"></label>
-    <p class="hint">Point the concern endpoint at a form whose notifications go only to those supervisors.</p>
     <div class="dlg-actions"><button value="cancel">Cancel</button><button value="apply" class="primary">Save settings</button></div>
   </form>
 </dialog>
 
 <dialog class="dlg dlg-wide" id="acctDlg">
   <form method="dialog">
-    <h3>Staff logins</h3>
-    <p class="hint">Each employee signs in with their own username and password and sees only the schedule rows assigned to their login. Supervisors see every row and choose which login sees each row with Edit schedule on the Schedule tab.</p>
-    <div id="acctList" class="acct-list"></div>
-    <h4 class="dlg-sub">Add a login</h4>
-    <div class="acct-new">
-      <input id="newUser" placeholder="Username" autocomplete="off" autocapitalize="none">
-      <input id="newName" placeholder="Display name" autocomplete="off">
-      <input id="newPass" type="password" placeholder="Password" autocomplete="new-password">
-      <select id="newRole"><option value="employee">Officer</option><option value="dispatcher">Dispatcher</option><option value="support">Support Staff</option><option value="supervisor">Supervisor</option><option value="ia">Internal Affairs</option><option value="hr">HR</option><option value="captain">Captain</option><option value="asst_chief">Assistant Chief</option><option value="chief">Chief</option><option value="owner">Site Owner</option></select>
-      <button type="button" id="addAcct" class="primary">Add login</button>
-    </div>
+    <h3>Staff accounts</h3>
+    <p class="hint">Staff accounts are managed from the authenticated portal only. The site editor cannot create or store passwords.</p>
     <div class="dlg-actions"><button value="close">Done</button></div>
   </form>
 </dialog>
@@ -1352,36 +1339,13 @@
   const cfg = {
     title: document.title,
     accent: getComputedStyle(root).getPropertyValue('--accent').trim() || '#39ff14',
-    email: '', endpoint: '',
-    timeoffEmail: '', timeoffEndpoint: '',
-    complaintEmails: '', complaintEndpoint: '',
-    careersEmail: '', careersEndpoint: '',
-    editorPass: '',   // SHA-256 of "lycan-editor:<site editor password>"
-    accounts: ''      // JSON list of staff logins; passwords stored as SHA-256 of "user:password"
+    editorPass: ''    // SHA-256 of "lycan-editor:<site editor password>"
   };
   const DATA_KEYS = Object.keys(cfg).slice(2);
   DATA_KEYS.forEach(k => cfg[k] = site.dataset[k] || '');
 
   // Restore a saved draft from this browser, if one exists.
   // Sections added to the page after the draft was saved (e.g. the portal) are kept.
-  // Older drafts kept the schedule as page HTML; read it so it can become portal records
-  const parseSched = root => {
-    const sched = root.querySelector('.sched');
-    if (!sched) return null;
-    const cells = row => [...row.children].filter(c => !c.classList.contains('edit-ui')).map(c => c.textContent.trim());
-    const head = sched.querySelector('.sched-head');
-    return {
-      week: root.querySelector('[data-panel="schedule"] .panel-head p')?.textContent.trim() || '',
-      note: root.querySelector('[data-panel="schedule"] .small-note')?.textContent.trim() || '',
-      days: head ? cells(head).slice(2, 9) : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-      rows: [...sched.querySelectorAll('.sched-row[data-item]')].map((r, i) => {
-        const c = cells(r);
-        return { id: 'r' + i, owner: r.dataset.owner || '', officer: c[0] || '', post: c[1] || '', days: c.slice(2, 9) };
-      })
-    };
-  };
-  let legacySchedule = null;
-
   const draft = store.get(KEY);
   if (draft && draft.html) {
     const defaults = [...site.children].filter(c => c.id);
@@ -1397,12 +1361,16 @@
       const saved = site.querySelector(':scope > #' + c.id);
       if (!saved) { site.appendChild(c); return; }
       if (c.dataset.v && saved.dataset.v !== c.dataset.v) {
-        // this section was upgraded since the draft was saved: take the new version, carrying the schedule over
-        legacySchedule = parseSched(saved);
         saved.replaceWith(c);
       }
     });
     Object.assign(cfg, draft.cfg || {});
+    delete cfg.accounts;
+    if (draft.cfg) {
+      ['accounts', 'email', 'endpoint', 'timeoffEmail', 'timeoffEndpoint', 'complaintEmails',
+        'complaintEndpoint', 'careersEmail', 'careersEndpoint'].forEach(key => delete draft.cfg[key]);
+      store.set(KEY, draft);
+    }
     // Apply Now used to be a placeholder email link; it now opens the application page
     site.querySelectorAll('#careers a.btn[href^="mailto:"]').forEach(a => a.setAttribute('href', '#apply'));
     // menu links added since the draft was saved
@@ -1411,6 +1379,14 @@
       list.querySelector('a[href="#careers"]')?.closest('li')?.insertAdjacentHTML('beforebegin', '<li><a href="#gallery" data-e>Gallery</a></li>');
     });
   }
+  site.removeAttribute('data-accounts');
+  const savedDraft = store.get(KEY);
+  if (savedDraft?.cfg) {
+    ['accounts', 'email', 'endpoint', 'timeoffEmail', 'timeoffEndpoint', 'complaintEmails',
+      'complaintEndpoint', 'careersEmail', 'careersEndpoint'].forEach(key => delete savedDraft.cfg[key]);
+    store.set(KEY, savedDraft);
+  }
+  try { localStorage.removeItem('lycan-portal-db-v1'); sessionStorage.removeItem('lycan-portal-auth'); } catch {}
 
   function applyCfg(){
     document.title = cfg.title;
@@ -1420,27 +1396,83 @@
   applyCfg();
 
   // ---------- employee portal ----------
-  const AUTH = 'lycan-portal-auth';
-  const sha256 = async s => {
-    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
-    return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
-  };
-  // Logins: ones the site owner adds (page settings) plus ones supervisors create in the portal
-  const cfgAccounts = () => { try { return JSON.parse(cfg.accounts) || []; } catch { return []; } };
-  const getAccounts = () => {
-    // site-owner logins can be removed or edited (name, badge, role) in the portal
-    const d = db.load(), removed = new Set(d.removed || []), edits = d.acctEdits || {};
-    const base = cfgAccounts().filter(a => !removed.has(a.user)).map(a => ({ ...a, ...(edits[a.user] || {}) }));
-    const taken = new Set(base.map(a => a.user));
-    return [...base, ...(d.accounts || []).filter(a => !taken.has(a.user)).map(a => ({ ...a, src: 'portal' }))];
-  };
-  // a username is taken if any login uses it now, or a removed site-owner login used it
-  const usernameTaken = user => getAccounts().some(a => a.user === user) || cfgAccounts().some(a => a.user === user);
-  const setAccounts = list => { cfg.accounts = JSON.stringify(list); applyCfg(); save(false); applyUser(); };
-  const passHash = (user, pass) => sha256(user + ':' + pass);
-  let currentUser = null, profileFor, pendingReset = null;
+  let csrfToken = '', currentUser = null, currentUserInfo = null, profileFor, pendingReset = null;
+  let portalData = { accounts: [], profiles: {}, schedule: null, records: {} };
   let createdFor = null, lastCreated = '';   // the login whose temporary password is on screen, and its copy text
-  try { currentUser = sessionStorage.getItem(AUTH); } catch {}
+  const apiError = error => {
+    const message = error?.message || 'The secure portal service is unavailable.';
+    toast(message);
+    return false;
+  };
+  async function apiGet(action){
+    const response = await fetch(`api/portal.php?action=${encodeURIComponent(action)}`, {
+      headers: { Accept: 'application/json' }, credentials: 'same-origin'
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || !result.ok) throw new Error(result.error || 'The secure portal service is unavailable.');
+    if (result.csrf) csrfToken = result.csrf;
+    return result;
+  }
+  async function apiPost(action, data = {}, file = null){
+    if (!csrfToken) await apiGet('csrf');
+    let body, headers = { Accept: 'application/json', 'X-CSRF-Token': csrfToken };
+    if (file) {
+      body = new FormData();
+      body.append('_json', JSON.stringify(data));
+      body.append(file.field, file.file);
+    } else {
+      headers['Content-Type'] = 'application/json';
+      body = JSON.stringify(data);
+    }
+    const response = await fetch(`api/${action === 'setup-owner' ? 'setup-owner.php' : 'portal.php?action=' + encodeURIComponent(action)}`, {
+      method: 'POST', headers, body, credentials: 'same-origin'
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || !result.ok) throw new Error(result.error || 'The secure portal service is unavailable.');
+    if (result.csrf) csrfToken = result.csrf;
+    return result;
+  }
+  const getAccounts = () => portalData.accounts?.length ? portalData.accounts : (currentUserInfo ? [currentUserInfo] : []);
+  const usernameTaken = user => getAccounts().some(a => a.user === user);
+  const needsReset = a => !!a?.mustReset;
+  async function refreshPortalState(){
+    const state = await apiGet('state');
+    portalData = { ...portalData, ...state, records: state.records || {} };
+    currentUserInfo = state.user;
+    currentUser = state.user?.username || null;
+    applyUser();
+  }
+  async function syncPortal(){
+    try {
+      const session = await apiGet('me');
+      currentUserInfo = session.user;
+      currentUser = session.user?.username || null;
+      if (currentUser && session.user.mustReset) {
+        pendingReset = currentUser;
+        $('resetWho').textContent = session.user.name || currentUser;
+        body.classList.add('portal-reset');
+      } else if (currentUser) {
+        body.classList.remove('portal-reset');
+        await refreshPortalState();
+      }
+      else {
+        body.classList.remove('portal-reset');
+        portalData = { accounts: currentUserInfo ? [currentUserInfo] : [], profiles: {}, schedule: null, records: {} };
+        applyUser();
+      }
+      const setup = await apiGet('setup-status');
+      $('setupBox').hidden = !setup.available;
+      if (!currentUser) {
+        const gallery = await apiGet('public-gallery');
+        portalData.records.gallery = gallery.gallery || [];
+      }
+      renderGallery();
+    } catch (error) {
+      $('setupBox').hidden = true;
+      const status = $('portalLogin')?.querySelector('.form-status');
+      if (status) { status.textContent = error.message; status.classList.add('err'); }
+    }
+  }
 
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const fmtDate = s => {
@@ -1451,66 +1483,48 @@
   };
   const fmtTime = s => new Date(s).toLocaleString([], { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
 
-  // Portal records (time off, reports, posts, BOLOs).
-  // TEST MODE: kept in this browser's localStorage only. Replace these methods with
-  // calls to a real database to share records across devices.
-  const DB_KEY = 'lycan-portal-db-v1';
+  // Portal data lives on the PHP API; this object is only an in-memory view.
   const db = {
-    load(){ try { return JSON.parse(localStorage.getItem(DB_KEY)) || {}; } catch { return {}; } },
-    write(d){ try { localStorage.setItem(DB_KEY, JSON.stringify(d)); return true; } catch { toast('Browser storage is full. Use smaller photos.'); return false; } },
-    list(t){ return this.load()[t] || []; },
-    add(t, rec){
-      const d = this.load();
-      (d[t] = d[t] || []).unshift({ id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), at: new Date().toISOString(), ...rec });
-      return this.write(d);
+    load(){ return portalData; },
+    list(type){ return (portalData.records || {})[type] || []; },
+    async add(type, record){
+      try {
+        await apiPost('record-save', { type, record });
+        await refreshPortalState();
+        return true;
+      } catch (error) { return apiError(error); }
     },
-    update(t, id, patch){ const d = this.load(); const r = (d[t] || []).find(x => x.id === id); if (r) Object.assign(r, patch); return this.write(d); },
-    remove(t, id){ const d = this.load(); d[t] = (d[t] || []).filter(x => x.id !== id); return this.write(d); }
+    async update(type, id, patch){
+      try {
+        if (type === 'posts' || type === 'bolos') {
+          const current = this.list(type).find(item => item.id === id) || {};
+          await apiPost('record-save', { type, id, record: { ...current, ...patch } });
+        } else if (type === 'gallery' && 'caption' in patch) {
+          await apiPost('gallery-caption', { id, caption: patch.caption });
+        } else {
+          if ('status' in patch) await apiPost('record-action', { type, id, verb: 'status', value: patch.status });
+          if ('note' in patch) await apiPost('record-action', { type, id, verb: 'note', note: patch.note });
+          if (!('status' in patch) && !('note' in patch)) throw new Error('Unsupported update.');
+        }
+        await refreshPortalState();
+        return true;
+      } catch (error) { return apiError(error); }
+    },
+    async remove(type, id){
+      try {
+        await apiPost('record-delete', { type, id });
+        await refreshPortalState();
+        return true;
+      } catch (error) { return apiError(error); }
+    }
   };
-  // Passwords employees set themselves live with the portal records, not the page settings,
-  // so changing one never saves a private copy of the site in the employee's browser
-  const passFor = a => (db.load().passwords || {})[a.user] || a.pass;
-  // a temporary password (a new login, or one a supervisor re-issued) must be replaced at first sign-in
-  const needsReset = a => { const t = db.load().tempReset || {}; return a.user in t ? !!t[a.user] : !!a.mustReset; };
   // "employee" is the Officer role (kept as the stored value so existing logins carry over)
   const ROLE_NAMES = { employee: 'Officer', dispatcher: 'Dispatcher', support: 'Support Staff', supervisor: 'Supervisor', ia: 'Internal Affairs', hr: 'HR', captain: 'Captain', asst_chief: 'Assistant Chief', chief: 'Chief', owner: 'Site Owner' };
   const genTemp = () => {
     const A = 'ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
-    const s = [...crypto.getRandomValues(new Uint32Array(10))].map(n => A[n % A.length]).join('');
-    return `${s.slice(0, 4)}-${s.slice(4, 8)}-${s.slice(8)}`;
+    const s = [...crypto.getRandomValues(new Uint32Array(16))].map(n => A[n % A.length]).join('');
+    return `${s.slice(0, 4)}-${s.slice(4, 8)}-${s.slice(8, 12)}-${s.slice(12)}`;
   };
-  if (!db.load().seeded) {
-    const d = db.load(), at = '2026-11-07T12:00:00.000Z';
-    d.seeded = true;
-    d.posts = [
-      { id: 'p1', at, tag: 'Announcement', date: '2026-11-07', title: 'Welcome to the Employee Portal', body: 'Schedules, announcements and BOLOs will be posted here. Use the Time Off and Report a Concern tabs to reach the right people directly.' },
-      { id: 'p2', at, tag: 'Reminder', date: '2026-11-07', title: 'Uniform & Equipment Standards', body: 'Report to post in a clean, complete uniform with your ID visible. Replace this text with your current uniform and equipment policy.' },
-      { id: 'p3', at, tag: 'Training', date: '2026-11-07', title: 'Upcoming Training', body: 'Dates and details for the next training session will be posted here.' }
-    ];
-    d.bolos = [
-      { id: 'b1', at, status: 'Active', issued: '2026-11-07', img: '', title: 'Example: Person of Interest', description: 'Height, build, hair, clothing and any distinguishing marks.', lastSeen: 'Site / location, date and time.', reason: 'Why officers should watch for this person (e.g. trespass warning on file).', action: 'Do not engage. Notify your supervisor and document in your daily report.' },
-      { id: 'b2', at, status: 'Active', issued: '2026-11-07', img: '', title: 'Example: Vehicle', vehicle: 'Color, make, model, year. State and plate number, if known.', lastSeen: 'Site / location, date and time.', action: 'Record time and location if seen. Notify your supervisor.' }
-    ];
-    db.write(d);
-  }
-  const DEFAULT_SCHEDULE = {
-    week: 'Week of November 9 – 15, 2026. Schedule changes are announced on the Bulletin Board.',
-    note: 'Shift swaps must be approved by a supervisor. If you will be late or cannot make a shift, call dispatch immediately at (555) 555-0100.',
-    days: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-    rows: [
-      { id: 'r0', owner: 'admin1', officer: 'Admin1', post: 'Site A – Front Desk', days: ['0700–1500', '0700–1500', '0700–1500', '0700–1500', '0700–1500', 'OFF', 'OFF'] },
-      { id: 'r1', owner: '', officer: 'Officer 2', post: 'Site A – Overnight', days: ['OFF', 'OFF', '2300–0700', '2300–0700', '2300–0700', '2300–0700', '2300–0700'] },
-      { id: 'r2', owner: '', officer: 'Officer 3', post: 'Mobile Patrol', days: ['1500–2300', '1500–2300', '1500–2300', '1500–2300', 'OFF', 'OFF', '1500–2300'] },
-      { id: 'r3', owner: '', officer: 'Officer 4', post: 'Event Coverage', days: ['OFF', 'OFF', 'OFF', 'OFF', '1800–0200', '1800–0200', 'OFF'] }
-    ]
-  };
-  if (!db.load().schedule) {
-    const d = db.load(), ls = legacySchedule;
-    d.schedule = ls && ls.rows.length
-      ? { week: ls.week || DEFAULT_SCHEDULE.week, note: ls.note || DEFAULT_SCHEDULE.note, days: ls.days.length === 7 ? ls.days : DEFAULT_SCHEDULE.days, rows: ls.rows }
-      : DEFAULT_SCHEDULE;
-    db.write(d);
-  }
 
   const STATUS_TAG = { Pending: 'tag-warn', Denied: 'tag-alert', Open: 'tag-alert', Reviewed: 'tag-warn', Closed: 'tag-muted', Active: 'tag-alert', Resolved: 'tag-muted', Urgent: 'tag-alert', 'Temporary password': 'tag-warn', Contacted: 'tag-warn', Interviewing: 'tag-warn', 'Not Selected': 'tag-muted' };
   const tag = s => `<span class="tag ${STATUS_TAG[s] || ''}">${esc(s)}</span>`;
@@ -1726,7 +1740,7 @@
               ['Ohio license', [a.license, a.licenseNumber].filter(Boolean).join(' · ')], ['Firearms', a.firearms], ['Transportation', a.transport],
               ['Experience', a.experience], ['Background', a.background], ['Last employer', a.prevEmployer], ['References', a.references],
               ['Why Lycan', a.about], ['Received', fmtTime(a.at)], ['Status', a.decidedBy ? `${a.status} by ${a.decidedBy}` : '']])}
-        ${a.resume?.data ? `<p class="resume-link"><a href="${esc(a.resume.data)}" download="${esc(a.resume.name)}">Download résumé: ${esc(a.resume.name)} (${Math.max(1, Math.round(a.resume.size / 1024))} KB)</a></p>` : ''}
+        ${a.resumeUrl ? `<p class="resume-link"><a href="${esc(a.resumeUrl)}">Download résumé: ${esc(a.resumeName || 'Résumé')} (${Math.max(1, Math.round((a.resumeSize || 0) / 1024))} KB)</a></p>` : ''}
         <label class="field rec-note"><span>HR notes (internal, not shown to the applicant)</span>
           <textarea data-note="${a.id}" rows="2" placeholder="Interview notes, follow-ups, background check status">${esc(noteDrafts[a.id] ?? a.note ?? '')}</textarea></label>
         ${btns([...[['Interview', 'Interviewing'], ['Hire', 'Hired'], ['Not selected', 'Not Selected'], ['Reopen', 'New']].filter(([, s]) => s !== a.status)
@@ -1814,7 +1828,7 @@
       </figure>`).join('')
       : [1, 2, 3].map(() => `<figure class="gallery-item"><div class="gallery-placeholder" aria-hidden="true">${LOGO_IMAGE}<span>Photos coming soon</span></div></figure>`).join(''));
   }
-  document.addEventListener('click', e => {
+  document.addEventListener('click', async e => {
     const b = e.target.closest('[data-gallery]'); if (!b) return;
     const p = db.list('gallery').find(x => x.id === b.dataset.gallery); if (!p) return;
     $('lbImg').src = p.img; $('lbImg').alt = p.caption || 'Lycan Division photo';
@@ -1825,7 +1839,7 @@
 
   // Show the portal for the signed-in account; employees only see schedule rows assigned to them
   function applyUser(){
-    const a = currentUser && getAccounts().find(x => x.user === currentUser);
+    const a = currentUser && (getAccounts().find(x => x.user === currentUser) || currentUserInfo);
     const role = a ? a.role || 'employee' : '';
     body.classList.toggle('portal-authed', !!a);
     body.classList.toggle('role-sup', isSup(role));
@@ -1866,7 +1880,7 @@
     $('passwordForm').querySelector('.form-status').textContent = '';
   }
 
-  function saveProfile(form){
+  async function saveProfile(form){
     const st = form.querySelector('.form-status');
     st.className = 'form-status';
     if (!currentUser) { st.textContent = 'Please sign in again.'; st.classList.add('err'); return; }
@@ -1875,11 +1889,13 @@
     const p = Object.fromEntries(PROFILE_FIELDS.map(k => [k, form.elements.namedItem(k).value.trim()]));
     p.emergency = collectEmg().filter(c => c.name || c.phone);
     p.updatedAt = new Date().toISOString();
-    const d = db.load();
-    (d.profiles = d.profiles || {})[currentUser] = p;
-    if (!db.write(d)) return;
-    renderEmg(p.emergency.length ? p.emergency : [{}]);
-    st.textContent = 'Profile saved.'; st.classList.add('ok');
+    try {
+      await apiPost('profile-save', { profile: p });
+      portalData.profiles = portalData.profiles || {};
+      portalData.profiles[currentUser] = p;
+      renderEmg(p.emergency.length ? p.emergency : [{}]);
+      st.textContent = 'Profile saved.'; st.classList.add('ok');
+    } catch (error) { st.textContent = error.message; st.classList.add('err'); }
   }
 
   async function changePassword(form){
@@ -1888,17 +1904,15 @@
     const fail = msg => { st.textContent = msg; st.classList.add('err'); };
     const a = currentUser && getAccounts().find(x => x.user === currentUser);
     if (!a) return fail('Please sign in again.');
-    if (!window.crypto?.subtle) return fail('Changing passwords needs the site to be served over https.');
     const val = k => form.elements.namedItem(k).value;
-    if (await passHash(a.user, val('current')) !== passFor(a)) return fail('Your current password is incorrect.');
-    if (val('newPass').length < 8) return fail('Use at least 8 characters for your new password.');
+    if (val('newPass').length < 14) return fail('Use at least 14 characters for your new password.');
     if (val('newPass') !== val('confirmPass')) return fail('The new passwords do not match.');
     if (val('newPass') === val('current')) return fail('Choose a password different from your current one.');
-    const d = db.load();
-    (d.passwords = d.passwords || {})[a.user] = await passHash(a.user, val('newPass'));
-    if (!db.write(d)) return;
-    form.reset();
-    st.textContent = 'Password updated. Use your new password next time you sign in.'; st.classList.add('ok');
+    try {
+      await apiPost('change-password', { currentPassword: val('current'), newPassword: val('newPass') });
+      form.reset();
+      st.textContent = 'Password updated.'; st.classList.add('ok');
+    } catch (error) { fail(error.message); }
   }
 
   site.addEventListener('click', e => {
@@ -1912,32 +1926,37 @@
   function setUser(user){
     if (user !== currentUser) clearCreated();   // never leave a temporary password on screen after sign-out
     currentUser = user;
+    currentUserInfo = user ? getAccounts().find(x => x.user === user) || currentUserInfo : null;
+    if (!user) portalData = { accounts: [], profiles: {}, schedule: null, records: {} };
     schedDraft = null;
-    try { user ? sessionStorage.setItem(AUTH, user) : sessionStorage.removeItem(AUTH); } catch {}
     applyUser();
   }
 
   async function login(form){
     const status = form.querySelector('.form-status');
     status.className = 'form-status';
-    if (!window.crypto?.subtle) { status.textContent = 'Sign-in needs the site to be served over https.'; status.classList.add('err'); return; }
-    const user = form.username.value.trim().toLowerCase();
-    const acct = getAccounts().find(a => a.user === user);
-    if (acct && passFor(acct) === await passHash(user, form.password.value)) {
+    try {
+      const result = await apiPost('login', {
+        username: form.elements.namedItem('username').value.trim().toLowerCase(),
+        password: form.elements.namedItem('password').value
+      });
       form.reset();
-      if (needsReset(acct)) {
-        // signed in with a temporary password: they must choose their own before entering the portal
-        pendingReset = user;
-        $('resetWho').textContent = acct.name || user;
+      currentUserInfo = { ...result.user, user: result.user.username };
+      currentUser = result.user.username;
+      if (result.user.mustReset) {
+        pendingReset = currentUser;
+        $('resetWho').textContent = result.user.name || currentUser;
         $('resetForm').reset();
         $('resetForm').querySelector('.form-status').textContent = '';
         body.classList.add('portal-reset');
         $('resetForm').elements.namedItem('newPass').focus();
         return;
       }
-      setUser(user); showTab('schedule'); window.scrollTo(0, 0);
-    } else {
-      status.textContent = 'Incorrect username or password.'; status.classList.add('err'); form.password.value = '';
+      await refreshPortalState();
+      showTab('schedule'); window.scrollTo(0, 0);
+    } catch (error) {
+      status.textContent = error.message; status.classList.add('err');
+      form.elements.namedItem('password').value = '';
     }
   }
 
@@ -1948,19 +1967,17 @@
     st.className = 'form-status';
     const fail = msg => { st.textContent = msg; st.classList.add('err'); };
     st.textContent = '';
-    const a = pendingReset && getAccounts().find(x => x.user === pendingReset);
-    if (!a) { endReset(); return; }
+    if (!pendingReset) { endReset(); return; }
     const nw = form.elements.namedItem('newPass').value, cf = form.elements.namedItem('confirmPass').value;
-    if (nw.length < 8) return fail('Use at least 8 characters.');
+    if (nw.length < 14) return fail('Use at least 14 characters.');
     if (nw !== cf) return fail('The passwords do not match.');
-    const hash = await passHash(a.user, nw);
-    if (hash === passFor(a)) return fail('Choose a password different from your temporary one.');
-    const d = db.load();
-    (d.passwords = d.passwords || {})[a.user] = hash;
-    (d.tempReset = d.tempReset || {})[a.user] = false;
-    if (!db.write(d)) return;
-    endReset(); setUser(a.user); showTab('schedule'); window.scrollTo(0, 0);
-    toast('Password set. Welcome to the portal!');
+    try {
+      await apiPost('setup-password', { newPassword: nw });
+      endReset();
+      await refreshPortalState();
+      showTab('schedule'); window.scrollTo(0, 0);
+      toast('Password set. Welcome to the portal!');
+    } catch (error) { fail(error.message); }
   }
 
   function clearCreated(){ createdFor = null; lastCreated = ''; fill('staffCreated', ''); }
@@ -1979,10 +1996,6 @@
     $('staffCreated').scrollIntoView({ block: 'nearest' });
   }
 
-  // another tab changed the portal records (for example, a new employee just set their password):
-  // refresh what this tab shows
-  window.addEventListener('storage', e => { if (e.key === DB_KEY) applyUser(); });
-
   // badge numbers are unique (ignoring capitals); blank is allowed
   const badgeTaken = (badge, except) => !!badge && getAccounts().some(a => a.user !== except && (a.badge || '').toLowerCase() === badge.toLowerCase());
 
@@ -1998,7 +2011,7 @@
   // Edit a login's name, badge number and role. The role list is what the editor may assign, plus the
   // login's current role so editing other details never forces a role change.
   function openStaffEdit(a, myRole){
-    $('staffEditId').value = a.user;
+    $('staffEditId').value = a.id;
     $('staffEditUser').textContent = `Username: ${a.user}`;
     $('staffEditName').value = a.name || '';
     $('staffEditBadge').value = a.badge || '';
@@ -2008,20 +2021,20 @@
     $('staffEditDlg').returnValue = '';
     $('staffEditDlg').showModal();
   }
-  $('staffEditDlg').addEventListener('close', () => {
+  $('staffEditDlg').addEventListener('close', async () => {
     if ($('staffEditDlg').returnValue !== 'save') return;
-    const user = $('staffEditId').value, a = getAccounts().find(x => x.user === user);
+    const userId = Number($('staffEditId').value), a = getAccounts().find(x => x.id === userId);
     const myRole = getAccounts().find(x => x.user === currentUser)?.role;
     if (!a || a.user === currentUser || !canEdit(myRole, a.role)) { toast('Your login cannot change this account.'); return; }
     const name = $('staffEditName').value.trim(), badge = $('staffEditBadge').value.trim(), role = $('staffEditRole').value;
     if (!name) { toast('A login needs a name. Nothing was changed.'); return; }
     if (role !== (a.role || 'employee') && !creatableRoles(myRole).includes(role)) { toast('Your login cannot assign that role.'); return; }
-    if (badgeTaken(badge, user)) { toast(`Badge number ${badge} is already used by another login. Nothing was changed.`); return; }
-    const d = db.load(), patch = { name, badge, role };
-    if (a.src === 'portal') Object.assign((d.accounts || []).find(x => x.user === user) || {}, patch);
-    else (d.acctEdits = d.acctEdits || {})[user] = patch;
-    if (!db.write(d)) return;
-    applyUser(); toast(`Login "${user}" updated`);
+    if (badgeTaken(badge, a.user)) { toast(`Badge number ${badge} is already used by another login. Nothing was changed.`); return; }
+    try {
+      await apiPost('staff-edit', { userId, name, badge, role });
+      await refreshPortalState();
+      toast(`Login "${a.user}" updated`);
+    } catch (error) { apiError(error); }
   });
 
   async function createStaff(form){
@@ -2029,23 +2042,22 @@
     st.className = 'form-status'; st.textContent = ''; fill('staffCreated', '');
     const fail = msg => { st.textContent = msg; st.classList.add('err'); };
     const myRole = getAccounts().find(a => a.user === currentUser)?.role;
-    if (!window.crypto?.subtle) return fail('Creating logins needs the site to be served over https.');
     const val = k => form.elements.namedItem(k).value.trim();
     const name = val('fullName'), user = val('username').toLowerCase(), role = val('role'), temp = val('temp'), badge = val('badge');
     if (!creatableRoles(myRole).includes(role)) return fail('Your login cannot create that role.');
     if (!name) return fail('Enter the employee\'s full name.');
-    if (!/^[a-z0-9._-]{2,40}$/.test(user)) return fail('Usernames are 2–40 letters, numbers, dots, dashes or underscores.');
+    if (!/^[a-z0-9._-]{3,40}$/.test(user)) return fail('Usernames are 3–40 letters, numbers, dots, dashes or underscores.');
     if (usernameTaken(user)) return fail('That username is already taken.');
     if (badgeTaken(badge)) return fail(`Badge number ${badge} is already used by another login.`);
-    if (temp.length < 8) return fail('The temporary password must be at least 8 characters.');
-    const d = db.load();
-    (d.accounts = d.accounts || []).push({ user, name, badge, role, pass: await passHash(user, temp), mustReset: true, createdBy: myName(), at: new Date().toISOString() });
-    if (d.passwords) delete d.passwords[user];
-    if (d.tempReset) delete d.tempReset[user];
-    if (!db.write(d)) return;
-    form.reset();
-    applyUser();
-    showCreated('Login created', user, temp, name);
+    if (temp.length < 14) return fail('The temporary password must be at least 14 characters.');
+    try {
+      await apiPost('staff-create', { username: user, name, badge, role, temporaryPassword: temp });
+      await refreshPortalState();
+      form.reset();
+      const tempField = form.elements.namedItem('temp');
+      if (tempField) tempField.value = genTemp();
+      showCreated('Login created', user, temp, name);
+    } catch (error) { fail(error.message); }
   }
 
   site.addEventListener('click', async e => {
@@ -2061,26 +2073,24 @@
     const myRole = getAccounts().find(x => x.user === currentUser)?.role;
     const permitted = act === 'del' ? canRemove(myRole, a?.role) : act === 'edit' ? canEdit(myRole, a?.role) : canManage(myRole, a?.role);
     if (!a || a.user === currentUser || !permitted) { toast('Your login cannot change this account.'); return; }
-    const d = db.load();
     if (act === 'edit') {
       openStaffEdit(a, myRole);
     } else if (act === 'temp') {
       if (!(await ask(`Issue a new temporary password for ${a.name || a.user}? Their current password will stop working.`, { ok: 'Issue password' }))) return;
       const temp = genTemp();
-      (d.passwords = d.passwords || {})[a.user] = await passHash(a.user, temp);
-      (d.tempReset = d.tempReset || {})[a.user] = true;
-      if (!db.write(d)) return;
-      applyUser();
-      showCreated('New temporary password issued', a.user, temp, a.name || a.user);
+      try {
+        await apiPost('staff-reset', { userId: a.id, temporaryPassword: temp });
+        await refreshPortalState();
+        showCreated('New temporary password issued', a.user, temp, a.name || a.user);
+      } catch (error) { apiError(error); }
     } else if (act === 'del') {
       if (!(await ask(`Remove the login "${a.user}" (${a.name || a.user})? They will no longer be able to sign in.`, { ok: 'Remove login', danger: true }))) return;
-      if (a.src === 'portal') d.accounts = (d.accounts || []).filter(x => x.user !== a.user);
-      else d.removed = [...new Set([...(d.removed || []), a.user])];
-      if (d.passwords) delete d.passwords[a.user];
-      if (d.tempReset) delete d.tempReset[a.user];
-      db.write(d);
-      fill('staffCreated', '');
-      applyUser(); toast(`Login "${a.user}" removed`);
+      try {
+        await apiPost('staff-disable', { userId: a.id });
+        await refreshPortalState();
+        fill('staffCreated', '');
+        toast(`Login "${a.user}" removed`);
+      } catch (error) { apiError(error); }
     }
   });
 
@@ -2107,7 +2117,7 @@
   }
   window.addEventListener('hashchange', route);
   route();
-  applyUser();
+  syncPortal();
   renderGallery();
   site.querySelectorAll('.year').forEach(n => n.textContent = new Date().getFullYear());
 
@@ -2122,13 +2132,26 @@
   }
   initReveal();
 
-  document.addEventListener('click', e => {
+  document.addEventListener('click', async e => {
     const tab = e.target.closest('[data-tab]');
     if (tab) { showTab(tab.dataset.tab); return; }
     const pa = e.target.closest('[data-portal]');
     if (pa) {
-      if (pa.dataset.portal === 'logout') { setUser(null); window.scrollTo(0, 0); }
-      else if (pa.dataset.portal === 'cancel-reset') endReset();
+      if (pa.dataset.portal === 'logout') {
+        try { await apiPost('logout'); } catch (error) { toast(error.message); }
+        csrfToken = '';
+        setUser(null);
+        window.scrollTo(0, 0);
+        apiGet('public-gallery').then(result => {
+          portalData.records.gallery = result.gallery || [];
+          renderGallery();
+        }).catch(() => {});
+      }
+      else if (pa.dataset.portal === 'cancel-reset') {
+        try { await apiPost('logout'); } catch (error) { toast(error.message); }
+        setUser(null);
+        endReset();
+      }
       else requestEdit();
       return;
     }
@@ -2142,35 +2165,31 @@
     if (!editing && e.target.closest('.nav-links a')) header.classList.remove('open');
   });
 
-  // Each form sends to its own recipients (set in Settings): an endpoint if given, otherwise email.
-  const FORMS = {
-    quote: {
-      to: 'email', via: 'endpoint',
-      subject: d => `Quote request — ${d.get('name')}${d.get('company') ? ' (' + d.get('company') + ')' : ''}`,
-      sent: "Thank you — your request was sent. We'll be in touch shortly."
-    },
-    timeoff: {
-      to: 'timeoffEmail', via: 'timeoffEndpoint',
-      subject: d => `Time-off request — ${d.get('name')} (${d.get('start')} to ${d.get('end')})`,
-      sent: 'Request submitted. Track its status under My Requests below.'
-    },
-    complaint: {
-      to: 'complaintEmails', via: 'complaintEndpoint',
-      subject: d => `Confidential report — ${d.get('category')}`,
-      sent: 'Your report was submitted confidentially to Internal Affairs and the company owners.'
-    },
-    application: {
-      to: 'careersEmail', via: 'careersEndpoint',
-      subject: d => `Job application — ${d.get('name')} (${d.get('position')})`,
-      sent: 'Application received.'
-    }
-  };
-  const readFile = file => new Promise((resolve, reject) => {
-    const r = new FileReader(); r.onload = () => resolve(r.result); r.onerror = reject; r.readAsDataURL(file);
-  });
-
   document.addEventListener('submit', async e => {
     if (e.target.id === 'portalLogin') { e.preventDefault(); login(e.target); return; }
+    if (e.target.id === 'setupForm') {
+      e.preventDefault();
+      const form = e.target, status = form.querySelector('.form-status');
+      status.className = 'form-status';
+      const data = Object.fromEntries(new FormData(form).entries());
+      if (String(data.password || '').length < 14) {
+        status.textContent = 'Choose a password with at least 14 characters.';
+        status.classList.add('err');
+        return;
+      }
+      try {
+        await apiPost('setup-owner', data);
+        form.reset();
+        $('setupBox').hidden = true;
+        await refreshPortalState();
+        showTab('schedule');
+        toast('Owner account created.');
+      } catch (error) {
+        status.textContent = error.message;
+        status.classList.add('err');
+      }
+      return;
+    }
     if (e.target.id === 'profileForm') { e.preventDefault(); saveProfile(e.target); return; }
     if (e.target.id === 'passwordForm') { e.preventDefault(); changePassword(e.target); return; }
     if (e.target.id === 'resetForm') { e.preventDefault(); finishReset(e.target); return; }
@@ -2179,7 +2198,7 @@
     if (!form) return;
     e.preventDefault();
     if (editing) { toast('Forms are disabled while editing'); return; }
-    const spec = FORMS[form.dataset.form];
+    const kind = form.dataset.form;
     const status = form.querySelector('.form-status');
     status.className = 'form-status';
     const fail = msg => { status.textContent = msg; status.classList.add('err'); };
@@ -2191,56 +2210,36 @@
       return;
     }
     const data = new FormData(form);
-    const kind = form.dataset.form, portalForm = kind === 'timeoff' || kind === 'complaint';
-    // every form keeps a record in the portal: time off for supervisors, reports for Internal Affairs
-    // and the owners, quote requests for Captains and the Chiefs, applications for HR and the Chiefs
-    const rec = {};
-    for (const k of new Set(data.keys())) {
-      const vals = data.getAll(k).filter(v => typeof v === 'string' && v);   // checkbox groups become "a, b, c"
-      if (vals.length) rec[k] = vals.join(', ');
+    const payload = {};
+    for (const key of new Set(data.keys())) {
+      const values = data.getAll(key).filter(value => typeof value === 'string' && value);
+      if (values.length) payload[key] = values.join(', ');
     }
+    let upload = null;
     if (kind === 'application') {
-      const file = form.elements.namedItem('resume')?.files[0];   // required
+      const file = form.elements.namedItem('resume')?.files[0];
       if (!file) { fail('Please attach your résumé (PDF or Word).'); form.elements.namedItem('resume').focus(); return; }
       if (file.size > 1024 * 1024) { fail('Your résumé must be under 1 MB. Try saving it as a PDF.'); return; }
-      try { rec.resume = { name: file.name, type: file.type, size: file.size, data: await readFile(file) }; }
-      catch { fail('That résumé file could not be read. Please try another file.'); return; }
+      upload = { field: 'resume', file };
     }
-    const endpoint = cfg[spec.via], to = cfg[spec.to].replace(/\s+/g, '');
-    const realTo = to && !/your-domain\.com/i.test(to);   // skip placeholder addresses
-    if (!endpoint && (kind === 'application' || !realTo)) {
-      fail(kind === 'application'
-        ? 'Job applications need a form endpoint so your résumé can be delivered securely.'
-        : 'This form is not configured yet. Please contact us directly.');
-      return;
-    }
-    const saved = kind === 'timeoff' ? db.add('timeoff', { ...rec, by: currentUser, status: 'Pending' })
-      : kind === 'complaint' ? db.add('complaints', { ...rec, status: 'Open' })
-      : kind === 'application' ? db.add('applications', { ...rec, status: 'New' })
-      : db.add('quotes', { ...rec, status: 'New' });
-    if (!saved) { fail(portalForm ? 'Could not save. Please contact a supervisor directly.' : 'Sorry, something went wrong. Please call us directly.'); return; }
-    const done = () => {
-      status.textContent = spec.sent; status.classList.add('ok'); form.reset(); applyUser();
+    const button = form.querySelector('[type=submit]');
+    button.disabled = true;
+    status.textContent = 'Submitting securely…';
+    try {
+      const result = await apiPost('submit', { formType: kind, ...payload }, upload);
+      if (currentUser) await refreshPortalState();
+      form.reset();
+      status.textContent = result.notificationSent === false
+        ? 'Your request was saved, but the email notification could not be sent. Please contact the office directly.'
+        : kind === 'timeoff' ? 'Request submitted. Track its status under My Requests below.'
+        : kind === 'complaint' ? 'Your report was submitted confidentially.'
+        : kind === 'application' ? 'Application received.'
+        : "Thank you — your request was sent. We'll be in touch shortly.";
+      status.classList.add(result.notificationSent === false ? 'err' : 'ok');
       if (kind === 'application') { body.classList.add('applied'); window.scrollTo(0, 0); }
-    };
-    if (endpoint) {
-      const btn = form.querySelector('[type=submit]');
-      btn.disabled = true; status.textContent = 'Sending…';
-      try {
-        data.append('_subject', spec.subject(data));
-        const r = await fetch(endpoint, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
-        if (!r.ok) throw new Error(r.status);
-        done();
-      } catch {
-        fail('Your request was saved, but the email copy could not be sent.');
-      } finally { btn.disabled = false; }
-    } else if (realTo) {
-      const label = k => (form.querySelector(`[name="${k}"]`)?.closest('.field')?.querySelector('span')?.textContent || k).replace(/\s*\*$/, '');
-      const lines = Object.entries(rec).filter(([k]) => k !== 'resume').map(([k, v]) => `${label(k)}: ${v}`).join('\n');
-      location.href = `mailto:${to}?subject=${encodeURIComponent(spec.subject(data))}&body=${encodeURIComponent(lines)}`;
-      status.textContent = 'Your email app should open with this request. Send the email to complete your submission.';
-      status.classList.add('ok');
-    }
+    } catch (error) {
+      fail(error.message);
+    } finally { button.disabled = false; }
   });
 
   // ---------- editor ----------
@@ -2487,14 +2486,6 @@
   function openSettings(){
     $('setTitle').value = cfg.title;
     $('setAccent').value = /^#[0-9a-f]{6}$/i.test(cfg.accent) ? cfg.accent : '#39ff14';
-    $('setEmail').value = cfg.email;
-    $('setEndpoint').value = cfg.endpoint;
-    $('setTimeoff').value = cfg.timeoffEmail;
-    $('setTimeoffEp').value = cfg.timeoffEndpoint;
-    $('setComplaint').value = cfg.complaintEmails;
-    $('setComplaintEp').value = cfg.complaintEndpoint;
-    $('setCareers').value = cfg.careersEmail;
-    $('setCareersEp').value = cfg.careersEndpoint;
     $('setEditorPass').value = '';
     $('setDlg').showModal();
   }
@@ -2503,14 +2494,6 @@
     if ($('setDlg').returnValue === 'apply') {
       cfg.title = $('setTitle').value.trim() || cfg.title;
       cfg.accent = $('setAccent').value;
-      cfg.email = $('setEmail').value.trim();
-      cfg.endpoint = $('setEndpoint').value.trim();
-      cfg.timeoffEmail = $('setTimeoff').value.trim();
-      cfg.timeoffEndpoint = $('setTimeoffEp').value.trim();
-      cfg.complaintEmails = $('setComplaint').value.trim();
-      cfg.complaintEndpoint = $('setComplaintEp').value.trim();
-      cfg.careersEmail = $('setCareers').value.trim();
-      cfg.careersEndpoint = $('setCareersEp').value.trim();
       const newEditorPass = $('setEditorPass').value;
       $('setEditorPass').value = '';
       let msg = 'Settings saved';
@@ -2522,7 +2505,7 @@
   });
 
   // portal records: posts, BOLOs, time off and reports
-  const me = () => currentUser && getAccounts().find(a => a.user === currentUser);
+  const me = () => currentUser && (getAccounts().find(a => a.user === currentUser) || currentUserInfo);
   const myName = () => { const a = me(); return a ? a.name || a.user : ''; };
   const today = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; };
   let boloImg = null;
@@ -2538,7 +2521,7 @@
     if (verb === 'new' || verb === 'edit') { type === 'posts' ? openPostDlg(id) : openBoloDlg(id); return; }
     const WHAT = { timeoff: 'time-off request', posts: 'bulletin post', bolos: 'BOLO', complaints: 'report', quotes: 'quote request', applications: 'application' };
     if (verb === 'del' && !(await ask(`Delete this ${WHAT[type] || 'item'}? This cannot be undone.`, { ok: 'Delete', danger: true }))) return;
-    if (verb === 'del') db.remove(type, id);
+    if (verb === 'del') await db.remove(type, id);
     else {
       const patch = verb === 'status' ? { status: b.dataset.val, decidedBy: myName() } : {};
       // a time-off decision saves the supervisor's note along with it
@@ -2547,8 +2530,8 @@
         const note = noteEl.value.trim(), old = db.list(type).find(r => r.id === id)?.note || '';
         if (note !== old) Object.assign(patch, { note, noteBy: note ? myName() : '' });
       }
-      db.update(type, id, patch);
-      if (verb === 'note') toast('Note saved');
+      const saved = await db.update(type, id, patch);
+      if (saved && verb === 'note') toast('Note saved');
     }
     applyUser();
   });
@@ -2567,11 +2550,12 @@
     }
     if (act === 'cancel') schedDraft = null;
     if (act === 'save') {
-      const d = db.load();
-      d.schedule = { ...collectSched(), updatedBy: myName(), updatedAt: new Date().toISOString() };
-      if (!db.write(d)) return;
-      schedDraft = null;
-      toast('Schedule saved');
+      try {
+        await apiPost('schedule-save', { schedule: { ...collectSched(), updatedBy: myName(), updatedAt: new Date().toISOString() } });
+        await refreshPortalState();
+        schedDraft = null;
+        toast('Schedule saved');
+      } catch (error) { apiError(error); }
     }
     renderSchedule(true, false);
     if (act === 'addrow') $('schedBox').querySelector('[data-row]:last-of-type [data-sf=officer]')?.focus();
@@ -2592,12 +2576,16 @@
       let added = 0;
       for (const f of files) {
         try {
-          const img = await fileToDataURL(f, 1400, true);
-          const d = db.load();
-          (d.gallery = d.gallery || []).push({ id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), at: new Date().toISOString(), img, caption, by: myName() });
-          if (!db.write(d)) break;
+          if (!['image/jpeg', 'image/png', 'image/webp'].includes(f.type)) {
+            throw new Error('Use JPEG, PNG, or WebP photos.');
+          }
+          const compressed = await fileToDataURL(f, 1400, true);
+          const blob = await (await fetch(compressed)).blob();
+          const upload = new File([blob], 'site-photo.jpg', { type: blob.type || 'image/jpeg' });
+          await apiPost('gallery-upload', { caption }, { field: 'photo', file: upload });
+          await refreshPortalState();
           added++;
-        } catch { toast(`Couldn't read ${f.name} as an image.`); }
+        } catch (error) { toast(error.message || `Couldn't upload ${f.name}.`); }
       }
       b.disabled = false;
       st.textContent = added ? `${added} photo${added > 1 ? 's' : ''} added to the public site.` : 'No photos were added.';
@@ -2605,20 +2593,24 @@
       if (added) { $('photoFiles').value = ''; $('photoCaption').value = ''; }
     } else if (act === 'del') {
       if (!(await ask('Remove this photo from the public site?', { ok: 'Remove photo', danger: true }))) return;
-      db.remove('gallery', id);
+      await db.remove('gallery', id);
     } else {
-      const d = db.load(), list = d.gallery || [], i = list.findIndex(p => p.id === id), j = act === 'left' ? i - 1 : i + 1;
+      const list = [...db.list('gallery')], i = list.findIndex(p => p.id === id), j = act === 'left' ? i - 1 : i + 1;
       if (i < 0 || j < 0 || j >= list.length) return;
       [list[i], list[j]] = [list[j], list[i]];
-      db.write(d);
+      try {
+        await apiPost('gallery-order', { ids: list.map(photo => photo.id) });
+        await refreshPortalState();
+      } catch (error) { apiError(error); }
     }
     applyUser(); renderGallery();
   });
-  site.addEventListener('change', e => {
+  site.addEventListener('change', async e => {
     const cap = e.target.closest('[data-photo=caption]');
     if (!cap || !canManagePhotos()) return;
-    db.update('gallery', cap.dataset.id, { caption: cap.value.trim() });
-    renderGallery(); toast('Caption saved');
+    if (await db.update('gallery', cap.dataset.id, { caption: cap.value.trim() })) {
+      renderGallery(); toast('Caption saved');
+    }
   });
 
   function openPostDlg(id){
@@ -2632,13 +2624,13 @@
     $('postDlg').returnValue = '';
     $('postDlg').showModal();
   }
-  $('postDlg').addEventListener('close', () => {
+  $('postDlg').addEventListener('close', async () => {
     if ($('postDlg').returnValue !== 'save') return;
     const rec = { tag: $('postTag').value, date: $('postDate').value, title: $('postTitle').value.trim(), body: $('postBody').value.trim() };
     if (!rec.title) { toast('A post needs a title.'); return; }
     const id = $('postId').value;
-    id ? db.update('posts', id, rec) : db.add('posts', { ...rec, by: myName() });
-    applyUser(); toast(id ? 'Post updated' : 'Posted to the bulletin board');
+    const saved = id ? await db.update('posts', id, rec) : await db.add('posts', rec);
+    if (saved) toast(id ? 'Post updated' : 'Posted to the bulletin board');
   });
 
   const BOLO_FIELDS = ['description', 'vehicle', 'lastSeen', 'reason', 'action'];
@@ -2659,7 +2651,7 @@
     const f = e.target.files[0]; if (!f) return;
     try { boloImg = await fileToDataURL(f, 900); } catch { toast("That file couldn't be read as an image."); }
   });
-  $('boloDlg').addEventListener('close', () => {
+  $('boloDlg').addEventListener('close', async () => {
     if ($('boloDlg').returnValue !== 'save') return;
     const rec = { title: $('boloTitle').value.trim(), status: $('boloStatus').value, issued: $('boloIssued').value };
     BOLO_FIELDS.forEach(k => rec[k] = $('bolo_' + k).value.trim());
@@ -2667,56 +2659,11 @@
     if (boloImg) rec.img = boloImg.replace(/['"()\s]/g, encodeURIComponent);
     else if ($('boloNoPhoto').checked) rec.img = '';
     const id = $('boloId').value;
-    const ok = id ? db.update('bolos', id, rec) : db.add('bolos', { img: '', ...rec, by: myName() });
-    applyUser(); if (ok) toast(id ? 'BOLO updated' : 'BOLO posted');
+    const saved = id ? await db.update('bolos', id, rec) : await db.add('bolos', { img: '', ...rec });
+    if (saved) toast(id ? 'BOLO updated' : 'BOLO posted');
   });
 
-  // staff logins
-  // (logins supervisors create in the portal are managed on the portal's Staff tab)
-  function renderAccounts(){
-    const list = cfgAccounts();
-    $('acctList').innerHTML = list.length ? list.map((a, i) => `
-      <div class="acct-row">
-        <div><b>${esc(a.name || a.user)}</b><small>Username: ${esc(a.user)} · ${ROLE_NAMES[a.role] || 'Officer'}</small></div>
-        <span></span>
-        <div class="acct-btns"><button type="button" data-acct="reset" data-i="${i}">Reset password</button><button type="button" class="danger" data-acct="del" data-i="${i}">Remove</button></div>
-      </div>`).join('') : '<p class="hint">No logins yet. Add one below.</p>';
-  }
-  function openStaff(){
-    if (!window.crypto?.subtle) { toast('Open the site over https to manage logins.'); return; }
-    renderAccounts(); $('acctDlg').showModal();
-  }
-  $('acctList').addEventListener('click', async e => {
-    const b = e.target.closest('[data-acct]'); if (!b) return;
-    const list = cfgAccounts(), a = list[+b.dataset.i];
-    if (b.dataset.acct === 'del') {
-      if (!(await ask(`Remove the login "${a.user}"? Their schedule rows will become unassigned.`, { ok: 'Remove login', danger: true }))) return;
-      list.splice(+b.dataset.i, 1);
-      if (currentUser === a.user) currentUser = null;
-    } else {
-      const p = await ask(`New password for ${a.user}:`, { ok: 'Set password', input: '', type: 'password' });
-      if (!p) return;
-      a.pass = await passHash(a.user, p);
-      const d = db.load();   // an owner reset replaces any password the employee set or was issued in the portal
-      if (d.passwords) delete d.passwords[a.user];
-      if (d.tempReset) delete d.tempReset[a.user];
-      db.write(d);
-      toast(`Password updated for ${a.user}`);
-    }
-    setAccounts(list); renderAccounts(); refreshEditUI();
-  });
-  $('addAcct').addEventListener('click', async () => {
-    const user = $('newUser').value.trim().toLowerCase(), pass = $('newPass').value;
-    if (!/^[a-z0-9._-]{2,40}$/.test(user)) { toast('Usernames use letters, numbers, dots, dashes or underscores.'); return; }
-    if (!pass) { toast('Enter a password for this login.'); return; }
-    const list = cfgAccounts();
-    if (usernameTaken(user)) { toast('That username is already taken.'); return; }
-    list.push({ user, name: $('newName').value.trim() || user, role: $('newRole').value, pass: await passHash(user, pass) });
-    setAccounts(list);
-    ['newUser', 'newName', 'newPass'].forEach(id => $(id).value = '');
-    renderAccounts(); refreshEditUI();
-    toast(`Login "${user}" added. Assign their schedule rows with the Login picker.`);
-  });
+  function openStaff(){ $('acctDlg').showModal(); }
 
   function exportSite(){
     save(false);
