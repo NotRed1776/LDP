@@ -47,8 +47,9 @@
   .site-header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.84);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
   .site-header .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
   .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-  .logo-mark{position:relative;width:42px;height:42px;flex:none;color:var(--accent);display:grid;place-items:center}
+  .logo-mark{position:relative;width:42px;height:42px;flex:none;color:var(--accent);display:grid;place-items:center;background:url("lycan-wolf-crest.png") center/cover no-repeat}
   .logo-mark svg,.logo-mark img{width:100%;height:100%;object-fit:contain}
+  .logo-mark > svg{display:none}
   .logo-mark .cut{fill:var(--bg)}
   .brand-name{display:flex;flex-direction:column;line-height:1}
   .brand-name strong{font:700 21px/1 Oswald,sans-serif;letter-spacing:.12em;text-transform:uppercase;background:linear-gradient(180deg,#fff 30%,var(--silver) 75%,#8d9196);-webkit-background-clip:text;background-clip:text;color:transparent;caret-color:#fff}
@@ -69,9 +70,9 @@
     -webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%);mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%)}
   .hero.has-img::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(0,0,0,.94) 25%,rgba(0,0,0,.55))}
   .hero.has-img::after,.hero.has-img .hero-emblem{display:none}
-  .hero-emblem{position:absolute;right:-4%;top:50%;transform:translateY(-50%);width:min(50vw,620px);aspect-ratio:1;pointer-events:none;color:color-mix(in srgb,var(--accent) 10%,transparent)}
+  .hero-emblem{position:absolute;right:-4%;top:50%;transform:translateY(-50%);width:min(50vw,620px);aspect-ratio:1;pointer-events:none;color:color-mix(in srgb,var(--accent) 10%,transparent);background:url("lycan-wolf-crest.png") center/cover no-repeat}
   .hero-emblem::before{content:"";position:absolute;inset:6%;border-radius:50%;background:radial-gradient(circle at 40% 35%,rgba(192,192,192,.09),rgba(192,192,192,.02) 60%,transparent 70%);border:1px solid rgba(192,192,192,.12)}
-  .hero-emblem svg{position:absolute;inset:16%;width:68%;height:68%}
+  .hero-emblem svg{display:none}
   .hero-emblem .cut{fill:#050505}
   .hero .wrap{position:relative;z-index:2;width:100%}
   .hero-copy{max-width:680px}
@@ -97,7 +98,8 @@
   .media{position:relative;aspect-ratio:4/5;border-radius:var(--radius);border:1px solid var(--line);overflow:hidden;background-size:cover;background-position:center;
     background-color:#0a0a0a;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.025) 0 2px,transparent 2px 14px),radial-gradient(circle at 50% 40%,color-mix(in srgb,var(--accent) 18%,transparent),transparent 60%)}
   .media .media-mark{position:absolute;inset:0;display:grid;place-items:center;color:color-mix(in srgb,var(--accent) 22%,transparent)}
-  .media .media-mark svg{width:42%}
+  .media .media-mark{background:url("lycan-wolf-crest.png") center/42% auto no-repeat}
+  .media .media-mark svg{display:none}
   .media .media-mark .cut{fill:#0a0a0a}
   .media.has-img .media-mark{display:none}
   .media-tag{position:absolute;left:20px;bottom:20px;right:20px;z-index:2;background:rgba(0,0,0,.8);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
@@ -393,7 +395,7 @@
 
   /* ============ PHOTO GALLERY ============ */
   .gallery-placeholder{aspect-ratio:4/3;display:grid;place-items:center;align-content:center;gap:12px;border:1px dashed var(--line);border-radius:12px;background:var(--panel);color:color-mix(in srgb,var(--accent) 25%,transparent)}
-  .gallery-placeholder svg{width:56px;height:56px}
+  .gallery-placeholder svg,.gallery-placeholder img{width:56px;height:56px;object-fit:cover}
   .gallery-placeholder .cut{fill:var(--panel)}
   .gallery-placeholder span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
   .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
@@ -534,7 +536,7 @@
 </head>
 <body>
 
-<template id="logo-tpl"><svg viewBox="0 0 64 64" aria-hidden="true"><path fill="currentColor" d="M7 3l16 17 9-4 9 4L57 3l-2 27-8 14-15 17-15-17-8-14z"/><path class="cut" d="M17 30l11 4-7.5 3.5zM47 30l-11 4 7.5 3.5zM27.5 46h9L32 52z"/></svg></template>
+<template id="logo-tpl"><img src="lycan-wolf-crest.png" alt="Lycan Division wolf crest"></template>
 
 <div id="site" data-email="admin@lycandivision.com" data-endpoint=""
   data-timeoff-email="l.kornick@lycandivision.com" data-timeoff-endpoint=""
@@ -1318,7 +1320,7 @@
   const root = document.documentElement, body = document.body;
   const site = document.getElementById('site');
   const $ = id => document.getElementById(id);
-  const LOGO_SVG = $('logo-tpl').innerHTML.trim();
+  const LOGO_IMAGE = $('logo-tpl').innerHTML.trim();
 
   // In-page replacement for confirm()/prompt(): some browsers and embedded viewers block
   // native dialogs (they silently return "cancel"), which made deletes do nothing.
@@ -1810,7 +1812,7 @@
         </button>
         ${p.caption ? `<figcaption>${esc(p.caption)}</figcaption>` : ''}
       </figure>`).join('')
-      : [1, 2, 3].map(() => `<figure class="gallery-item"><div class="gallery-placeholder" aria-hidden="true">${LOGO_SVG}<span>Photos coming soon</span></div></figure>`).join(''));
+      : [1, 2, 3].map(() => `<figure class="gallery-item"><div class="gallery-placeholder" aria-hidden="true">${LOGO_IMAGE}<span>Photos coming soon</span></div></figure>`).join(''));
   }
   document.addEventListener('click', e => {
     const b = e.target.closest('[data-gallery]'); if (!b) return;
@@ -2441,7 +2443,7 @@
     const safe = src && src.replace(/"/g, '%22');
     if (el.dataset.img === 'logo') {
       site.querySelectorAll('[data-img="logo"]').forEach(l => {
-        l.innerHTML = safe ? `<img src="${safe}" alt="Lycan Division logo">` : LOGO_SVG;
+        l.innerHTML = safe ? `<img src="${safe}" alt="Lycan Division logo">` : LOGO_IMAGE;
       });
       refreshEditUI();
     } else if (safe) {
