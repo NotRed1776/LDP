@@ -12,3 +12,4 @@ Thumbs.db
 # Secrets should never be committed
 .env
 .env.*
+/lycan-config.php
