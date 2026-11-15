@@ -47,8 +47,9 @@
   .site-header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.84);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
   .site-header .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
   .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-  .logo-mark{position:relative;width:42px;height:42px;flex:none;color:var(--accent);display:grid;place-items:center}
+  .logo-mark{position:relative;width:42px;height:42px;flex:none;color:var(--accent);display:grid;place-items:center;background:url("lycan-wolf-crest.png") center/cover no-repeat}
   .logo-mark svg,.logo-mark img{width:100%;height:100%;object-fit:contain}
+  .logo-mark > svg{display:none}
   .logo-mark .cut{fill:var(--bg)}
   .brand-name{display:flex;flex-direction:column;line-height:1}
   .brand-name strong{font:700 21px/1 Oswald,sans-serif;letter-spacing:.12em;text-transform:uppercase;background:linear-gradient(180deg,#fff 30%,var(--silver) 75%,#8d9196);-webkit-background-clip:text;background-clip:text;color:transparent;caret-color:#fff}
@@ -69,9 +70,9 @@
     -webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%);mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%)}
   .hero.has-img::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(0,0,0,.94) 25%,rgba(0,0,0,.55))}
   .hero.has-img::after,.hero.has-img .hero-emblem{display:none}
-  .hero-emblem{position:absolute;right:-4%;top:50%;transform:translateY(-50%);width:min(50vw,620px);aspect-ratio:1;pointer-events:none;color:color-mix(in srgb,var(--accent) 10%,transparent)}
+  .hero-emblem{position:absolute;right:-4%;top:50%;transform:translateY(-50%);width:min(50vw,620px);aspect-ratio:1;pointer-events:none;color:color-mix(in srgb,var(--accent) 10%,transparent);background:url("lycan-wolf-crest.png") center/cover no-repeat}
   .hero-emblem::before{content:"";position:absolute;inset:6%;border-radius:50%;background:radial-gradient(circle at 40% 35%,rgba(192,192,192,.09),rgba(192,192,192,.02) 60%,transparent 70%);border:1px solid rgba(192,192,192,.12)}
-  .hero-emblem svg{position:absolute;inset:16%;width:68%;height:68%}
+  .hero-emblem svg{display:none}
   .hero-emblem .cut{fill:#050505}
   .hero .wrap{position:relative;z-index:2;width:100%}
   .hero-copy{max-width:680px}
@@ -97,7 +98,8 @@
   .media{position:relative;aspect-ratio:4/5;border-radius:var(--radius);border:1px solid var(--line);overflow:hidden;background-size:cover;background-position:center;
     background-color:#0a0a0a;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.025) 0 2px,transparent 2px 14px),radial-gradient(circle at 50% 40%,color-mix(in srgb,var(--accent) 18%,transparent),transparent 60%)}
   .media .media-mark{position:absolute;inset:0;display:grid;place-items:center;color:color-mix(in srgb,var(--accent) 22%,transparent)}
-  .media .media-mark svg{width:42%}
+  .media .media-mark{background:url("lycan-wolf-crest.png") center/42% auto no-repeat}
+  .media .media-mark svg{display:none}
   .media .media-mark .cut{fill:#0a0a0a}
   .media.has-img .media-mark{display:none}
   .media-tag{position:absolute;left:20px;bottom:20px;right:20px;z-index:2;background:rgba(0,0,0,.8);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
@@ -393,7 +395,7 @@
 
   /* ============ PHOTO GALLERY ============ */
   .gallery-placeholder{aspect-ratio:4/3;display:grid;place-items:center;align-content:center;gap:12px;border:1px dashed var(--line);border-radius:12px;background:var(--panel);color:color-mix(in srgb,var(--accent) 25%,transparent)}
-  .gallery-placeholder svg{width:56px;height:56px}
+  .gallery-placeholder svg,.gallery-placeholder img{width:56px;height:56px;object-fit:cover}
   .gallery-placeholder .cut{fill:var(--panel)}
   .gallery-placeholder span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
   .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
@@ -534,15 +536,16 @@
 </head>
 <body>
 
-<template id="logo-tpl"><svg viewBox="0 0 64 64" aria-hidden="true"><path fill="currentColor" d="M7 3l16 17 9-4 9 4L57 3l-2 27-8 14-15 17-15-17-8-14z"/><path class="cut" d="M17 30l11 4-7.5 3.5zM47 30l-11 4 7.5 3.5zM27.5 46h9L32 52z"/></svg></template>
+<template id="logo-tpl"><img src="lycan-wolf-crest.png" alt="Lycan Division wolf crest"></template>
 
-<div id="site" data-email="contact@your-domain.com" data-endpoint=""
-  data-timeoff-email="scheduling@your-domain.com" data-timeoff-endpoint=""
-  data-complaint-emails="supervisor1@your-domain.com,supervisor2@your-domain.com" data-complaint-endpoint=""
-  data-careers-email="careers@your-domain.com" data-careers-endpoint=""
+<div id="site" data-email="admin@lycandivision.com" data-endpoint=""
+  data-timeoff-email="l.kornick@lycandivision.com" data-timeoff-endpoint=""
+  data-complaint-emails="l.kornick@lycandivision.com" data-complaint-endpoint=""
+  data-careers-email="admin@lycandivision.com" data-careers-endpoint=""
   data-editor-pass="f343296857198793482015ee6ab9e456fe27b0bc0ec2651f0d378f6f164f4059"
   data-accounts='[{"user":"admin1","name":"Admin1","role":"employee","pass":"df2810076c2f8f928242bb09633f731b41ca1a726be96939fe8e83cd347b3e16"},{"user":"lkornick101","name":"Assistant Chief","role":"asst_chief","pass":"499a0e1e66042e14d33a804827b126f3fa8cc774ef669a8f6316430016236df8"},{"user":"owner","name":"Site Owner","role":"owner","pass":"e28cc74467f4449564d5b4c5dfc373875df9cffd863edf9f881a2d78a8126e25"}]'>
 
+  <div class="demo-banner" role="note"><strong>DEMO ONLY:</strong> Do not enter real personal, employee, or customer data. Portal credentials are in this page's source, and browser-stored records are not private or shared. Use a server-side system before production.</div>
   <div class="topbar">
     <div class="wrap">
       <span><b data-e>24/7 Dispatch:</b> <a href="tel:+15555550100" data-e>(555) 555-0100</a></span>
@@ -728,7 +731,7 @@
           <p class="muted" data-e>Tell us about your site or event. We'll respond within one business day, and urgent requests are handled by 24/7 dispatch.</p>
           <ul class="info-list">
             <li><div class="icon"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div><div><small data-e>Phone (24/7)</small><a href="tel:+15555550100" data-e>(555) 555-0100</a></div></li>
-            <li><div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div><div><small data-e>Email</small><a href="mailto:contact@your-domain.com" data-e>contact@your-domain.com</a></div></li>
+            <li><div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div><div><small data-e>Email</small><a href="mailto:Contact@lycandivision.com" data-e>Contact@lycandivision.com</a></div></li>
             <li><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div><div><small data-e>Service Area</small><span data-e>State of Ohio</span></div></li>
             <li><div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><small data-e>Office Hours</small><span data-e>Mon–Fri 8am–6pm · Dispatch 24/7</span></div></li>
           </ul>
@@ -736,6 +739,7 @@
 
         <form class="form reveal" id="quoteForm" data-form="quote" novalidate>
           <h3 data-e>Tell Us What You Need</h3>
+          <p class="demo-banner" role="note">Demo only. Do not submit real customer information.</p>
           <div class="form-row">
             <label class="field"><span data-e>Full name *</span><input name="name" required autocomplete="name"></label>
             <label class="field"><span data-e>Company</span><input name="company" autocomplete="organization"></label>
@@ -789,7 +793,7 @@
           <h4 data-e>Reach Us</h4>
           <ul>
             <li><a href="tel:+15555550100" data-e>(555) 555-0100</a></li>
-            <li><a href="mailto:contact@your-domain.com" data-e>contact@your-domain.com</a></li>
+            <li><a href="mailto:Contact@lycandivision.com" data-e>Contact@lycandivision.com</a></li>
             <li><a href="#contact" data-e>Request a Quote</a></li>
           </ul>
         </div>
@@ -826,6 +830,7 @@
 
       <form class="form apply-form" id="applyForm" data-form="application" novalidate>
         <h3>Your Information</h3>
+        <p class="demo-banner" role="note">Demo only. Do not submit real personal information or résumés.</p>
         <div class="form-row">
           <label class="field"><span data-e>Full name *</span><input name="name" required autocomplete="name"></label>
           <label class="field"><span data-e>Phone *</span><input name="phone" type="tel" required autocomplete="tel"></label>
@@ -914,7 +919,7 @@
           <span class="brand-name"><strong data-e>Lycan Division</strong><small data-e>of Protection Services</small></span>
         </a>
         <h2 data-e>Employee Portal</h2>
-        <p class="muted" data-e>Authorized Lycan Division personnel only. Sign in with the login provided by your supervisor.</p>
+        <p class="demo-banner" role="note">Demo only — not a secure employee login. Do not enter real credentials or personal information.</p>
         <label class="field"><span>Username</span><input name="username" required autocomplete="username" autocapitalize="none"></label>
         <label class="field"><span>Password</span><input name="password" type="password" required autocomplete="current-password"></label>
         <button type="submit" class="btn btn-primary">Sign In</button>
@@ -935,7 +940,7 @@
     </div>
 
     <div class="portal-app">
-      <div class="demo-banner">Test mode: requests, reports, posts and BOLOs are saved on this device only until the database is connected.</div>
+      <div class="demo-banner" role="note">DEMO ONLY — Do not enter real employee or customer data. Credentials are in the page source; records stay in this browser and are not private or shared.</div>
       <div class="portal-top">
         <div class="wrap">
           <a href="#top" class="brand">
@@ -1212,16 +1217,16 @@
     <h3>Site settings</h3>
     <label>Browser tab title<input id="setTitle"></label>
     <label>Brand accent color<input type="color" id="setAccent"></label>
-    <label>Quote form sends to this email<input type="email" id="setEmail" placeholder="you@your-domain.com"></label>
+    <label>Quote form sends to this email<input type="email" id="setEmail" placeholder="admin@lycandivision.com"></label>
     <label>Form service endpoint (optional)<input type="url" id="setEndpoint" placeholder="https://formspree.io/f/xxxxxxx"></label>
     <p class="hint">Without an endpoint, the quote form opens the visitor's email app addressed to you. With a form service like Formspree, Basin or Getform, submissions are delivered straight to your inbox.</p>
     <h4 class="dlg-sub">Employee portal</h4>
     <p class="hint">Employee usernames and passwords are managed under <b>Staff logins</b> in the editor toolbar.</p>
-    <label>Time-off requests go to<input type="email" id="setTimeoff" placeholder="scheduling@your-domain.com"></label>
+    <label>Time-off requests go to<input type="email" id="setTimeoff" placeholder="l.kornick@lycandivision.com"></label>
     <label>Time-off form endpoint (optional)<input type="url" id="setTimeoffEp" placeholder="https://formspree.io/f/…"></label>
-    <label>Concern reports go ONLY to (supervisor emails, comma-separated)<input id="setComplaint" placeholder="supervisor1@your-domain.com, supervisor2@your-domain.com"></label>
+    <label>Concern reports go ONLY to (supervisor emails, comma-separated)<input id="setComplaint" placeholder="l.kornick@lycandivision.com"></label>
     <label>Concern report endpoint (optional)<input type="url" id="setComplaintEp" placeholder="https://formspree.io/f/…"></label>
-    <label>Job applications also go to this email<input type="email" id="setCareers" placeholder="careers@your-domain.com"></label>
+    <label>Job applications also go to this email<input type="email" id="setCareers" placeholder="admin@lycandivision.com"></label>
     <label>Job application endpoint (optional)<input type="url" id="setCareersEp" placeholder="https://formspree.io/f/…"></label>
     <h4 class="dlg-sub">Site editor</h4>
     <label>New editor password (leave blank to keep the current one)<input type="password" id="setEditorPass" autocomplete="new-password"></label>
@@ -1315,7 +1320,7 @@
   const root = document.documentElement, body = document.body;
   const site = document.getElementById('site');
   const $ = id => document.getElementById(id);
-  const LOGO_SVG = $('logo-tpl').innerHTML.trim();
+  const LOGO_IMAGE = $('logo-tpl').innerHTML.trim();
 
   // In-page replacement for confirm()/prompt(): some browsers and embedded viewers block
   // native dialogs (they silently return "cancel"), which made deletes do nothing.
@@ -1519,8 +1524,13 @@
   let schedDraft = null;   // a supervisor's unsaved schedule edits
   const schedule = () => db.load().schedule || { week: '', note: '', days: [], rows: [] };
   const newRow = n => ({ id: 'r' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5), owner: '', officer: '', post: '', days: Array(n).fill('OFF'), posts: Array(n).fill('') });
-  // a day's own post, only when it differs from the officer's usual post and they are working that day
-  const dayPost = (r, i) => { const p = (r.posts || [])[i]; return p && p !== r.post && !/^off$/i.test(r.days[i] || '') ? p : ''; };
+  const ZONES = ['Central', 'Zone 1', 'Zone 2', 'Zone 3', 'Zone 4'];
+  const zoneOptions = selected => [
+    '<option value="">Select a zone</option>',
+    ...ZONES.map(zone => `<option value="${zone}"${selected === zone ? ' selected' : ''}>${zone}</option>`)
+  ].join('');
+  // Use a day's assigned location, falling back to the row's usual post.
+  const dayPost = (r, i) => /^off$/i.test(r.days[i] || '') ? '' : (r.posts || [])[i] || r.post || '';
 
   function collectSched(){
     const box = $('schedBox'), v = el => el ? el.value.trim() : '';
@@ -1553,13 +1563,15 @@
       box.innerHTML = `
         <div class="sched-form">
           <label class="field"><span>Week / heading</span><input data-sf="week" value="${esc(s.week)}"></label>
+          <p class="form-note">Set a shift and post location for each day. Leave a daily location blank to use the Zone.</p>
+          <datalist id="zone-options">${ZONES.map(zone => `<option value="${zone}">`).join('')}</datalist>
           <div class="sched-wrap"><div class="sched sched-editing">
-            <div class="sched-row sched-head"><div>Officer &amp; login</div><div>Usual post</div>${s.days.map(d => `<div><input data-sf="day" value="${esc(d)}" aria-label="Day label"></div>`).join('')}<div></div></div>
+            <div class="sched-row sched-head"><div>Officer &amp; login</div><div>Zone</div>${s.days.map(d => `<div><input data-sf="day" value="${esc(d)}" aria-label="Day label"></div>`).join('')}<div></div></div>
             ${s.rows.map(r => `
             <div class="sched-row" data-row="${esc(r.id)}">
               <div><input data-sf="officer" value="${esc(r.officer)}" placeholder="Officer name" aria-label="Officer"><select data-sf="owner" aria-label="Login that sees this row">${ownerOpts(r.owner)}</select></div>
-              <div><input data-sf="post" value="${esc(r.post)}" placeholder="Post / site" aria-label="Post"></div>
-              ${s.days.map((day, i) => `<div><input data-sf="d" value="${esc(r.days[i] ?? '')}" aria-label="${esc(day)} shift"><input class="day-post-input" data-sf="dp" value="${esc((r.posts || [])[i] ?? '')}" placeholder="Same post" aria-label="${esc(day)} post, if different"></div>`).join('')}
+              <div><select data-sf="post" aria-label="Default zone">${zoneOptions(r.post)}</select></div>
+              ${s.days.map((day, i) => `<div><input data-sf="d" value="${esc(r.days[i] ?? '')}" aria-label="${esc(day)} shift"><input class="day-post-input" data-sf="dp" list="zone-options" value="${esc((r.posts || [])[i] ?? '')}" placeholder="Zone" aria-label="${esc(day)} zone"></div>`).join('')}
               <div><button type="button" class="sched-del" data-sched="delrow" data-id="${esc(r.id)}" title="Delete row">✕</button></div>
             </div>`).join('')}
           </div></div>
@@ -1577,7 +1589,7 @@
         ${sup ? '<button type="button" class="btn btn-primary btn-sm" data-sched="edit">Edit schedule</button>' : ''}
       </div>
       ${rows.length ? `<div class="sched-wrap"><div class="sched">
-        <div class="sched-row sched-head"><div>Officer</div><div>Post</div>${s.days.map(d => `<div>${esc(d)}</div>`).join('')}</div>
+        <div class="sched-row sched-head"><div>Officer</div><div>Zone</div>${s.days.map(d => `<div>${esc(d)}</div>`).join('')}</div>
         ${rows.map(r => `
         <div class="sched-row">
           <div>${esc(r.officer)}${sup ? `<small class="sched-owner">${r.owner ? 'Login: ' + esc(r.owner) : 'Not assigned'}</small>` : ''}</div>
@@ -1800,7 +1812,7 @@
         </button>
         ${p.caption ? `<figcaption>${esc(p.caption)}</figcaption>` : ''}
       </figure>`).join('')
-      : [1, 2, 3].map(() => `<figure class="gallery-item"><div class="gallery-placeholder" aria-hidden="true">${LOGO_SVG}<span>Photos coming soon</span></div></figure>`).join(''));
+      : [1, 2, 3].map(() => `<figure class="gallery-item"><div class="gallery-placeholder" aria-hidden="true">${LOGO_IMAGE}<span>Photos coming soon</span></div></figure>`).join(''));
   }
   document.addEventListener('click', e => {
     const b = e.target.closest('[data-gallery]'); if (!b) return;
@@ -2194,6 +2206,14 @@
       try { rec.resume = { name: file.name, type: file.type, size: file.size, data: await readFile(file) }; }
       catch { fail('That résumé file could not be read. Please try another file.'); return; }
     }
+    const endpoint = cfg[spec.via], to = cfg[spec.to].replace(/\s+/g, '');
+    const realTo = to && !/your-domain\.com/i.test(to);   // skip placeholder addresses
+    if (!endpoint && (kind === 'application' || !realTo)) {
+      fail(kind === 'application'
+        ? 'Job applications need a form endpoint so your résumé can be delivered securely.'
+        : 'This form is not configured yet. Please contact us directly.');
+      return;
+    }
     const saved = kind === 'timeoff' ? db.add('timeoff', { ...rec, by: currentUser, status: 'Pending' })
       : kind === 'complaint' ? db.add('complaints', { ...rec, status: 'Open' })
       : kind === 'application' ? db.add('applications', { ...rec, status: 'New' })
@@ -2203,8 +2223,6 @@
       status.textContent = spec.sent; status.classList.add('ok'); form.reset(); applyUser();
       if (kind === 'application') { body.classList.add('applied'); window.scrollTo(0, 0); }
     };
-    const endpoint = cfg[spec.via], to = cfg[spec.to].replace(/\s+/g, '');
-    const realTo = to && !/your-domain\.com/i.test(to);   // skip placeholder addresses
     if (endpoint) {
       const btn = form.querySelector('[type=submit]');
       btn.disabled = true; status.textContent = 'Sending…';
@@ -2220,9 +2238,8 @@
       const label = k => (form.querySelector(`[name="${k}"]`)?.closest('.field')?.querySelector('span')?.textContent || k).replace(/\s*\*$/, '');
       const lines = Object.entries(rec).filter(([k]) => k !== 'resume').map(([k, v]) => `${label(k)}: ${v}`).join('\n');
       location.href = `mailto:${to}?subject=${encodeURIComponent(spec.subject(data))}&body=${encodeURIComponent(lines)}`;
-      done();
-    } else {
-      done();
+      status.textContent = 'Your email app should open with this request. Send the email to complete your submission.';
+      status.classList.add('ok');
     }
   });
 
@@ -2426,7 +2443,7 @@
     const safe = src && src.replace(/"/g, '%22');
     if (el.dataset.img === 'logo') {
       site.querySelectorAll('[data-img="logo"]').forEach(l => {
-        l.innerHTML = safe ? `<img src="${safe}" alt="Lycan Division logo">` : LOGO_SVG;
+        l.innerHTML = safe ? `<img src="${safe}" alt="Lycan Division logo">` : LOGO_IMAGE;
       });
       refreshEditUI();
     } else if (safe) {

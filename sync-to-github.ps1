@@ -36,13 +36,18 @@ while ($true) {
   $ahead = & $git rev-list --count '@{u}..HEAD' 2>$null
   if ($LASTEXITCODE -eq 0 -and [int]$ahead -gt 0) {
     $output = & $git push -q 2>&1 | Out-String
-    if ($LASTEXITCODE -ne 0) {
+    $pushSucceeded = $LASTEXITCODE -eq 0
+    if (-not $pushSucceeded) {
       # GitHub has commits this computer doesn't (for example, an edit on the website): merge them in first
       $output += & $git pull -q --rebase 2>&1 | Out-String
-      if ($LASTEXITCODE -eq 0) { $output = & $git push -q 2>&1 | Out-String }
-      else { & $git rebase --abort 2>$null }
+      if ($LASTEXITCODE -eq 0) {
+        $output = & $git push -q 2>&1 | Out-String
+        $pushSucceeded = $LASTEXITCODE -eq 0
+      } else {
+        & $git rebase --abort 2>$null
+      }
     }
-    if ($LASTEXITCODE -eq 0) {
+    if ($pushSucceeded) {
       Write-SyncLog "Pushed $ahead commit(s) to GitHub"
       $pushFailing = $false
     } elseif (-not $pushFailing) {
