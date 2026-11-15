@@ -1,16 +1,28 @@
 # IONOS PHP and MySQL setup
 
-The database connection values are kept in a private PHP file, not in the public site or Git. Get the host, database name, username, and password from your IONOS database details.
+The portal backend requires PHP 8.1 or later with PDO MySQL, Fileinfo, mbstring, sessions, and PHP mail enabled. Keep the site on HTTPS. No database password or setup secret belongs in this repository or in chat.
 
-## Configure the private connection file
+## Configure private server settings
 
 1. In Webspace Explorer, locate the public web root (often named `htdocs`).
-2. Make a private copy of `lycan-config.example.php` named `lycan-config.php` in the directory immediately above the public web root.
-3. Edit the private copy and fill in the host, database name, username, and password from IONOS. Do not upload the password to GitHub or send it in chat.
-4. Confirm the private file is next to, not inside, the public web root. The API expects it at `../lycan-config.php` relative to the web root.
+2. Copy `lycan-config.example.php` as `lycan-config.php` into the directory immediately above the public web root. Keep it outside `htdocs`.
+3. Enter the database host, name, username, and password from IONOS. Set `app_key` and `setup_key` to two different, randomly generated 64-character hexadecimal secrets. Keep both private. Set `storage_dir` to a private directory outside the web root; the example places it beside the config.
+4. Confirm the file is at the location expected by `/api/common.php`. The API refuses HTTP when `require_https` is enabled.
 
-## Check the connection
+## Create the database tables
 
-After uploading the site and the `api` directory, open `/api/db-check.php` on the website. A working connection responds with `{"ok":true}`. Any failure returns a generic error; the specific diagnostic is written to the PHP server error log.
+In the IONOS database's phpMyAdmin, select the database, open **Import**, and import `api/schema.sql`. The schema contains user accounts, portal records, schedules, and login throttling data. It does not create demo users or copy browser-local records.
 
-This only verifies that PHP can connect to MySQL. It does not yet move portal data or make the demo portal production-safe. Keep the demo warnings in place until the authenticated API and database-backed portal are implemented and tested.
+## Initial owner account
+
+After uploading the site and all files in `api`, visit the secure site and open the employee portal. Use its **First-time setup** form to create the owner account. Enter the `setup_key` from the private config and choose a unique username and a strong password of at least 14 characters. Setup is disabled after an owner has been created. Remove or replace the setup key in the private config after initialization.
+
+The old browser-only demo accounts and localStorage records are intentionally not migrated. Create staff accounts from the authenticated portal; staff members must change their temporary password at first sign-in.
+
+## Verify before using real data
+
+1. Open `/api/db-check.php` over HTTPS; it should return `{"ok":true}`.
+2. Sign in with the new owner account, create a staff account, then verify the staff member's first-sign-in password change and role restrictions.
+3. Submit test quote, application, time-off, and concern forms. Confirm the records appear only to the appropriate portal roles and notifications arrive at `admin@lycandivision.com` or `l.kornick@lycandivision.com` as configured.
+4. Test résumé and gallery uploads, including that résumés are only downloadable by HR and designated leadership roles. Confirm private files are outside the web root.
+5. Keep demo warnings and do not enter real records until these checks pass on the actual IONOS host. The local static `serve.ps1` does not run PHP and cannot verify this backend.
